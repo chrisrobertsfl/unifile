@@ -65,14 +65,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("commons-io:commons-io:2.15.0")
     implementation("info.picocli:picocli:4.0.4")
-    implementation("org.apache.tika:tika-core:2.9.1")
-    implementation("org.apache.tika:tika-parsers:2.9.1")
-    implementation("org.apache.tika:tika-parsers-standard-package:2.9.1")
     implementation("e-iceblue:spire.office.free:5.3.1")
     implementation("e-iceblue:spire.pdf.free:9.12.3")
     implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
-
-
 
 
 }

@@ -1,5 +1,0 @@
-File Name: settings.gradle.kts
-Content Type: text/plain
-Contents:
-
----

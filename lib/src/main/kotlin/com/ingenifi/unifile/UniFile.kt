@@ -1,15 +1,14 @@
 package com.ingenifi.unifile
 
-import org.apache.tika.Tika
-import org.apache.tika.exception.TikaException
-import org.apache.tika.exception.ZeroByteFileException
-import org.apache.tika.metadata.Metadata
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
 import java.io.File
+import java.nio.file.Path
+import java.nio.file.Paths
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.Callable
+import kotlin.io.path.extension
 
 
 @CommandLine.Command(
@@ -49,66 +48,25 @@ class UniFileCli : Callable<Int> {
 }
 
 data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val ejectBlankLines: Boolean = true) {
-    private val logger = LoggerFactory.getLogger(UniFile::class.java)
-
     fun combineFiles(output: OutputPath) {
-        input.list.flatMap { it.findFiles() }.mapNotNull { retrieve(it) }.forEach { uniFileEntry ->
-            val formattedContent = format(uniFileEntry)
-            output.write(formattedContent)
+        val outputs = input.list.flatMap { it.findFiles() }.mapNotNull {
+            DocumentConverter.from(it.extension).convert(it)
         }
-
+        val outputText = UnifyingMerger().merge(outputs)
+        output.write(outputText)
     }
-
-
-    fun retrieve(file: File): UniFileEntry? {
-        logger.info("Processing file ${file.absolutePath}")
-        val metadata = Metadata()
-        try {
-            val tika = Tika()
-            val contents = tika.parseToString(file.inputStream(), metadata)
-            logger.info("contents is {}", contents)
-            val entry = UniFileEntry(contents = contents, fileName = file.name, contentType = metadata.get("Content-Type"))
-            logger.info("entry is {}", entry)
-            return entry
-        } catch (e: ZeroByteFileException) {
-            logger.warn("No bytes - skipping file: {}", file.absolutePath)
-            return null
-        } catch (e: TikaException) {
-            logger.warn("{}} - skipping file: {}", e.message, file.absolutePath)
-        } catch(e : Exception) {
-            logger.error("fatal error: {}", e.message, e)
-        }
-        return null
-    }
-
-
-    fun format(uniFileEntry: UniFileEntry): String = buildString {
-        append("File Name: ${uniFileEntry.fileName}\n")
-        append("Content Type: ${uniFileEntry.contentType}\n")
-        val contents = if (ejectBlankLines) uniFileEntry.contents.skipBlanks() else uniFileEntry.contents
-        append("Contents:\n${contents}\n")
-        append("---\n")
-    }
-
-    private fun String.skipBlanks(): String {
-        return this.lines().filter { it.isNotBlank() }  // Keep only non-blank lines
-            .joinToString("\n")          // Rejoin the lines with a newline character
-    }
-
 
 }
-
-data class UniFileEntry(val fileName: String = "", val contentType: String = "", val contents: String = "")
 
 class InputPaths(paths: List<String>) {
     val list: List<InputPath> = paths.map { InputPath(it) }
 }
 
-class InputPath(private val path: String) {
-    fun findFiles(): List<File> = when {
-        path == "." -> File(".").walkTopDown().filter { it.isFile }.toList()
-        File(path).isDirectory -> File(path).walkTopDown().filter { it.isFile }.toList()
-        else -> listOf(File(path))
+class InputPath(private val pathName: String) {
+    fun findFiles(): List<Path> = when {
+        pathName == "." -> File(".").walkTopDown().filter { it.isFile }.map { it.toPath() }.toList()
+        File(pathName).isDirectory -> File(pathName).walkTopDown().filter { it.isFile }.map { it.toPath() }.toList()
+        else -> listOf(Paths.get(pathName))
     }
 }
 
@@ -131,35 +89,4 @@ data class OutputPath(var path: String?) {
     private fun generatePathName(): String {
         return "unifile-${LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MMM-dd-HH:mm:ss"))}.txt"
     }
-}
-
-
-class FileSplitter(private val maxFileSizeMB: Int, private val basePath: String) {
-    private var currentFileSize = 0L
-    private var fileIndex = 0
-    private val currentContent = StringBuilder()
-
-    fun addContent(content: String) {
-        if (currentFileSize + content.toByteArray().size > maxFileSizeMB * 1024 * 1024) {
-            writeCurrentContent()
-        }
-        currentContent.append(content)
-        currentFileSize += content.toByteArray().size
-    }
-
-    fun finalizeSplitting() {
-        if (currentContent.isNotEmpty()) {
-            writeCurrentContent()
-        }
-    }
-
-    private fun writeCurrentContent() {
-        val filePath = if (fileIndex > 0) "${basePathWithoutExtension()}_$fileIndex.txt" else basePath
-        File(filePath).writeText(currentContent.toString())
-        currentContent.clear()
-        currentFileSize = 0
-        fileIndex++
-    }
-
-    private fun basePathWithoutExtension() = basePath.substringBeforeLast(".")
 }
