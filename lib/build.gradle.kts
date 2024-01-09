@@ -25,6 +25,9 @@ application {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+
+    // e-iceblue repository
+    maven(url = "https://repo.e-iceblue.cn/repository/maven-public/")
 }
 
 
@@ -65,6 +68,10 @@ dependencies {
     implementation("org.apache.tika:tika-core:2.9.1")
     implementation("org.apache.tika:tika-parsers:2.9.1")
     implementation("org.apache.tika:tika-parsers-standard-package:2.9.1")
+    implementation("e-iceblue:spire.office.free:5.3.1")
+    implementation("e-iceblue:spire.pdf.free:9.12.3")
+    implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
+
 
 
 
@@ -76,6 +83,7 @@ java {
         languageVersion.set(JavaLanguageVersion.of(19))
     }
 }
+
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.

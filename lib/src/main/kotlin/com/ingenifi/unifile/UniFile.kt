@@ -7,17 +7,15 @@ import org.apache.tika.metadata.Metadata
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
 import java.io.File
-import java.io.FileInputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.Callable
 
 
 @CommandLine.Command(
-    name = "unifile",
-    mixinStandardHelpOptions = true,
-    description = ["Utility to process and combine files."]
-)class UniFileCli : Callable<Int> {
+    name = "unifile", mixinStandardHelpOptions = true, description = ["Utility to process and combine files."]
+)
+class UniFileCli : Callable<Int> {
 
     private val logger = LoggerFactory.getLogger(UniFileCli::class.java)
 
@@ -49,43 +47,40 @@ import java.util.concurrent.Callable
         }
     }
 }
+
 data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val ejectBlankLines: Boolean = true) {
     private val logger = LoggerFactory.getLogger(UniFile::class.java)
 
     fun combineFiles(output: OutputPath) {
-        val fileSplitter = FileSplitter(maxFileSizeMB, output.path!!)
+        input.list.flatMap { it.findFiles() }.mapNotNull { retrieve(it) }.forEach { uniFileEntry ->
+            val formattedContent = format(uniFileEntry)
+            output.write(formattedContent)
+        }
 
-        input.list.flatMap { it.findFiles() }
-            .mapNotNull { retrieve(it) }
-            .forEach { uniFileEntry ->
-                val formattedContent = format(uniFileEntry)
-                fileSplitter.addContent(formattedContent)
-            }
-
-        fileSplitter.finalizeSplitting()
     }
 
 
-    fun retrieve(file: File): UniFileEntry? = FileInputStream(file).use {
+    fun retrieve(file: File): UniFileEntry? {
         logger.info("Processing file ${file.absolutePath}")
         val metadata = Metadata()
         try {
-            val contents = Tika().parseToString(it, metadata)
-            if (contents.isBlank()) {
-                logger.warn("No content - skipping file: {}", file.absolutePath)
-                return null
-            }
+            val tika = Tika()
+            val contents = tika.parseToString(file.inputStream(), metadata)
+            logger.info("contents is {}", contents)
             val entry = UniFileEntry(contents = contents, fileName = file.name, contentType = metadata.get("Content-Type"))
-            entry
-        } catch(e : ZeroByteFileException) {
+            logger.info("entry is {}", entry)
+            return entry
+        } catch (e: ZeroByteFileException) {
             logger.warn("No bytes - skipping file: {}", file.absolutePath)
-            null
-        }
-        catch( e : TikaException){
+            return null
+        } catch (e: TikaException) {
             logger.warn("{}} - skipping file: {}", e.message, file.absolutePath)
-            null
+        } catch(e : Exception) {
+            logger.error("fatal error: {}", e.message, e)
         }
+        return null
     }
+
 
     fun format(uniFileEntry: UniFileEntry): String = buildString {
         append("File Name: ${uniFileEntry.fileName}\n")
@@ -96,8 +91,7 @@ data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val eject
     }
 
     private fun String.skipBlanks(): String {
-        return this.lines()
-            .filter { it.isNotBlank() }  // Keep only non-blank lines
+        return this.lines().filter { it.isNotBlank() }  // Keep only non-blank lines
             .joinToString("\n")          // Rejoin the lines with a newline character
     }
 
@@ -129,7 +123,8 @@ data class OutputPath(var path: String?) {
     fun write(text: String) {
         File(path!!).apply {
             parentFile?.mkdirs()  // Ensure the directory exists
-            writeText(text)
+            // Change to appendText to add to the file rather than overwrite it
+            appendText(text)
         }
     }
 
@@ -137,6 +132,7 @@ data class OutputPath(var path: String?) {
         return "unifile-${LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MMM-dd-HH:mm:ss"))}.txt"
     }
 }
+
 
 class FileSplitter(private val maxFileSizeMB: Int, private val basePath: String) {
     private var currentFileSize = 0L

@@ -1,4 +1,3 @@
-<!-- TODO:  How can I convert this to yaml? -->
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -7,7 +6,10 @@
         </encoder>
     </appender>
 
-    <root level="trace">
+    <logger name="org.apache.fontbox.ttf" level="OFF"/>
+    <logger name="org.apache" level="ERROR"/>
+
+    <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
