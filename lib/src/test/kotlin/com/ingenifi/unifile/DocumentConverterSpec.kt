@@ -32,6 +32,11 @@ class DocumentConverterSpec : StringSpec({
         DocumentConverter.from(path.extension).convert(path).shouldBeTypeOf<PptxOutput>()
     }
 
+    "convert json" {
+        val path = Paths.get("src/test/resources/simple.json")
+        DocumentConverter.from(path.extension).convert(path).shouldBeTypeOf<PlainTextOutput>()
+    }
+
 
     "convert unknown" {
         shouldThrow<UnsupportedOperationException> { DocumentConverter.from("unknown").convert(Paths.get("hello.unknown")) }

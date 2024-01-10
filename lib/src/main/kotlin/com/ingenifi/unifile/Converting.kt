@@ -9,6 +9,7 @@ sealed interface DocumentConverter {
         fun from(extension: String): DocumentConverter = when(extension.lowercase()) {
             "doc" -> DocxConverter
             "docx" -> DocxConverter
+            "json" -> TextConverter
             "pdf" -> PdfConverter
             "ppt" -> PptxConverter
             "pptx" -> PptxConverter
