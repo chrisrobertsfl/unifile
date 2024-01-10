@@ -6,14 +6,18 @@ import java.nio.file.Paths
 
 class UnifyingMergerSpec : FeatureSpec({
 
-    val unifile = UnifyingMerger()
+    val unifile = UnifyingMerger(separator = "\n---\n")
     val textContents = """
-            Hello TEXT
-            
+        File: /Users/TKMA5QX/projects/unifile/lib/src/test/resources/simple.txt
+        Contents:
+        Hello TEXT
+        
         """.trimIndent()
     val pdfContents = """
-            Hello PDF
-            
+        File: /Users/TKMA5QX/projects/unifile/lib/src/test/resources/simple.pdf
+        Contents:
+        Hello PDF
+        
         """.trimIndent()
     val textOutput = PlainTextOutput(path = Paths.get("src/test/resources/simple.txt"))
     val pdfOutput = PdfOutput(path = Paths.get("src/test/resources/simple.pdf"))
@@ -26,11 +30,7 @@ class UnifyingMergerSpec : FeatureSpec({
         }
 
         scenario("merge two files") {
-            unifile.merge(textOutput, textOutput) shouldBe """
-            $textContents
-            ---
-            $textContents
-        """.trimIndent()
+            unifile.merge(textOutput, textOutput) shouldBe "$textContents\n---\n$textContents"
         }
     }
 
@@ -40,11 +40,7 @@ class UnifyingMergerSpec : FeatureSpec({
         }
 
         scenario("merge two files") {
-            unifile.merge(pdfOutput, pdfOutput) shouldBe """
-            $pdfContents
-            ---
-            $pdfContents
-        """.trimIndent()
+            unifile.merge(pdfOutput, pdfOutput) shouldBe "$pdfContents\n---\n$pdfContents"
         }
     }
 
@@ -55,22 +51,14 @@ class UnifyingMergerSpec : FeatureSpec({
         }
 
         scenario("merge two files") {
-            unifile.merge(pdfOutput, pdfOutput) shouldBe """
-            $pdfContents
-            ---
-            $pdfContents
-        """.trimIndent()
+            unifile.merge(pdfOutput, pdfOutput) shouldBe "$pdfContents\n---\n$pdfContents"
         }
     }
     feature("All types of files") {
 
         scenario("Text and PDF") {
 
-            unifile.merge(textOutput, pdfOutput) shouldBe """
-            $textContents
-            ---
-            $pdfContents
-        """.trimIndent()
+            unifile.merge(textOutput, pdfOutput) shouldBe "$textContents\n---\n$pdfContents"
         }
     }
 })

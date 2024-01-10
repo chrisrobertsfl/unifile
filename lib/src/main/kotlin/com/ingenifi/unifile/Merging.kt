@@ -11,7 +11,7 @@ sealed interface OutputMerger<T> {
     fun merge(vararg outputs: Output) = merge(outputs.toList())
 }
 
-data class UnifyingMerger(private val separator: String = "\n---\n") : OutputMerger<String> {
+data class UnifyingMerger(private val separator: String = "\n--------------------------\n") : OutputMerger<String> {
     override fun merge(outputs: List<Output>): String {
         val pdfOutput = PdfMerger.merge(outputs)
         return TextMerger(separator).merge(outputs + pdfOutput)
@@ -31,7 +31,14 @@ object PdfMerger : OutputMerger<Output> {
     }
 }
 data class TextMerger(private val separator: String = "\n---\n") : OutputMerger<String> {
-    override fun merge(outputs: List<Output>): String = outputs.filterIsInstance<TextOutput>().joinToString(separator) { it.asText() }
+    override fun merge(outputs: List<Output>): String = outputs.filterIsInstance<TextOutput>().joinToString(separator) { format(it) }
+
+    fun format(output : TextOutput): String = buildString {
+        append("File: ${output.fullPath}\n")
+        append("Contents:\n")
+        append("${output.asText()}")
+    }
+
 }
 
 
