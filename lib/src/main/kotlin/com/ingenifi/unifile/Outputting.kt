@@ -11,6 +11,7 @@ import java.io.ByteArrayOutputStream
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.inputStream
+import kotlin.io.path.pathString
 import kotlin.io.path.readText
 
 
@@ -19,20 +20,19 @@ sealed interface Output {
 }
 
 interface TextOutput : Output {
-    val fullPath: String
+    val fileName: String
     fun asText(): String
 }
 
 data class PlainTextOutput(private val path: Path) : TextOutput {
-    override val fullPath: String
-        get() = path.absolutePathString()
+    override val fileName = path.fileName.pathString
 
     override fun asText(): String = path.readText()
 }
 
 data class PdfOutput(private val path: Path) : TextOutput {
-    override val fullPath: String
-        get() = path.absolutePathString()
+    override val fileName = path.fileName.pathString
+
 
     override fun asText(): String = RandomAccessReadBuffer(path.inputStream()).use {
         TEXT_STRIPPER.getText(PDFParser(it).parse())

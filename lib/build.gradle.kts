@@ -11,6 +11,7 @@ val slf4jVersion = "2.0.7"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.8.10"
+    kotlin("plugin.serialization") version "1.8.10"
     `java-library`
     idea
     id("maven-publish")
@@ -56,6 +57,9 @@ dependencies {
     api("org.apache.commons:commons-math3:3.6.1")
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation(kotlin("stdlib"))
+    implementation("org.apache.opennlp:opennlp-tools:2.3.1")
+
     implementation("com.google.guava:guava:31.1-jre")
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
     implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
@@ -69,6 +73,9 @@ dependencies {
     implementation("e-iceblue:spire.office.free:5.3.1")
     implementation("e-iceblue:spire.pdf.free:9.12.3")
     implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
+    implementation("org.apache.lucene:lucene-core:9.9.1")
+    implementation("org.apache.lucene:lucene-analyzers-common:8.11.2")
+
 
 
 }
@@ -95,13 +102,5 @@ tasks.shadowJar {
     }
 }
 
-val native = tasks.register("native", Exec::class) {
-    dependsOn("shadowJar")
-    doFirst {
-        val jarPath = "${project.buildDir}/libs/unifile-all-${project.version}.jar"
-        executable = "native-image"
-        args = listOf("--no-fallback", "--initialize-at-build-time", "-jar", jarPath, "unifile")
-    }
-}
 
 version = "1.0.0"

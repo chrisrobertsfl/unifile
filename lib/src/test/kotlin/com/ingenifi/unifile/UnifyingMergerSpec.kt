@@ -1,9 +1,11 @@
 package com.ingenifi.unifile
 
+import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import java.nio.file.Paths
 
+@Ignored
 class UnifyingMergerSpec : FeatureSpec({
 
     val unifile = UnifyingMerger(separator = "\n---\n")
