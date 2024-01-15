@@ -71,7 +71,7 @@ dependencies {
     implementation("e-iceblue:spire.pdf.free:9.12.3")
     implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
     implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-java:2.3.7") // For custom engine configuration
+    implementation("io.ktor:ktor-client-java:2.3.7")
     implementation("com.jayway.jsonpath:json-path:2.6.0")
     implementation("org.jsoup:jsoup:1.17.2")
 

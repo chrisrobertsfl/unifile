@@ -13,8 +13,8 @@ sealed interface ContentConverter {
     fun convert(file: File): List<Content>
 
     companion object {
-        fun from(extension: String, keywordExtractor: KeywordExtractor): ContentConverter = when (extension.lowercase()) {
-            "clink" -> ConfluenceLinkConverter(keywordExtractor, username = "TKMA5QX", password = "Kotlin2023!!")
+        fun from(extension: String, keywordExtractor: KeywordExtractor, verbose : Boolean = false): ContentConverter = when (extension.lowercase()) {
+            "clink" -> ConfluenceLinkConverter(keywordExtractor, username = "TKMA5QX", password = "Kotlin2023!!", verbose = verbose)
             "doc" -> Word(keywordExtractor, ContentType.DOC)
             "docx" -> Word(keywordExtractor, ContentType.DOCX)
             "json" -> Json(keywordExtractor)

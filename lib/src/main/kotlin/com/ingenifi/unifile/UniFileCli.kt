@@ -31,9 +31,12 @@ class UniFileCli : Callable<Int> {
         return try {
             val output = OutputPath.from(outputPath)
             val input = InputPaths(inputPaths.toList())
-            UniFile(input).combineFiles(output)
+            UniFile(input, verbose = verbose).combineFiles(output)
             if (output is FileOutputPath) {
-                logger.info("Combined file created: {}", output.path)
+                if (verbose) println("o Combined file created: ${output.path}")
+            }
+            else {
+                if (verbose) println("o Completed with output written to console")
             }
             0
         } catch (e: Exception) {
