@@ -29,9 +29,6 @@ class ConfluenceApi(
     suspend fun fetch(pageId: String, options: List<FetchOption>): FetchResult {
         val apiUrl = apiUrlPattern.format(pageId)
         val response = httpGet(apiUrl)
-//        val jsonElement = Json.parseToJsonElement(response)
-//        val json =Json { prettyPrint = true }.encodeToString(JsonElement.serializer(), jsonElement)
-//        logger.info("json is $json")
         val resultMap = mutableMapOf<String, Any>()
         options.forEach { option ->
             val result = JsonPath.read<Any?>(response, option.path)
