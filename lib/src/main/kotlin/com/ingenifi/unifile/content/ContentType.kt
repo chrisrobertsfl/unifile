@@ -15,6 +15,9 @@ enum class ContentType {
     @SerialName("word document .docx")
     DOCX,
 
+    @SerialName("json")
+    JSON,
+
     @SerialName("pdf document")
     PDF,
 

@@ -60,7 +60,6 @@ dependencies {
     implementation(kotlin("stdlib"))
     //implementation("com.google.guava:guava:31.1-jre")
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
-    //implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
     implementation("ch.qos.logback:logback-classic:1.4.11")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
@@ -75,6 +74,10 @@ dependencies {
     implementation("io.ktor:ktor-client-java:2.3.7") // For custom engine configuration
     implementation("com.jayway.jsonpath:json-path:2.6.0")
     implementation("org.jsoup:jsoup:1.17.2")
+
+
+
+
 
 }
 

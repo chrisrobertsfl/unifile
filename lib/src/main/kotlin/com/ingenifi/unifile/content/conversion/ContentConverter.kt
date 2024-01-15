@@ -17,6 +17,7 @@ sealed interface ContentConverter {
             "clink" -> ConfluenceLinkConverter(keywordExtractor, username = "TKMA5QX", password = "Kotlin2023!!")
             "doc" -> Word(keywordExtractor, ContentType.DOC)
             "docx" -> Word(keywordExtractor, ContentType.DOCX)
+            "json" -> Json(keywordExtractor)
             "pdf" -> Pdf(keywordExtractor)
             "ppt" -> PowerPoint(keywordExtractor, ContentType.PPT)
             "pptx" -> PowerPoint(keywordExtractor, ContentType.PPTX)

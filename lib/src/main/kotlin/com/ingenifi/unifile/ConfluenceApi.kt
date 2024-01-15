@@ -46,6 +46,6 @@ class ConfluenceApi(
     }.bodyAsText()
 
     companion object {
-        fun htmlToPlainText(html: String): String = Jsoup.parse(html).text()
+        fun htmlToPlainText(html: String): String = HtmlConverter().convert(html)!!
     }
 }
