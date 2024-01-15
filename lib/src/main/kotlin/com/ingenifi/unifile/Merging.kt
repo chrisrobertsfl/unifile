@@ -1,5 +1,6 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.content.KeywordExtractor
 import com.spire.pdf.PdfDocument
 import java.io.FileOutputStream
 import java.io.OutputStream

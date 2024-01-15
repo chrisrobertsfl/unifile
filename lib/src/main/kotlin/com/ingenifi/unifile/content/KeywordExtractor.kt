@@ -1,4 +1,4 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.content
 
 data class KeywordExtractor(val percentage: Double = 0.5, val stopWords: List<String>) {
 

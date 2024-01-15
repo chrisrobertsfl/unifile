@@ -50,7 +50,7 @@ dependencies {
 
     // Utilities
     testImplementation("org.apache.commons:commons-lang3:3.13.0")
-    testImplementation("org.instancio:instancio-core:3.6.0")
+    //testImplementation("org.instancio:instancio-core:3.6.0")
 
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
@@ -58,11 +58,9 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(kotlin("stdlib"))
-    implementation("org.apache.opennlp:opennlp-tools:2.3.1")
-
-    implementation("com.google.guava:guava:31.1-jre")
+    //implementation("com.google.guava:guava:31.1-jre")
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
-    implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
+    //implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
     implementation("ch.qos.logback:logback-classic:1.4.11")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
@@ -73,10 +71,14 @@ dependencies {
     implementation("e-iceblue:spire.office.free:5.3.1")
     implementation("e-iceblue:spire.pdf.free:9.12.3")
     implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
-    implementation("org.apache.lucene:lucene-core:9.9.1")
-    implementation("org.apache.lucene:lucene-analyzers-common:8.11.2")
+    //implementation("org.apache.httpcomponents:httpclient:4.5.14")
+    //implementation("com.google.code.gson:gson:2.10.1")
 
-
+    //implementation("net.htmlparser.jericho:jericho-html:3.4")
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-java:2.3.7") // For custom engine configuration
+    implementation("com.jayway.jsonpath:json-path:2.6.0")
+    implementation("org.jsoup:jsoup:1.17.2")
 
 }
 

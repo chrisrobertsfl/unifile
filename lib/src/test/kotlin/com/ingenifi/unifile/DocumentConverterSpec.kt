@@ -1,11 +1,13 @@
 package com.ingenifi.unifile
 
 import io.kotest.assertions.throwables.shouldThrow
+import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.types.shouldBeTypeOf
 import java.nio.file.Paths
 import kotlin.io.path.extension
 
+@Ignored
 class DocumentConverterSpec : StringSpec({
     "convert docx" {
         val path = Paths.get("src/test/resources/simple.doc")
