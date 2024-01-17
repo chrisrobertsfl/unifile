@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.content.conversion
 
-import com.ingenifi.unifile.content.Content
+import com.ingenifi.unifile.content.JsonContent
 import com.ingenifi.unifile.content.ContentType
 import com.ingenifi.unifile.content.KeywordExtractor
 import com.spire.doc.Document
@@ -10,10 +10,10 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 
 data class Word(private val keywordExtractor: KeywordExtractor, private val type: ContentType) : ContentConverter {
-    override fun convert(file: File): List<Content> {
+    override fun convert(file: File): List<JsonContent> {
 
         val body = file.bodyFromPdf(file.asStream())
-        return listOf(Content(type = type, source = file.name, keywords = keywordExtractor.extract(body) + file.keywords(), body = body))
+        return listOf(JsonContent(type = type, source = file.name, keywords = keywordExtractor.extract(body) + file.keywords(), body = body))
     }
     private fun File.asStream(): ByteArrayInputStream {
         val document = Document()

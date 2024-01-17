@@ -3,7 +3,7 @@ package com.ingenifi.unifile.content.conversion
 import com.ingenifi.unifile.ConfluenceApi
 import com.ingenifi.unifile.FetchOption
 import com.ingenifi.unifile.UnsecuredHttpClient
-import com.ingenifi.unifile.content.Content
+import com.ingenifi.unifile.content.JsonContent
 import com.ingenifi.unifile.content.ContentType
 import com.ingenifi.unifile.content.KeywordExtractor
 import kotlinx.coroutines.runBlocking
@@ -15,7 +15,7 @@ data class ConfluenceLinkConverter(private val keywordExtractor: KeywordExtracto
     private val logger by lazy { LoggerFactory.getLogger(ConfluenceLinkConverter::class.java) }
     private val client = UnsecuredHttpClient.create()
     private val api = ConfluenceApi(client, username, password)
-    override fun convert(file: File): List<Content> = runBlocking {
+    override fun convert(file: File): List<JsonContent> = runBlocking {
         val links = file.readLines()
         links.mapNotNull { link ->
             try {
@@ -28,7 +28,7 @@ data class ConfluenceLinkConverter(private val keywordExtractor: KeywordExtracto
                     .filterNot { it.length > 25 }
                     .filterNot { it.matches("^[0-9].*".toRegex()) }
                 val keywords = extract + title
-                Content(type = ContentType.CONFLUENCE_LINK, source = link, keywords = keywords, body = body)
+                JsonContent(type = ContentType.CONFLUENCE_LINK, source = link, keywords = keywords, body = body)
             } catch (e: Exception) {
                 null // or handle the exception as you see fit
             }

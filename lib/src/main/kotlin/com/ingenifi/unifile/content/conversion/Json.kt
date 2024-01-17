@@ -1,12 +1,12 @@
 package com.ingenifi.unifile.content.conversion
 
-import com.ingenifi.unifile.content.Content
+import com.ingenifi.unifile.content.JsonContent
 import com.ingenifi.unifile.content.ContentType
 import com.ingenifi.unifile.content.KeywordExtractor
 import java.io.File
 
 data class Json(private val keywordExtractor: KeywordExtractor, private val type: ContentType = ContentType.JSON) : ContentConverter {
-    override fun convert(file: File): List<Content> {
+    override fun convert(file: File): List<JsonContent> {
         val jsonString = file.readText()
         val filteredJsonString = removeNullFields(jsonString)
 
@@ -25,7 +25,8 @@ data class Json(private val keywordExtractor: KeywordExtractor, private val type
             .filterNot {  it.contains("issuetype") }
             .filterNot {  it.contains("jirauser") }
             .toList()
-        return listOf(Content(type = type, source = file.name, keywords = extracted + file.keywords(), body = filteredJsonString))
+        val keywords = extracted + file.keywords()
+        return listOf(JsonContent(type = type, source = file.name, keywords = keywords, body = filteredJsonString))
     }
 
     private fun removeNullFields(jsonString: String): String {

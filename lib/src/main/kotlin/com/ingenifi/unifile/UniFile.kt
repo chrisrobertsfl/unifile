@@ -1,8 +1,8 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.content.Content
 import com.ingenifi.unifile.content.Contents
 import com.ingenifi.unifile.content.KeywordExtractor
-import com.ingenifi.unifile.content.conversion.ConfluenceLinkConverter
 import com.ingenifi.unifile.content.conversion.ContentConverter
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
@@ -27,6 +27,7 @@ data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val eject
             if (verbose) println("o Processing file:  $it")
             ContentConverter.from(it.extension, keywordExtractor, verbose).convert(it)
         }.forEach { contents.add(it) }
+        val out = ContentDocumentFormatter(startAt = 1).format(contents.contents)
         output.write(contents.toJsonString())
     }
 
@@ -41,9 +42,15 @@ data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val eject
     }
 
     companion object {
-        val STOP_WORDS_RESOURCE =  "/all-stop-words.txt"
+        val STOP_WORDS_RESOURCE = "/all-stop-words.txt"
     }
 
+}
+
+data class ContentDocumentFormatter(private val startAt: Int = 1) {
+    fun format(contents: MutableList<Content>): String {
+        return ""
+    }
 }
 
 

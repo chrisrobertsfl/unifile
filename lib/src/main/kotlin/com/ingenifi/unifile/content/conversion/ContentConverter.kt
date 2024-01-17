@@ -1,6 +1,7 @@
 package com.ingenifi.unifile.content.conversion
 
 import com.ingenifi.unifile.content.Content
+import com.ingenifi.unifile.content.JsonContent
 import com.ingenifi.unifile.content.ContentType
 import com.ingenifi.unifile.content.KeywordExtractor
 import org.apache.pdfbox.io.RandomAccessReadBuffer
@@ -30,7 +31,12 @@ sealed interface ContentConverter {
         val TEXT_STRIPPER = PDFTextStripper()
     }
 
-    fun File.keywords(): List<String> = name.substringBeforeLast(".").split(Regex("\\W+")).filter { it.isNotBlank() }
+    fun File.keywords(): List<String> {
+        val nameKeywords = name.substringBeforeLast(".").split(Regex("\\W+")).filter { it.isNotBlank() }
+        val pathKeywords = absolutePath.split(Regex("\\W+")).filter { it.isNotBlank() }
+
+        return (nameKeywords + pathKeywords).distinct()
+    }
 
     fun File.bodyFromPdf(inputStream: InputStream): String = RandomAccessReadBuffer(inputStream).use {
         TEXT_STRIPPER.getText(PDFParser(it).parse())
