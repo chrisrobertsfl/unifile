@@ -8,9 +8,10 @@ interface DocumentFormatter {
 
      companion object {
          fun from(file : File, keywordExtractor: KeywordExtractor, client : HttpClient) : DocumentFormatter {
-             return when(file.extension) {
-                 "txt" -> PlainTextFormatter(file, keywordExtractor)
+             return when(file.extension.lowercase()) {
                  "clink" -> ConfluencePagesFormatter(file = file, keywordExtractor = keywordExtractor, client = client)
+                 "json" -> JsonFormatter(file, keywordExtractor)
+                 "txt" -> PlainTextFormatter(file, keywordExtractor)
                  else -> throw IllegalArgumentException("Unknown formatter for $file")
              }
          }
