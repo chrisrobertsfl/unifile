@@ -67,14 +67,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("commons-io:commons-io:2.15.0")
     implementation("info.picocli:picocli:4.0.4")
-    implementation("e-iceblue:spire.office.free:5.3.1")
-    implementation("e-iceblue:spire.pdf.free:9.12.3")
-    implementation("org.apache.pdfbox:pdfbox-tools:3.0.0")
     implementation("io.ktor:ktor-client-core:2.3.7")
     implementation("io.ktor:ktor-client-java:2.3.7")
     implementation("com.jayway.jsonpath:json-path:2.6.0")
     implementation("org.jsoup:jsoup:1.17.2")
     implementation("com.itextpdf:itext7-core:8.0.2")
+    implementation("org.apache.poi:poi-ooxml:5.2.5")
+
+
 
 
 

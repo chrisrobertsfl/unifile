@@ -1,13 +1,9 @@
 package com.ingenifi.unifile
 
-import com.ingenifi.unifile.content.conversion.ConfluenceLinkConverter
 import com.jayway.jsonpath.JsonPath
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import kotlinx.coroutines.runBlocking
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonElement
 import org.jsoup.Jsoup
 import org.slf4j.LoggerFactory
 import java.util.*
@@ -17,7 +13,7 @@ class ConfluenceApi(
 ) {
     private val encodedCredentials = Base64.getEncoder().encodeToString("$user:$password".toByteArray())
 
-    private val logger by lazy { LoggerFactory.getLogger(ConfluenceLinkConverter::class.java) }
+    private val logger by lazy { LoggerFactory.getLogger(ConfluenceApi::class.java) }
 
     suspend fun fetchPageId(url: String): String? {
         val doc = Jsoup.parse(httpGet(url))

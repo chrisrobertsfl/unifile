@@ -1,6 +1,5 @@
 package com.ingenifi.unifile.content.formatter
 
-import com.ingenifi.unifile.PdfConverter
 import com.ingenifi.unifile.content.KeywordExtractor
 import java.io.File
 
@@ -10,9 +9,3 @@ data class PdfFormatter(val file: File, private val keywordExtractor: KeywordExt
     override fun lastNumber(): Int = delegate.lastNumber()
 }
 
-data class PdfSource(val file: File) : Source {
-    override fun description(): String = file.toText()
-    override fun title(): String = file.name
-    private fun File.toText(): String = PdfConverter().convert(this)
-
-}

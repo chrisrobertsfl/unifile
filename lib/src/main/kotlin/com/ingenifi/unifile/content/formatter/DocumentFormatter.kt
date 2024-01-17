@@ -13,6 +13,7 @@ interface DocumentFormatter {
                  "json" -> JsonFormatter(file, keywordExtractor)
                  "pdf" -> PdfFormatter(file, keywordExtractor)
                  "txt" -> PlainTextFormatter(file, keywordExtractor)
+                 "xlsx" -> ExcelFormatter(file, keywordExtractor)
                  else -> throw IllegalArgumentException("Unknown formatter for $file")
              }
          }

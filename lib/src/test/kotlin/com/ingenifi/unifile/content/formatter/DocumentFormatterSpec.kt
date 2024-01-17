@@ -60,6 +60,14 @@ class DocumentFormatterSpec : StringSpec({
         println(text)
     }
 
+    "xlsx" {
+        val formatter = ExcelFormatter(file = File("src/test/resources/simple.xlsx"), keywordExtractor = keywordExtractor)
+        val text = formatter.format(1)
+        val lastNumber = formatter.lastNumber()
+        println("lastNumber = ${lastNumber}")
+        println(text)
+    }
+
     "confluence" {
         val linkString = "https://confluence.kohls.com:8443/display/OE/Software+Quality+and+Performance"
         val link = ConfluenceLink.create(linkString, confluenceApi)
