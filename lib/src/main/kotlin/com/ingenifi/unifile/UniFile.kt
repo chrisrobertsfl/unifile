@@ -1,13 +1,11 @@
 package com.ingenifi.unifile
 
 import com.ingenifi.unifile.content.Content
-import com.ingenifi.unifile.content.Contents
 import com.ingenifi.unifile.content.KeywordExtractor
-import com.ingenifi.unifile.content.conversion.ContentConverter
+import com.ingenifi.unifile.content.formatter.DocumentFormatter
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
 import org.slf4j.LoggerFactory
-import java.nio.charset.StandardCharsets
 
 
 // TODO:  Fix verbosity throughout the process
@@ -20,25 +18,14 @@ data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val eject
     private val logger by lazy { LoggerFactory.getLogger(UniFile::class.java) }
 
     fun combineFiles(output: OutputPath) {
-        val stopWords = gatherStopWords()
-        val keywordExtractor = KeywordExtractor(stopWords = stopWords)
-        val contents = Contents()
-        input.list.flatMap { it.findFiles() }.map {
-            if (verbose) println("o Processing file:  $it")
-            ContentConverter.from(it.extension, keywordExtractor, verbose).convert(it)
-        }.forEach { contents.add(it) }
-        val out = ContentDocumentFormatter(startAt = 1).format(contents.contents)
-        output.write(contents.toJsonString())
-    }
-
-    private fun gatherStopWords(): List<String> {
-        if (verbose) println("o Gathering stop words from $STOP_WORDS_RESOURCE")
-        val resourceAsStream = this::class.java.getResourceAsStream(STOP_WORDS_RESOURCE)
-        if (resourceAsStream != null) {
-            return resourceAsStream.bufferedReader(StandardCharsets.UTF_8).readLines()
-        } else {
-            throw IllegalArgumentException("Resource not found: $STOP_WORDS_RESOURCE")
-        }
+        val keywordExtractor = KeywordExtractor()
+        val client = UnsecuredHttpClient.create()
+        var documentNumber = 1
+        val documents = input.list.flatMap { it.findFiles() }.map {
+            if (verbose) println("$documentNumber Processing file:  $it")
+            DocumentFormatter.from(it, keywordExtractor, client).format(documentNumber++)
+        }.joinToString("\n")
+        output.write(documents)
     }
 
     companion object {

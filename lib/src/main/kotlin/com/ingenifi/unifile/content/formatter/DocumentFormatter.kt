@@ -1,6 +1,20 @@
 package com.ingenifi.unifile.content.formatter
 
- interface DocumentFormatter {
+import com.ingenifi.unifile.content.KeywordExtractor
+import io.ktor.client.*
+import java.io.File
+
+interface DocumentFormatter {
+
+     companion object {
+         fun from(file : File, keywordExtractor: KeywordExtractor, client : HttpClient) : DocumentFormatter {
+             return when(file.extension) {
+                 "txt" -> PlainTextFormatter(file, keywordExtractor)
+                 "clink" -> ConfluencePagesFormatter(file = file, keywordExtractor = keywordExtractor, client = client)
+                 else -> throw IllegalArgumentException("Unknown formatter for $file")
+             }
+         }
+     }
     fun format(number: Int): String
     fun lastNumber(): Int
 }
