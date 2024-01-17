@@ -1,4 +1,4 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.formatter
 
 import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.xssf.usermodel.XSSFWorkbook

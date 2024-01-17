@@ -1,8 +1,7 @@
 package com.ingenifi.unifile
 
-import com.ingenifi.unifile.content.Content
-import com.ingenifi.unifile.content.KeywordExtractor
-import com.ingenifi.unifile.content.formatter.DocumentFormatter
+import com.ingenifi.unifile.formatter.DocumentFormatter
+import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
 import org.slf4j.LoggerFactory
@@ -28,16 +27,6 @@ data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val eject
         output.write(documents)
     }
 
-    companion object {
-        val STOP_WORDS_RESOURCE = "/all-stop-words.txt"
-    }
-
-}
-
-data class ContentDocumentFormatter(private val startAt: Int = 1) {
-    fun format(contents: MutableList<Content>): String {
-        return ""
-    }
 }
 
 

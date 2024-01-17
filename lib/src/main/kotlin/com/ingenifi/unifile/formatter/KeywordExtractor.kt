@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.content
+package com.ingenifi.unifile.formatter
 
 import java.nio.charset.StandardCharsets
 

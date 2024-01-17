@@ -1,6 +1,5 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.ExcelConverter
 import java.io.File
 
 data class ExcelSource(val file: File) : Source {

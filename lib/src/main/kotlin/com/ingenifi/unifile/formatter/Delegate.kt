@@ -1,6 +1,4 @@
-package com.ingenifi.unifile.content.formatter
-
-import com.ingenifi.unifile.content.KeywordExtractor
+package com.ingenifi.unifile.formatter
 
 class Delegate(private val source: Source, private val keywordExtractor: KeywordExtractor) {
     private var lastNumber = 0

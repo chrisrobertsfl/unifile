@@ -1,5 +1,6 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.formatter.HtmlConverter
 import com.jayway.jsonpath.JsonPath
 import io.ktor.client.*
 import io.ktor.client.request.*

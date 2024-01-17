@@ -1,4 +1,4 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.formatter
 
 import kotlinx.serialization.json.*
 

@@ -1,16 +1,23 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
-class XmlSource(private val file : File) : Source {
-    override fun description(): String {
+data class XmlFormatter(private val file: File, private val keywordExtractor: KeywordExtractor) : DocumentFormatter {
+    private val delegate = Delegate(XmlSource(file), keywordExtractor)
+
+    override fun format(number: Int): String = delegate.format(number, "xml-document.tmpl")
+
+    override fun lastNumber(): Int = delegate.lastNumber()
+    private fun getBodyFromXml(): String {
         val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(file)
         val root = document.documentElement
-        return buildString { appendXmlContent(root, 0, this) }
+        return buildString {
+            appendXmlContent(root, 0, this)
+        }
     }
 
     private fun appendXmlContent(node: Node, depth: Int, builder: StringBuilder) {
@@ -50,7 +57,4 @@ class XmlSource(private val file : File) : Source {
         }
         return false
     }
-
-    override fun title(): String = file.name
-
 }

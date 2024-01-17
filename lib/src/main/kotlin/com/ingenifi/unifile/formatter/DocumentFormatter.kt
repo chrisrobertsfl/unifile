@@ -1,6 +1,5 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.content.KeywordExtractor
 import io.ktor.client.*
 import java.io.File
 

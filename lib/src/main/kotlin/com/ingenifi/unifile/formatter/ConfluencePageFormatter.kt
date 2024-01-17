@@ -1,6 +1,4 @@
-package com.ingenifi.unifile.content.formatter
-
-import com.ingenifi.unifile.content.KeywordExtractor
+package com.ingenifi.unifile.formatter
 
 data class ConfluencePageFormatter(private val link : ConfluenceLink, private val keywordExtractor: KeywordExtractor) : DocumentFormatter {
     private val delegate = Delegate(link, keywordExtractor)

@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
 import java.io.File
 

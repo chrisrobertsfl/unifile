@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
 interface Source {
     fun description() : String

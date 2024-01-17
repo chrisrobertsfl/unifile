@@ -1,4 +1,4 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.formatter
 
 import com.itextpdf.kernel.pdf.PdfDocument
 import com.itextpdf.kernel.pdf.PdfReader

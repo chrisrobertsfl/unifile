@@ -1,6 +1,5 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.content.KeywordExtractor
 import java.io.File
 
 data class PlainTextFormatter(val file: File, private val keywordExtractor: KeywordExtractor) : DocumentFormatter {

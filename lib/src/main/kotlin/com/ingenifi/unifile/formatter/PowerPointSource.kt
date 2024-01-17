@@ -1,6 +1,5 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.PowerPointConverter
 import java.io.File
 
 data class PowerPointSource(val file: File) : Source {

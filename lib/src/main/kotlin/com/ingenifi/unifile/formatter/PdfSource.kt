@@ -1,6 +1,5 @@
-package com.ingenifi.unifile.content.formatter
+package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.PdfConverter
 import java.io.File
 
 data class PdfSource(val file: File) : Source {

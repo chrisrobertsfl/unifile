@@ -1,5 +1,6 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.formatter.HtmlConverter
 import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.StringSpec
 import org.jsoup.Jsoup
