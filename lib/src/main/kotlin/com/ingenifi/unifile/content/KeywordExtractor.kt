@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets
 data class KeywordExtractor(val percentage: Double = 0.025, val stopWords: List<String> = gatherStopWords(), val filters: List<(String) -> Boolean> = listOf()
 ) {
 
-    fun extract(text: String): List<String> {
+    fun extract(text: String, percentage: Double = this.percentage): List<String> {
 
         val words = text.split("\\s+".toRegex()).map { it.lowercase().trim() }.map { it.replace(Regex("[^\\w\\s]"), "") }
         val filteredWords = words.filterNot { it in stopWords }.filter { word -> filters.all{ filter -> filter(word)} }

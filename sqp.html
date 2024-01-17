@@ -1,0 +1,1041 @@
+    
+
+<!DOCTYPE html>
+<html lang="en-GB" >
+<head>
+                            <title>Software Quality and Performance - OCF Engineering - Kohl&#39;s Confluence</title>
+    
+        
+
+                        
+    
+                        
+    
+
+                
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://confluence.kohls.com:8443">
+
+    <meta id="atlassian-token" name="atlassian-token" content="97af9fb078956a2c70390f78755240db63e3a50b">
+
+<meta id="confluence-cluster-node-id" name="confluence-cluster-node-id" value="36c3cea7">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="OE">
+<script type="text/javascript">
+        var contextPath = '';
+</script>
+
+    
+
+    <meta name="confluence-request-time" content="1705495099110">
+        
+    
+        
+            <meta name="ajs-show-space-welcome-dialog" content="true">
+            <style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style>
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            <meta name="ajs-discovered-plugin-features" content="{&quot;com.atlassian.confluence.plugins.confluence-dashboard&quot;:[&quot;transition-saved-for-later&quot;,&quot;dialog&quot;,&quot;tips&quot;],&quot;com.atlassian.confluence.plugins.confluence-jira-metadata&quot;:[&quot;linked-issues-dropdown&quot;]}">
+            <meta name="ajs-keyboardshortcut-hash" content="72699bcdbbc1642a6d6f7d729717d4db">
+            <meta name="ajs-is-confluence-admin" content="false">
+            <meta name="ajs-connection-timeout" content="0">
+            
+    
+    
+            <meta name="ajs-page-title" content="Software Quality and Performance">
+            <meta name="ajs-latest-published-page-title" content="Software Quality and Performance">
+            <meta name="ajs-space-name" content="OCF Engineering">
+            <meta name="ajs-page-id" content="362678252">
+            <meta name="ajs-latest-page-id" content="362678252">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-parent-page-title" content="Standard and Design Practices">
+            <meta name="ajs-parent-page-id" content="311723167">
+            <meta name="ajs-space-key" content="OE">
+            <meta name="ajs-max-number-editors" content="12">
+            <meta name="ajs-macro-placeholder-timeout" content="5000">
+            <meta name="ajs-jira-metadata-count" content="0">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-can-remove-page" content="false">
+            <meta name="ajs-can-remove-page-hierarchy" content="false">
+            <meta name="ajs-browse-page-tree-mode" content="view">
+            <meta name="ajs-shared-drafts" content="false">
+            <meta name="ajs-user-display-name" content="Christopher Roberts">
+            <meta name="ajs-context-path" content="">
+            <meta name="ajs-base-url" content="https://confluence.kohls.com:8443">
+            <meta name="ajs-version-number" content="7.13.7">
+            <meta name="ajs-build-number" content="8703">
+            <meta name="ajs-remote-user" content="TKMA5QX">
+            <meta name="ajs-remote-user-key" content="8a86d0a48409455401843be9a74e0001">
+            <meta name="ajs-remote-user-has-licensed-access" content="true">
+            <meta name="ajs-remote-user-has-browse-users-permission" content="true">
+            <meta name="ajs-current-user-fullname" content="Christopher Roberts">
+            <meta name="ajs-current-user-avatar-url" content="/images/icons/profilepics/default.svg">
+            <meta name="ajs-current-user-avatar-uri-reference" content="/images/icons/profilepics/default.svg">
+            <meta name="ajs-static-resource-url-prefix" content="/s/-krfcyh/8703/51k4y0/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="104857600">
+            <meta name="ajs-global-settings-quick-search-enabled" content="true">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="site-wide.synchrony.disable,site-wide.shared-drafts.disable,clc.quick.create,confluence.view.edit.transition,cql.search.screen,confluence-inline-comments-resolved,http.session.registrar,frontend.editor.v4,nps.survey.inline.dialog,confluence.efi.onboarding.new.templates,frontend.editor.v4.compatibility,atlassian.cdn.static.assets,pdf-preview,previews.sharing,previews.versions,file-annotations,collaborative-audit-log,confluence.efi.onboarding.rich.space.content,confluence.reindex.improvements,previews.conversion-service,editor.ajax.save,graphql,read.only.mode,previews.trigger-all-file-types,lucene.caching.filter,attachment.extracted.text.extractor,confluence.table.resizable,notification.batch,previews.sharing.pushstate,tc.tacca.dacca,confluence-inline-comments-rich-editor,site-wide.synchrony.opt-in,file-annotations.likes,gatekeeper-ui-v2,v2.content.name.searcher,mobile.supported.version,pulp,confluence-inline-comments,quick-reload-inline-comments-flags,confluence-inline-comments-dangling-comment">
+            <meta name="ajs-atl-token" content="97af9fb078956a2c70390f78755240db63e3a50b">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-user-date-pattern" content="dd MMM yyyy">
+            <meta name="ajs-access-mode" content="READ_WRITE">
+            <meta name="ajs-render-mode" content="READ_WRITE">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="/s/-krfcyh/8703/51k4y0/76/_/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/s/-krfcyh/8703/51k4y0/76/_/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch/osd.action" title="Kohl&#39;s Confluence"/>
+    
+                    
+            <meta name="ajs-create-issue-metadata-show-discovery" content="true">
+            
+
+    <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u0022";
+WRM._unparsedData["confluence.macro.metadata.provider:macro-browser-metadata-resources.macro-meta-client-cache-key"]="\u00221705493556334\u0022";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-feature-discovery-plugin:confluence-feature-discovery-plugin-resources.test-mode"]="false";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"]="false";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"]="false";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-help-paths"]="{\u0022entries\u0022:{\u0022applinks.docs.root\u0022:\u0022https://confluence.atlassian.com/display/APPLINKS-072/\u0022,\u0022applinks.docs.diagnostics.troubleshoot.sslunmatched\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthsignatureinvalid\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthtimestamprefused\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.delete.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.adding.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administration.guide\u0022:\u0022Application+Links+Documentation\u0022,\u0022applinks.docs.oauth.security\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.troubleshoot.application.links\u0022:\u0022Troubleshoot+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownerror\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.trusted.apps\u0022:\u0022Configuring+Trusted+Applications+authentication+for+an+application+link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelunsupported\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.ssluntrusted\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownhost\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.delete.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.adding.project.link\u0022:\u0022Configuring+Project+links+across+Applications\u0022,\u0022applinks.docs.link.applications\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthproblem\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.migration\u0022:\u0022Update+application+links+to+use+OAuth\u0022,\u0022applinks.docs.relocate.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administering.entity.links\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.upgrade.application.link\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.connectionrefused\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.oauth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.insufficient.remote.permission\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.configuring.application.link.auth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics\u0022:\u0022Application+links+diagnostics\u0022,\u0022applinks.docs.configured.authentication.types\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.adding.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unexpectedresponse\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.basic\u0022:\u0022Configuring+Basic+HTTP+Authentication+for+an+Application+Link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelmismatch\u0022:\u0022OAuth+troubleshooting+guide\u0022}}";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-types"]="{\u0022crowd\u0022:\u0022Crowd\u0022,\u0022confluence\u0022:\u0022Confluence\u0022,\u0022fecru\u0022:\u0022FishEye / Crucible\u0022,\u0022stash\u0022:\u0022Bitbucket Server\u0022,\u0022jira\u0022:\u0022Jira\u0022,\u0022refapp\u0022:\u0022Reference Application\u0022,\u0022bamboo\u0022:\u0022Bamboo\u0022,\u0022generic\u0022:\u0022Generic Application\u0022}";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.entity-types"]="{\u0022singular\u0022:{\u0022refapp.charlie\u0022:\u0022Charlie\u0022,\u0022fecru.project\u0022:\u0022Crucible Project\u0022,\u0022fecru.repository\u0022:\u0022FishEye Repository\u0022,\u0022stash.project\u0022:\u0022Bitbucket Server Project\u0022,\u0022generic.entity\u0022:\u0022Generic Project\u0022,\u0022confluence.space\u0022:\u0022Confluence Space\u0022,\u0022bamboo.project\u0022:\u0022Bamboo Project\u0022,\u0022jira.project\u0022:\u0022Jira Project\u0022},\u0022plural\u0022:{\u0022refapp.charlie\u0022:\u0022Charlies\u0022,\u0022fecru.project\u0022:\u0022Crucible Projects\u0022,\u0022fecru.repository\u0022:\u0022FishEye Repositories\u0022,\u0022stash.project\u0022:\u0022Bitbucket Server Projects\u0022,\u0022generic.entity\u0022:\u0022Generic Projects\u0022,\u0022confluence.space\u0022:\u0022Confluence Spaces\u0022,\u0022bamboo.project\u0022:\u0022Bamboo Projects\u0022,\u0022jira.project\u0022:\u0022Jira Projects\u0022}}";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.authentication-types"]="{\u0022com.atlassian.applinks.api.auth.types.BasicAuthenticationProvider\u0022:\u0022Basic Access\u0022,\u0022com.atlassian.applinks.api.auth.types.TrustedAppsAuthenticationProvider\u0022:\u0022Trusted Applications\u0022,\u0022com.atlassian.applinks.api.auth.types.CorsAuthenticationProvider\u0022:\u0022CORS\u0022,\u0022com.atlassian.applinks.api.auth.types.OAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthWithImpersonationAuthenticationProvider\u0022:\u0022OAuth\u0022}";
+WRM._unparsedData["com.atlassian.confluence.plugins.synchrony-interop:synchrony-status-banner-loader.synchrony-status"]="false";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-license-banner:confluence-license-banner-resources.license-details"]="{\u0022daysBeforeLicenseExpiry\u0022:0,\u0022daysBeforeMaintenanceExpiry\u0022:0,\u0022showLicenseExpiryBanner\u0022:false,\u0022showMaintenanceExpiryBanner\u0022:false,\u0022renewUrl\u0022:null,\u0022salesUrl\u0022:null}";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-search-ui-plugin:confluence-search-ui-plugin-resources.i18n-data"]="{\u0022search.ui.recent.link.text\u0022:\u0022View more recently visited\u0022,\u0022search.ui.filter.space.category.input.label\u0022:\u0022Find space categories...\u0022,\u0022search.ui.filter.clear.selected\u0022:\u0022Clear selected items\u0022,\u0022search.ui.search.results.empty\u0022:\u0022We couldn\u005Cu0027\u005Cu0027t find anything matching \u005C\u0022{0}\u005C\u0022.\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.button.text\u0022:\u0022Show more app results...\u0022,\u0022search.ui.filter.space.archive.label\u0022:\u0022Search archived spaces\u0022,\u0022search.ui.filter.label\u0022:\u0022filter\u0022,\u0022search.ui.filter.contributor.button.text\u0022:\u0022Contributor\u0022,\u0022search.ui.filter.date.all.text\u0022:\u0022Any time\u0022,\u0022search.ui.filter.space.current.label\u0022:\u0022CURRENT\u0022,\u0022search.ui.clear.input.button.text\u0022:\u0022Clear text\u0022,\u0022help.search.ui.link.title\u0022:\u0022Search tips\u0022,\u0022search.ui.search.results.clear.button\u0022:\u0022clear your filters.\u0022,\u0022search.ui.filter.date.hour.text\u0022:\u0022The past day\u0022,\u0022search.ui.filters.heading\u0022:\u0022Filter by\u0022,\u0022search.ui.filter.label.input.label\u0022:\u0022Find labels...\u0022,\u0022search.ui.filter.date.month.text\u0022:\u0022The past month\u0022,\u0022search.ui.recent.items.anonymous\u0022:\u0022Start exploring. Your search results will appear here.\u0022,\u0022search.ui.input.label\u0022:\u0022Search\u0022,\u0022search.ui.search.result\u0022:\u0022{0,choice,1#{0} search result|1\u005Cu003c{0} search results}\u0022,\u0022search.ui.infinite.scroll.button.text\u0022:\u0022More results\u0022,\u0022search.ui.filter.date.button.text\u0022:\u0022Date\u0022,\u0022search.ui.filter.date.week.text\u0022:\u0022The past week\u0022,\u0022search.ui.filter.label.button.text\u0022:\u0022Label\u0022,\u0022search.ui.input.alert\u0022:\u0022Hit enter to search\u0022,\u0022search.ui.filter.no.result.text\u0022:\u0022We can\u005Cu0027\u005Cu0027t find anything matching your search\u0022,\u0022search.ui.result.subtitle.calendar\u0022:\u0022Team calendar\u0022,\u0022search.ui.filter.date.heading\u0022:\u0022Last modified within\u0022,\u0022search.ui.result.subtitle.user\u0022:\u0022User profile\u0022,\u0022search.ui.filter.contributor.input.label\u0022:\u0022Find people...\u0022,\u0022search.ui.filter.content.type.button.text\u0022:\u0022Type\u0022,\u0022search.ui.filter.space.input.label\u0022:\u0022Find spaces...\u0022,\u0022search.ui.filter.date.year.text\u0022:\u0022The past year\u0022,\u0022search.ui.filter.space.button.text\u0022:\u0022Space\u0022,\u0022search.ui.advanced.search.link.text\u0022:\u0022Advanced search\u0022,\u0022search.ui.generic.error\u0022:\u0022Something went wrong. Refresh the page, or contact your admin if this keeps happening.\u0022,\u0022search.ui.recent.spaces\u0022:\u0022Recent Spaces\u0022,\u0022search.ui.search.results.clear.line2\u0022:\u0022Try a different search term or\u0022,\u0022search.ui.filter.space.category.button.text\u0022:\u0022Space category\u0022,\u0022search.ui.search.results.clear.line1\u0022:\u0022We couldn\u005Cu0027\u005Cu0027t find anything matching your search.\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.admin.button.text\u0022:\u0022Show more settings and app results...\u0022,\u0022search.ui.recent.pages\u0022:\u0022Recently visited\u0022,\u0022search.ui.search.result.anonymous\u0022:\u0022{0,choice,1#{0} search result|1\u005Cu003c{0} search results}. Have an account? {1}Log in{2} to expand your search.\u0022,\u0022search.ui.recent.items.empty\u0022:\u0022Start exploring. Pages and spaces you\u005Cu0027\u005Cu0027ve visited recently will appear here.\u0022,\u0022search.ui.result.subtitle.space\u0022:\u0022Space\u0022,\u0022search.ui.filter.space.init.heading\u0022:\u0022recent spaces\u0022}";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="/s/6bcc7087de45a1059c319bfd07f86484-CDN/-krfcyh/8703/51k4y0/08c5dc0bfd0b71a003e20c6dbd501537/_/download/contextbatch/css/_super/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="/s/4c63f605d9092b4d832cc2009b2837bb-CDN/-krfcyh/8703/51k4y0/9c899d65cad115a0e4f789af65a8618d/_/download/contextbatch/css/atl.confluence.plugins.pagetree-desktop,main,page,atl.general,viewcontent,atl.comments,-_super/batch.css?gatekeeper-ui-v2=true&amp;highlightactions=true&amp;hostenabled=true&amp;user-logged-in=true" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,page,atl.general,viewcontent,atl.comments,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="/s/-krfcyh/8703/51k4y0/76/_/styles/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="/s/-krfcyh/8703/51k4y0/76/_/styles/custom.css" media="all">
+<script type="text/javascript" src="/s/9c312834fa25bd2670cc812cd34bc8dd-CDN/-krfcyh/8703/51k4y0/08c5dc0bfd0b71a003e20c6dbd501537/_/download/contextbatch/js/_super/batch.js?locale=en-GB" data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/99be4fa19a1a5ac42ae5574555217408-CDN/-krfcyh/8703/51k4y0/9c899d65cad115a0e4f789af65a8618d/_/download/contextbatch/js/atl.confluence.plugins.pagetree-desktop,main,page,atl.general,viewcontent,atl.comments,-_super/batch.js?gatekeeper-ui-v2=true&amp;highlightactions=true&amp;hostenabled=true&amp;locale=en-GB&amp;user-logged-in=true" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,page,atl.general,viewcontent,atl.comments,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-krfcyh/8703/51k4y0/151/_/download/resources/com.bilith.lref.confluence-gdrive:lref-resources/descriptor.js?batch=false" data-wrm-key="com.bilith.lref.confluence-gdrive:lref-resources" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-krfcyh/8703/51k4y0/151/_/download/resources/com.bilith.lref.confluence-gdrive:lref-resources/lref-host.js?batch=false" data-wrm-key="com.bilith.lref.confluence-gdrive:lref-resources" data-wrm-batch-type="resource" data-initially-rendered></script>
+
+    
+
+        
+    
+
+        
+        <meta name="ajs-site-title" content="Kohl&#39;s Confluence" />
+            
+    
+
+    
+                <link rel="canonical" href="https://confluence.kohls.com:8443/display/OE/Software+Quality+and+Performance">
+        <link rel="shortlink" href="https://confluence.kohls.com:8443/x/7AeeFQ">
+    <meta name="wikilink" content="[OE:Software Quality and Performance]">
+    <meta name="page-version" content="24">
+    <meta name="ajs-page-version" content="24">
+
+</head>
+
+    
+<body      id="com-atlassian-confluence" class="theme-default  aui-layout aui-theme-default">
+
+        
+            <div id='stp-licenseStatus-banner'></div>
+            <meta name="ajs-is-scroll-viewport-available" content="true">
+    <ul id="assistive-skip-links" class="assistive">
+    <li><a href="#title-heading">Skip to content</a></li>
+    <li><a href="#breadcrumbs">Skip to breadcrumbs</a></li>
+    <li><a href="#header-menu-bar">Skip to header menu</a></li>
+    <li><a href="#navigation">Skip to action menu</a></li>
+    <li><a href="#quick-search-query">Skip to quick search</a></li>
+</ul>
+<div id="page">
+<div id="full-height-container">
+    <div id="header-precursor">
+        <div class="cell">
+            
+                            </div>
+    </div>
+        
+
+
+
+
+
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" aria-label="Site"><div class="aui-header-inner"><div class="aui-header-before"><button class=" aui-dropdown2-trigger app-switcher-trigger aui-dropdown2-trigger-arrowless" aria-controls="app-switcher" aria-haspopup="true" role="button" data-aui-trigger href="#app-switcher"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></button><div id="app-switcher" class="aui-dropdown2 aui-style-default" role="menu" hidden data-is-switcher="true" data-environment="{&quot;isUserAdmin&quot;:false,&quot;isAppSuggestionAvailable&quot;:false,&quot;isSiteAdminUser&quot;:false}"><div class="app-switcher-loading">Loading&hellip;</div></div></div><div class="aui-header-primary"><span id="logo" class="aui-header-logo aui-header-logo-custom"><a href="/" aria-label="Go to home page"><img src="/download/attachments/327682/atl.site.logo?version=1&amp;modificationDate=1691178646000&amp;api=v2" alt="Kohl&#39;s Confluence" /><span class="aui-header-logo-text">Kohl&#39;s Confluence</span></a></span><ul class="aui-nav">
+                            <li>
+            
+        
+        
+<a  id="space-directory-link" href="/spacedirectory/view.action"  class=" aui-nav-imagelink"   title="Spaces">
+            <span>Spaces</span>
+    </a>
+        </li>
+                    <li>
+            
+    
+        
+<a  id="people-directory-link" href="/browsepeople.action"  class=" aui-nav-imagelink"   title="People">
+            <span>People</span>
+    </a>
+        </li>
+                    <li>
+            
+    
+        
+<a  href="/plugins/confanalytics/analytics.action"  class=" aui-nav-imagelink"   title="Analytics">
+            <span>Analytics</span>
+    </a>
+        </li>
+                                <li class="aui-buttons">
+                                    
+                                        <a href="/pages/createpage.action?spaceKey=OE&amp;fromPageId=362678252&amp;src=quick-create" id="quick-create-page-button" class="aui-button aui-button-primary" title = 'Create blank page' tabindex="0">Create</a>
+                                <a href="#" id="create-page-button" class="aui-button aui-button-primary clc-create-dialog-btn" title = 'Create from template' tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-more">Create </span></a>
+            </li>
+</ul>
+</div><div class="aui-header-secondary"><ul class="aui-nav">
+                        <li>
+        <div id="search-ui" class="aui-quicksearch dont-default-focus header-quicksearch"><input id="quick-search-query" aria-label="Search" placeholder="Search" type="text" /><div id="quick-search-alert" role="alert">Hit enter to search</div><aui-spinner size="small"></aui-spinner></div>
+    </li>
+        <li>
+            
+        <a id="help-menu-link" class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" href="#" aria-haspopup="true" aria-owns="help-menu-link-content" title="Help">
+        <span class="aui-icon aui-icon-small aui-iconfont-question-filled">Help</span>
+    </a>
+    <nav id="help-menu-link-content" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                    <div class="aui-dropdown2-section">
+                                <ul  id="help-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+        
+            
+<a  id="confluence-help-link" href="https://docs.atlassian.com/confluence/docs-713/" class="    "      title="Visit the Confluence documentation home"  target="_blank"
+>
+        Online Help
+</a>
+</li>
+                                            <li>
+    
+                
+<a  id="keyboard-shortcuts-link" href="#" class="    "      title="View available keyboard shortcuts" >
+        Keyboard Shortcuts
+</a>
+</li>
+                                            <li>
+    
+            
+<a  id="feed-builder-link" href="/dashboard/configurerssfeed.action" class="    "      title="Create your custom RSS feed." >
+        Feed Builder
+</a>
+</li>
+                                            <li>
+    
+            
+<a  id="whats-new-menu-link" href="https://confluence.atlassian.com/display/DOC/Confluence+7.13+Release+Notes?a=false" class="    "      title="" >
+        What’s new
+</a>
+</li>
+                                            <li>
+    
+                
+<a  id="gadget-directory-link" href="#" class="   user-item administration-link "      title="Browse gadgets provided by Confluence" >
+        Available Gadgets
+</a>
+</li>
+                                            <li>
+    
+            
+<a  id="confluence-about-link" href="/aboutconfluencepage.action" class="    "      title="Get more information about Confluence" >
+        About Confluence
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+    </li>
+        <li>
+                
+    
+    </li>
+        <li>
+                    
+        
+            
+<a  id="notifications-anchor" href="#"  class="mw-anchor read aui-nav-imagelink"   title="">
+            <span></span>
+    </a>
+    
+    </li>
+        <li>
+                                            
+        <a id="user-menu-link" class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless " aria-haspopup="true" aria-owns="user-menu-link-content" data-username="TKMA5QX" href="#" title="Christopher Roberts">
+                    <div class="aui-avatar aui-avatar-small">
+                <div class="aui-avatar-inner">
+                                                                                                    <img alt="Profile picture for TKMA5QX" />
+                </div>
+            </div>
+            <span class="aui-icon-dropdown"></span>
+        </a>
+        <nav id="user-menu-link-content" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                            <div class="aui-dropdown2-section">
+                    <ul  id="user-menu-link-user-preferences"                        class="aui-list-truncate section-user-preferences first">
+                                                    <li>
+        
+            
+<a  id="view-user-history-link" href="/users/viewuserhistory.action" class="   user-item user-history popup-link "      title="" >
+        Recently viewed
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-recently-worked-on" href="/dashboard.action#recently-worked" class="   user-item "      title="" >
+        Recently worked on
+</a>
+</li>
+                                            </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul  id="user-menu-link-user-content"                        class="aui-list-truncate section-user-content">
+                                                    <li>
+    
+            
+<a  id="view-user-profile-link" href="/users/viewmyprofile.action" class="   user-item user-profile "      title="" >
+        Profile
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="view-mytasks-link" href="/plugins/inlinetasks/mytasks.action" class="   user-item list-user-status "      title="" >
+        Tasks
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-favourites-link" href="/users/viewmyfavourites.action" class="   user-item "      title="" >
+        Saved for later
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-watches-link" href="/users/viewnotifications.action" class="   user-item "      title="" >
+        Watches
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-drafts-link" href="/users/viewmydrafts.action" class="   user-item "      title="" >
+        Drafts
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-network-link" href="/users/viewfollow.action?username=TKMA5QX" class="   follow-link "      title="" >
+        Network
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="user-settings-link" href="/users/viewmysettings.action" class="   user-item "      title="" >
+        Settings
+</a>
+</li>
+                                                    <li>
+    
+            
+<a  id="upm-requests-link" href="/plugins/servlet/upm/requests?source=header_user" class="    "      title="" >
+        Atlassian Marketplace
+</a>
+</li>
+                                            </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul  id="user-menu-link-user-operations"                        class="aui-list-truncate section-user-operations">
+                                                    <li>
+    
+            
+<a  id="logout-link" href="/logout.action" class="   user-item logout-link "      title="" >
+        Log Out
+</a>
+</li>
+                                            </ul>
+                </div>
+                    </nav>
+                    
+    </li>
+    </ul>
+</div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    <br class="clear">
+</header>
+    
+
+    
+    	<div class="ia-splitter">
+    		<div class="ia-splitter-left">
+    			<div class="ia-fixed-sidebar">
+                                            
+                            <div class="acs-side-bar ia-scrollable-section"><div class="acs-side-bar-space-info tipsy-enabled" data-configure-tooltip="Edit space details"><div class="avatar"><div class="space-logo" data-key="OE" data-name="OCF Engineering" data-entity-type="confluence.space"><div class="avatar-img-container"><div class="avatar-img-wrapper"><a href="/display/OE/OCF+Engineering" title="OCF Engineering"><img class="avatar-img" src="/download/attachments/327682/global.logo?version=2&amp;modificationDate=1688741444000&amp;api=v2" alt="OCF Engineering"></a></div></div></div></div><div class="space-information-container"><div class="name"><a href="/display/OE/OCF+Engineering" title="OCF Engineering">OCF Engineering</a></div><div class="flyout-handle icon aui-icon aui-icon-small aui-iconfont-edit"></div><div class="favourite-space-icon "><button class="space-favourite aui-icon aui-icon-small aui-iconfont-unstar" id="space-favourite-add" title="Add to my spaces" aria-pressed="false"></button><button class="space-favourite-hidden space-favourite aui-icon aui-icon-small aui-iconfont-star" id="space-favourite-remove" title="Remove from my spaces" aria-pressed="false"></button></div></div></div><div class="acs-side-bar-content"><div class="acs-nav-wrapper"><div class="acs-nav" data-has-create-permission="true" data-quick-links-state="null" data-page-tree-state="null" data-nav-type="page-tree"><div class="acs-nav-sections"><div class="main-links-section "><ul class="acs-nav-list"><li class="acs-nav-item com-addonengine-addons-analytics-space-link-adg3" data-collector-key="space-analytics-web-item-adg3"><a class="acs-nav-item-link tipsy-enabled" href="/plugins/confanalytics/analytics.action?key=OE#/analytics/space/OE" data-collapsed-tooltip="Analytics"><span class="icon"></span><span class="acs-nav-item-label">Analytics</span></a></li></ul></div><div class="quick-links-wrapper"><h5 class="ia-quick-links-header-title">Space shortcuts</h5><div class="quick-links-section tipsy-enabled "><ul class="acs-nav-list"><li class="acs-nav-item pinned_page"><a class="acs-nav-item-link tipsy-enabled" href="/display/OE/OCF+-+Designs" data-collapsed-tooltip="null"><span class="icon"></span><span class="acs-nav-item-label">OCF - Designs</span></a></li><li class="acs-nav-item pinned_page blueprint meeting-notes"><a class="acs-nav-item-link tipsy-enabled" href="/display/OE/Meeting+notes" data-collapsed-tooltip="null"><span class="icon"></span><span class="acs-nav-item-label">Meeting notes</span></a></li></ul></div></div></div></div></div><div class="ia-secondary-container tipsy-enabled" data-tree-type="page-tree"><div class="ia-secondary-header"><h5 class="ia-secondary-header-title page-tree"><span class="icon"></span><span class="label">Page tree</span></h5></div><div class="ia-secondary-content">
+
+
+<div class="plugin_pagetree conf-macro output-inline" data-hasbody="false" data-macro-name="pagetree">
+
+        
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div class="plugin_pagetree_children">
+        </div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input type="hidden" name="treeId" value="" />
+        <input type="hidden" name="treeRequestId" value="/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false&amp;expandCurrent=true&amp;placement=sidebar" />
+        <input type="hidden" name="treePageId" value="362678252" />
+
+        <input type="hidden" name="noRoot" value="false" />
+        <input type="hidden" name="rootPageId" value="18318544" />
+
+        <input type="hidden" name="rootPage" value="" />
+        <input type="hidden" name="startDepth" value="0" />
+        <input type="hidden" name="spaceKey" value="OE" />
+
+        <input type="hidden" name="i18n-pagetree.loading" value="Loading..." />
+        <input type="hidden" name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page." />
+        <input type="hidden" name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information." />
+        <input type="hidden" name="loginUrl" value="/login.action?os_destination=%2Fpages%2Fviewpage.action%3FspaceKey%3DOE%26title%3DSoftware%2BQuality%2Band%2BPerformance&amp;permissionViolation=true" />
+        <input type="hidden" name="mobile" value="false" />
+        <input type="hidden" name="placement" value="sidebar" />
+
+                <fieldset class="hidden">
+                                                <input type="hidden" name="ancestorId" value="311723167" />
+                                    <input type="hidden" name="ancestorId" value="253168771" />
+                                    <input type="hidden" name="ancestorId" value="311723178" />
+                                    <input type="hidden" name="ancestorId" value="18318544" />
+                                    </fieldset>
+    </fieldset>
+</div>
+</div></div></div><div class="hidden"><a href="/collector/pages.action?key=OE" id="space-pages-link"></a><script type="text/x-template" title="logo-config-content"><h2>Space Details</h2><div class="personal-space-logo-hint">Your profile picture is used as the logo for your personal space. <a href="/users/profile/editmyprofilepicture.action" target="_blank">Change your profile picture</a>.</div></script></div></div><div class="space-tools-section"><div id="space-tools-menu-additional-items" class="hidden"><div data-label="Reorder pages" data-class="" data-href="/pages/reorderpages.action?key=OE">Reorder pages</div></div><button id="space-tools-menu-trigger"  class=" aui-dropdown2-trigger aui-button aui-button-subtle tipsy-enabled aui-dropdown2-trigger-arrowless " aria-controls="space-tools-menu" aria-haspopup="true" role="button" data-aui-trigger><span class="aui-icon aui-icon-small aui-iconfont-configure">Configure</span><span class="aui-button-label">Space tools</span><span class="aui-icon "></span></button><div id="space-tools-menu" class="aui-dropdown2 aui-style-default space-tools-dropdown" role="menu" hidden data-aui-alignment="top left"></div><a href="#" role="button" class="expand-collapse-trigger aui-icon aui-icon-small aui-iconfont-chevron-double-left" aria-expanded="true"></a></div>
+                    
+                        			</div>
+    		</div>
+        <!-- \#header -->
+
+            
+    
+        <div id="main" class=" aui-page-panel">
+                        <div id="main-header">
+                        
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                                                    <li class="ajs-button normal">
+
+        
+        
+    
+                                                        
+    
+    
+            <a  id="editPageLink" href="/pages/editpage.action?pageId=362678252" rel="nofollow" class="aui-button aui-button-subtle edit full-load"  accessKey="e"  title="Edit" >
+                        <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-edit"></span>
+                                <u>E</u>dit
+            </span>        </a>
+    </li>
+                                            <li class="ajs-button normal">
+
+        
+            
+    
+                                                        
+    
+    
+            <a  id="page-favourite" href="#" rel="nofollow" class="aui-button aui-button-subtle action-page-favourite"  accessKey="f"  title="Save for later" >
+                        <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-unstar"></span>
+                                Save <u>f</u>or later
+            </span>        </a>
+    </li>
+                                            <li class="ajs-button normal">
+
+        
+            
+    
+                                                        
+    
+    
+            <a  id="watch-content-button" href="#" rel="nofollow" class="aui-button aui-button-subtle watch-menu"   title="Watch (w)" >
+                        <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-unwatch"></span>
+                                <u>W</u>atch
+            </span>        </a>
+    </li>
+                                            <li class="ajs-button normal">
+
+        
+            
+    
+                                                        
+    
+    
+            <a  id="shareContentLink" href="#" rel="nofollow" class="aui-button aui-button-subtle share"   title="Share this page with others" >
+                        <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-share"></span>
+                                <u>S</u>hare
+            </span>        </a>
+    </li>
+                    
+        <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" href="#" aria-haspopup="true" aria-label="More options" aria-owns="action-menu" data-container="#navigation">
+            <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-more" aria-label="More options"></span>
+                                
+            </span>
+        </a>         <div id="action-menu" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                            <div class="aui-dropdown2-section">
+                    <ul  id="action-menu-primary"                         class="section-primary first">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="view-attachments-link" href="/pages/viewpageattachments.action?pageId=362678252" rel="nofollow" class="action-view-attachments"  accessKey="t"  title="View Attachments" >
+                        <span>
+                                A<u>t</u>tachments (3)
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-view-history-link" href="/pages/viewpreviousversions.action?pageId=362678252" rel="nofollow" class="action-view-history"   title="" >
+                        <span>
+                                Page History
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-page-permissions-link" href="/pages/viewinfo.action?pageId=362678252" rel="nofollow" class="action-page-permissions"   title="Edit restrictions" >
+                        <span>
+                                Restrictions
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+            
+    
+                                                        
+    
+    
+            <a  id="who-can-view-button-ak-button" href="#" rel="nofollow" class="who-can-view-link"   title="" >
+                        <span>
+                                People who can view
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  href="/plugins/confanalytics/analytics.action?key=OE#/analytics/content/page/362678252" rel="nofollow" class=""   title="Summary of views and activity" >
+                        <span>
+                                Analytics
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul  id="action-menu-secondary"                         class="section-secondary">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="view-page-info-link" href="/pages/viewinfo.action?pageId=362678252" rel="nofollow" class="action-view-info"   title="" >
+                        <span>
+                                Page Information
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+            
+    
+                                                        
+    
+    
+            <a  id="view-resolved-comments" href="#" rel="nofollow" class=""   title="" >
+                        <span>
+                                Resolved comments
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="view-in-hierarchy-link" href="/pages/reorderpages.action?key=OE&amp;openId=362678252#selectedPageInHierarchy" rel="nofollow" class=""   title="" >
+                        <span>
+                                View in Hierarchy
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-source-editor-view-storage-link" href="/plugins/viewstorage/viewpagestorage.action?pageId=362678252" rel="nofollow" class="action-view-storage view-storage-link popup-link"   title="" >
+                        <span>
+                                View Storage Format
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-view-source-link" href="/plugins/viewsource/viewpagesrc.action?pageId=362678252" rel="nofollow" class="action-view-source popup-link"   title="" >
+                        <span>
+                                View Source
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-export-pdf-link" href="/spaces/flyingpdf/pdfpageexport.action?pageId=362678252" rel="nofollow" class=""   title="" >
+                        <span>
+                                Export to PDF
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-export-word-link" href="/exportword?pageId=362678252" rel="nofollow" class="action-export-word"   title="" >
+                        <span>
+                                Export to Word
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="import-word-doc" href="/pages/worddav/uploadimport.action?pageId=362678252" rel="nofollow" class=""   title="" >
+                        <span>
+                                Import Word Document
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  href="/plugins/lucidchart/selectVisio.action?contentId=362678252" rel="nofollow" class=""   title="" >
+                        <span>
+                                View Visio File
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul  id="action-menu-modify"                         class="section-modify">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-copy-page-link" href="/pages/copypage.action?idOfPageToCopy=362678252&amp;spaceKey=OE" rel="nofollow" class="action-copy"   title="" >
+                        <span>
+                                Copy
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a  id="action-move-page-dialog-link" href="/pages/viewpage.action?pageId=362678252" rel="nofollow" class="action-move"   title="" >
+                        <span>
+                                Move
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+            
+            <div id="title-heading" class="pagetitle with-breadcrumbs">
+                
+                                    <div id="breadcrumb-section">
+                        
+    
+    
+    <ol id="breadcrumbs">
+                                        
+                        
+        <li class="first" >
+                        
+                            <span class=""><a href="/collector/pages.action?key=OE">Pages</a></span>
+                                                                                                            <li id="ellipsis" title="Show all breadcrumbs"><span><strong>&#8230;</strong></span></li>
+                                                
+                        
+        <li class="hidden-crumb" >
+                        
+                            <span class=""><a href="/display/OE/OCF+Engineering">OCF Engineering</a></span>
+                                                                                                    
+                        
+        <li class="hidden-crumb" >
+                        
+                            <span class=""><a href="/pages/viewpage.action?pageId=311723178">OLM / OMS</a></span>
+                                                                                                    
+                        
+        <li class="hidden-crumb" >
+                        
+                            <span class=""><a href="/pages/viewpage.action?pageId=253168771">OLM (OMS Re-imagined)</a></span>
+                                                                                    
+                        
+        <li>
+                        
+                            <span class=""><a href="/display/OE/Standard+and+Design+Practices">Standard and Design Practices</a></span>
+                                                                    </ol>
+
+
+                    </div>
+                
+                
+        <a href="#page-banner-end" class="assistive">Skip to end of banner</a>
+<div id="page-banner-start" class="assistive"></div>
+
+                    
+            <div id="page-metadata-banner"><ul class="banner"><li id="system-content-items" class="noprint"><a href="" title="Unrestricted" id="content-metadata-page-restrictions" class="aui-icon aui-icon-small aui-iconfont-unlocked system-metadata-restrictions"></a><a href="/pages/viewpageattachments.action?pageId=362678252&amp;metadataLink=true" title="3 attachments" id="content-metadata-attachments" class="aui-icon aui-icon-small aui-iconfont-attachment"></a></li><li class="page-metadata-item noprinthas-button"  id="content-metadata-jira-wrapper"><a href="" title="" id="content-metadata-jira" class="aui-button aui-button-subtle content-metadata-jira tipsy-disabled hidden"><span>Jira links</span></a></li><li class="page-metadata-item noprint" ><a href="/plugins/confanalytics/analytics.action?key=OE#/analytics/content/page/362678252" title="Summary of views and activity"  class="analytics-metadata-button-test"><img class="page-banner-item-icon" src="/s/-krfcyh/8703/51k4y0/_/download/resources/com.addonengine.analytics:analytics-resources/images/icons/analytics-content-byline-icon-adg3@2x.png" style="height: 16px; width: 16px;"/><span>Analytics</span></a></li></ul></div>
+            
+
+<a href="#page-banner-start" class="assistive">Go to start of banner</a>
+<div id="page-banner-end" class="assistive"></div>
+    
+
+                <h1 id="title-text" class="with-breadcrumbs">
+                                                <a href="/display/OE/Software+Quality+and+Performance">Software Quality and Performance</a>
+                                    </h1>
+            </div>
+        </div><!-- \#main-header -->
+        
+        
+
+        <div id="sidebar-container">
+                                                </div><!-- \#sidebar-container -->
+
+        
+    
+
+        
+
+
+
+
+            
+    
+
+                                
+    
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+    
+            
+        
+
+    
+    
+
+    
+            
+        
+
+
+
+    
+<div id="content" class="page view">
+    
+
+
+<div id="action-messages">
+                        </div>
+
+
+
+            <script type="text/x-template" title="searchResultsGrid">
+    <table class="aui">
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <td class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></td>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script>
+        
+    
+            
+
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+            <li class="page-metadata-modification-info">
+                
+        
+    
+        
+    
+        
+            
+            Created by <span class='author'>     <a href="    /display/~TKMA5QX
+"
+                       class="url fn confluence-userlink" data-username="TKMA5QX"
+                            >Christopher Roberts</a></span>, last modified on <a class='last-modified' title='Show changes' href='/pages/diffpagesbyversion.action?pageId=362678252&amp;selectedPageVersions=23&amp;selectedPageVersions=24'>Jul 21, 2023</a>
+                </li>
+        </ul>
+    </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+
+        
+                                            
+        <div id="main-content" class="wiki-content">
+                           
+        <h1 id="SoftwareQualityandPerformance-Objective"><div class="toc-macro client-side-toc-macro  conf-macro output-block" data-hasbody="false" data-headerelements="H1,H2,H3,H4,H5,H6,H7" data-macro-name="toc"> </div>Objective</h1><p>The overall objective of this page is to improve the quality of our applications through <span style="color: rgb(51,153,102);"><strong>Developmental</strong></span> and <span style="color: rgb(51,153,102);"><strong>Operational</strong></span> enhancements.</p><p>Addressing both of these qualities will enhance the software quality, maintainability, and efficiency of our systems.  To achieve this objective it is necessary for us to define how we can measure these qualities to see that we are making effective changes.  So we will define qualities, metrics, and artifacts we will use to produce the work to perform these improvements, and track the decisions we made along the way.</p><h1 id="SoftwareQualityandPerformance-Qualities">Qualities</h1><p>As previously mentioned our focus is about improving our software from a technical point of view while preserving the functionality of our system and show the justification for the <span style="color: rgb(51,153,102);"><strong>Developmental</strong></span> and <span style="color: rgb(51,153,102);"><strong>Operational</strong></span> qualities. </p><p><a class="external-link" href="https://iso25000.com/index.php/en/iso-25000-standards/iso-25010" rel="nofollow">The ISO/IEC 25010 standard</a> establishes a quality model for software product evaluation. It defines eight key quality characteristics which provide a good framework for us to evaluate the quality of our software.   <strong>We have further</strong><strong> categorized it into</strong> three higher-level categories.  Further we will not concern ourselves with the first - Functional - since we already have a well defined means of addressing this quality</p><p><br/></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 53.3654%;"><colgroup><col style="width: 45.501%;"/><col/><col style="width: 54.5248%;"/></colgroup><thead><tr><th class="confluenceTh">Category</th><th colspan="1" class="confluenceTh">Definition</th><th class="confluenceTh">ISO/IEC 25010 Quality Characteristics</th></tr></thead><tbody><tr><td class="confluenceTd"><span style="color: rgb(165,173,186);">Functional</span></td><td colspan="1" class="confluenceTd"><span style="color: rgb(165,173,186);">What the software does</span></td><td class="confluenceTd"><span style="color: rgb(165,173,186);">Functional Suitability, Usability</span></td></tr><tr><td class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>Operational</strong></span></td><td colspan="1" class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>How the software behaves</strong></span></td><td class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>Performance Efficiency, Compatibility, Reliability, Security</strong></span></td></tr><tr><td class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>Developmental</strong></span></td><td colspan="1" class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>How the software is built</strong></span></td><td class="confluenceTd"><span style="color: rgb(51,153,102);"><strong>Maintainability, Portability</strong></span></td></tr></tbody></table></div><h2 id="SoftwareQualityandPerformance-AffectsofCertainChangesbasedonCategory">Affects of Certain Changes based on Category</h2><p>When we make certain changes (under <strong>Type of Change</strong>) notice the impact of that change based on these columns:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="/download/attachments/362678252/image2023-7-17_12-43-15.png?version=1&amp;modificationDate=1689612196000&amp;api=v2" data-image-src="/download/attachments/362678252/image2023-7-17_12-43-15.png?version=1&amp;modificationDate=1689612196000&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="363169778" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-17_12-43-15.png" data-base-url="https://confluence.kohls.com:8443" data-linked-resource-content-type="image/png" data-linked-resource-container-id="362678252" data-linked-resource-container-version="24"></span></p><h3 id="SoftwareQualityandPerformance-Explanation">Explanation</h3><h4 id="SoftwareQualityandPerformance-TypeofChange">Type of Change</h4><p>The type of change allows us to understand what kind of commit we are undergoing:</p><ul><li>Notice that a Feature Addition and a Bug Fix are the same except for when it occurs</li><li>Notice also that a Refactor and a Technical Debt are the same except for when it occurs</li><li>Functionality and Optimizations are witnessed during runtime vs Refactors and Technical Debt items before runtime</li></ul><h4 id="SoftwareQualityandPerformance-OtherColumns">Other Columns</h4><ul><li><strong>Affect</strong> represents what quality is ultimately enhanced</li><li><strong>Occurs</strong> represents when in the process of software development we apply this change<ul><li><strong>Proactively</strong> implies that we are in front of the enhancement and apply the change ahead of time</li><li><strong>Reactively</strong> implies that we need to perform enhancement due to managing the change for a later date or a result of monitoring or discovery after software development</li></ul></li><li><strong>Visibility of Change</strong> represents when the change is visible or manifests itself</li><li>Impact of Change on other areas describes what we can expect to happen to other qualities of our software when applying a type of change:<ul><li><strong>Functional Change</strong> represent if it impacts the functionality of our software or what it does</li><li><strong>Operational Change</strong> represents if it impacts how the software behaves (caching, scaling, etc.)</li><li><strong>Developmental Change</strong> represent if it impacts how the software was built or deployed and helps to maintain the code (refactoring, and testing), or make it more portable or modular</li></ul></li></ul><h2 id="SoftwareQualityandPerformance-FunctionalQualities"><span style="color: rgb(122,134,154);">Functional Qualities</span></h2><p><span style="color: rgb(122,134,154);">Remember our objective is to keep this unchanged</span></p><h2 id="SoftwareQualityandPerformance-OperationalQualities">Operational Qualities</h2><p>Operational qualities are easy to track and measure since they can be quantified.  Here are some examples:</p><ul><li>response time</li><li>uptime/downtime</li><li>error rate</li><li>memory usage</li><li>throughput</li></ul><p>Story development usually happens reactively as a result of monitoring our system in <a class="external-link" href="https://kohls.okta.com/app/kohlscorporationprod_dynatrace_1/exkfrvpfr6laMRUk21t7/sso/saml" rel="nofollow">Dynatrace</a>. However, there are opportunities to incorporate optimization stories proactively as we deem necessary based on requirements and information that we have.</p><h2 id="SoftwareQualityandPerformance-DevelopmentalQualities">Developmental Qualities</h2><p><span style="color: rgb(0,0,0);">Developmental qualities can be track but can be trickier to measure.  Some indicators such as </span><span style="color: rgb(0,0,0);">static code analyzers, </span><span style="color: rgb(0,0,0);">defect density can be quantified.  In most cases, an increase in our productivity can also be an indicator depending on the criteria we use.  Other than quantifiable measurements, most of these measurements are of an empirical nature:</span></p><ul><li><span style="color: rgb(0,0,0);">Test coverage</span></li><li><span style="color: rgb(0,0,0);">Development approaches or implementation process</span></li><li><span style="color: rgb(0,0,0);">Ease of making quick changes to code</span></li><li><span style="color: rgb(0,0,0);">Fast test cycles</span></li><li><span style="color: rgb(0,0,0);">Cleaner more readable code</span></li><li><span style="color: rgb(0,0,0);">Knowledge share through design and code reviews</span></li><li><span style="color: rgb(0,0,0);">Efficiently and effectively managing technical debt</span></li><li><span style="color: rgb(0,0,0);">Topic discussions</span></li></ul><h1 id="SoftwareQualityandPerformance-Artifacts">Artifacts</h1><p>There are two main artifacts to help in achieving this objective:</p><ol><li>A comprehensive backlog of operational and developmental work items, and</li><li>A tracking board of all our technical decisions.</li></ol><h2 id="SoftwareQualityandPerformance-SoftwareQualityandPerformanceBacklog">Software Quality and Performance Backlog</h2><p>These work items are intended to enhance the software quality and performance of our system. Work items can take the form of stories, chores, spikes, or topics. By prioritizing and addressing these items, we aim to improve the overall quality, maintainability, and efficiency of our software.  Here is the start of a backlog, under <a class="external-link" href="https://docs.google.com/spreadsheets/d/1aK6pjqSc5MHHz3eoW3PkMcSsF2XdOPw5rqJXnFYr2EM/edit#gid=0" rel="nofollow">Software Quality and Performance Backlog</a>.</p><h2 id="SoftwareQualityandPerformance-DecisionTrackingBoard">Decision Tracking Board</h2><p>The second artifact refines and catalogs all our decisions and improvements made.  We have seeded this tracking board with decisions we've made so far:</p><ul><li>In the table on the <a href="/pages/viewpage.action?pageId=314409847">Design improvements / Backlog(post shadow mode)</a> page, and</li><li>As bulleted items found on the <a href="/display/OE/Standard+and+Design+Practices">Standard and Design Practices</a> pages.</li></ul><p>These will be incorporated into a unified guidelines list found here on the <a class="external-link" href="https://docs.google.com/spreadsheets/d/15nQvj08REoZzLF88KjoIJerzkXqO6Urr3M-WZqXUbHQ/edit#gid=0" rel="nofollow">Decision Tracking Board</a> page.</p><h1 id="SoftwareQualityandPerformance-References">References</h1><ol><li><p><strong><a class="external-link" href="https://iso25000.com/index.php/en/iso-25000-standards/iso-25010" rel="nofollow">The ISO/IEC 25010 standard</a></strong>: This is an international standard that establishes a quality model for software product evaluation. It defines eight key quality characteristics which provide a good framework for evaluating the quality of software.</p></li><li><p><strong><a class="external-link" href="https://kohls.okta.com/app/kohlscorporationprod_dynatrace_1/exkfrvpfr6laMRUk21t7/sso/saml" rel="nofollow">Dynatrace</a></strong>: This is a software intelligence platform that provides application performance management, artificial intelligence for operations, cloud infrastructure monitoring, and digital experience management.</p></li><li><p><strong><a class="external-link" href="https://docs.google.com/spreadsheets/d/1aK6pjqSc5MHHz3eoW3PkMcSsF2XdOPw5rqJXnFYr2EM/edit#gid=0" rel="nofollow">Software Quality and Performance Backlog</a></strong>: This is the start of a comprehensive backlog of operational and developmental work items intended to enhance the software quality and performance of the system.</p></li><li><p><strong><a class="external-link" href="https://docs.google.com/spreadsheets/d/15nQvj08REoZzLF88KjoIJerzkXqO6Urr3M-WZqXUbHQ/edit#gid=0" rel="nofollow">Decision Tracking Board</a></strong>: This is a unified guidelines list that catalogs all the technical decisions and improvements made.</p></li><li><p><strong><a href="/pages/viewpage.action?pageId=314409847">Design improvements / Backlog(post shadow mode)</a></strong>: This page contains a table of design improvements and backlog items post shadow mode.</p></li><li><p><strong><a href="/display/OE/Standard+and+Design+Practices">Standard and Design Practices</a></strong>: These pages contain bulleted items of standards and design practices.</p></li><li><strong><a class="external-link" href="https://miro.com/app/board/uXjVM0CpJOg=/" rel="nofollow">Work Item 2x2 Prioritization Board</a></strong>:  This board is used to kick off our prioritization of work items into epics and stories that we can put into JIRA.</li></ol><p><br/></p>
+
+                
+        
+    
+        </div>
+
+                        
+    
+
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-section-content content-column" entityid="362678252" entitytype="page">
+	<div class="labels-content">
+		
+    <ul class="label-list label-list-right  has-pen">
+            <li class="no-labels-message">
+            No labels
+        </li>
+                <li class="labels-edit-container">
+            <a href="#" class="show-labels-editor" title="Edit Labels">
+                <span class="aui-icon aui-icon-small aui-iconfont-devtools-tag-small">Edit Labels</span>
+            </a>
+        </li>
+        </ul>
+
+    </div>
+</div>
+</div>
+        
+		
+            
+
+
+
+
+            
+        
+
+
+
+
+
+
+
+
+                        
+    
+<div id="comments-section" class="pageSection group">
+        
+    
+
+
+    <div class="bottom-comment-panels comment-panels">
+                
+                    
+    
+
+
+        
+        
+    
+    <div class="quick-comment-container comment add"><p class="comment-user-logo"><a class="userLogoLink" data-username="TKMA5QX" href="/users/profile/editmyprofilepicture.action" title="Add a picture of yourself"><img class="userLogo logo defaultLogo" src="/s/-krfcyh/8703/51k4y0/_/images/icons/profilepics/add_profile_pic.svg" alt="User icon: Add a picture of yourself"></a></p><div class="quick-comment-body"><div class="quick-comment-loading-container" style="display:none;"></div><div id="editor-messages"></div><div id="any-messages"></div><form style="display:block;" class="quick-comment-form aui" method="post" name="inlinecommentform" action="/pages/doaddcomment.action?pageId=362678252" ><div title="Add a Comment" role="button" tabindex="0" aria-label="Add a Comment" class="quick-comment-prompt"><span>Write a comment…</span></div></form></div></div>
+
+            </div>
+
+            <div id="comments-actions" class="aui-toolbar noprint">
+            <p class="toolbar-group">
+                <span class="toolbar-item"><a href="/display/OE/Software+Quality+and+Performance?showComments=true&amp;showCommentArea=true#addcomment" id="add-comment-rte" accesskey="m" class="toolbar-trigger full-load">Add Comment</a></span>
+            </p>
+        </div>
+    </div>
+        
+
+
+                
+    
+            
+</div>
+
+    
+
+    
+
+
+
+
+    
+    
+
+    
+    
+    
+
+
+    
+<div id="space-tools-web-items" class="hidden">
+                <div data-label="Overview" data-href="/spaces/viewspacesummary.action?key=OE">Overview</div>
+            <div data-label="Content Tools" data-href="/pages/reorderpages.action?key=OE">Content Tools</div>
+            <div data-label="Apps" data-href="/spaces/scroll-viewport/config.action?key=OE#/list">Apps</div>
+    </div>
+        
+
+
+
+            </div><!-- \#main -->
+            
+    
+    
+        
+            
+            
+
+<div id="footer" role="contentinfo">
+    <section class="footer-body">
+
+                                                    
+        
+
+        <ul id="poweredby">
+            <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link" rel="nofollow">Atlassian Confluence</a> <span id='footer-build-information'>7.13.7</span> <span id='footer-cluster-node'>(Cluster node: 36c3cea7)</span></li>
+            <li class="print-only">Printed by Atlassian Confluence 7.13.7</li>
+            <li class="noprint"><a href="https://support.atlassian.com/help/confluence" class="hover-footer-link" rel="nofollow">Report a bug</a></li>
+            <li class="noprint"><a href="https://www.atlassian.com/company" class="hover-footer-link" rel="nofollow">Atlassian News</a></li>
+        </ul>
+
+        
+
+        <div id="footer-logo"><a href="http://www.atlassian.com/" rel="nofollow">Atlassian</a></div>
+
+                    
+        
+    </section>
+</div>
+
+    
+</div>
+
+</div><!-- \#full-height-container -->
+</div><!-- \#page -->
+
+    <span style="display:none;" id="confluence-server-performance">{"serverDuration": 268, "requestCorrelationId": "86691983623d8e06"}</span>
+</body>
+</html>
+    
