@@ -1,0 +1,96 @@
+12/13/23, 3:11 PM
+
+[#OMO-1980] Creation of New Kafka Topic
+
+[OMO-1980] Creation of New Kafka Topic Created: 12/Dec/23 Updated: 13/Dec/23
+Status:
+Project:
+Component/s:
+Fix Version/s:
+
+New
+Order Lifecycle Management (new)
+None
+None
+
+Type:
+Reporter:
+Resolution:
+Labels:
+Remaining Estimate:
+Time Spent:
+Original Estimate:
+
+Story
+Christopher Roberts
+Unresolved
+None
+Not Specified
+Not Specified
+Not Specified
+
+Issue Links:
+
+Cloners
+clones
+OMO-1973
+is cloned by
+OMO-1981
+is cloned by
+OMO-1982
+Depends on
+is required for OMO-1162
+S
+2
+Ship to Home Phase 0
+
+Issue Size:
+Story Points:
+Epic Link:
+
+
+
+Priority:
+Assignee:
+Votes:
+
+Your computer's time zone does not appear 
+to match your Jira time zone preference of
+(GMT-06:00)Medium
+Chicago.
+Update your Jira preference
+Unassigned
+0
+
+Investigating Trigger Events for Dela...
+Develop Microservice for Post-Checkou...
+Validate Order Consistency Between Ne...
+
+New
+Prioritied Backlog
+Prioritied Backlog
+
+Determine how to route orders to nOLM...
+
+Abandoned
+
+Description
+As an OLM Engineer,
+I want to create a new Kafka topic,
+So that I can make sure 100% of post-checkout orders are captured for audit & validation purposes.
+Acceptance Criteria 1:
+Given the system is processing checkout orders,
+When an order is completed,
+Then it should be published to the new Kafka topic with 12 partitions
+Notes & Assumptions:
+The Kafka topic must be scalable to handle the full volume of orders.
+Integration with existing systems should be seamless.
+A tool, means, or process should be developed to compare the data between Kafka and MQ.
+The comparison mechanism identify or flag discrepancies for further investigation.
+Generated at Wed Dec 13 14:11:31 CST 2023 by Christopher Roberts using Jira 8.20.7#820007sha1:98f6b160ab2ff5d8f9ec9088d10ba11ef78e8764.
+
+https://jiradc.kohls.com:8443/si/jira.issueviews:issue-html/OMO-1980/OMO-1980.html
+
+1/1
+
+

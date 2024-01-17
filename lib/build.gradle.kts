@@ -74,6 +74,7 @@ dependencies {
     implementation("io.ktor:ktor-client-java:2.3.7")
     implementation("com.jayway.jsonpath:json-path:2.6.0")
     implementation("org.jsoup:jsoup:1.17.2")
+    implementation("com.itextpdf:itext7-core:8.0.2")
 
 
 

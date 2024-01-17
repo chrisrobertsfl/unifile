@@ -4,9 +4,12 @@ import com.ingenifi.unifile.content.Content
 import com.ingenifi.unifile.content.JsonContent
 import com.ingenifi.unifile.content.ContentType
 import com.ingenifi.unifile.content.KeywordExtractor
+import com.spire.pdf.PdfDocument
 import org.apache.pdfbox.io.RandomAccessReadBuffer
 import org.apache.pdfbox.pdfparser.PDFParser
 import org.apache.pdfbox.text.PDFTextStripper
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.InputStream
 
@@ -41,5 +44,15 @@ sealed interface ContentConverter {
     fun File.bodyFromPdf(inputStream: InputStream): String = RandomAccessReadBuffer(inputStream).use {
         TEXT_STRIPPER.getText(PDFParser(it).parse())
     }
+
+    private fun File.asStream(): ByteArrayInputStream {
+        val pdf = PdfDocument()
+        pdf.loadFromFile(absolutePath)
+        val bos = ByteArrayOutputStream()
+        pdf.saveToStream(bos, com.spire.pdf.FileFormat.PDF)
+        return ByteArrayInputStream(bos.toByteArray())
+    }
+
+
 
 }

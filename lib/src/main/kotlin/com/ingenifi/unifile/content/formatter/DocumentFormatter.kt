@@ -11,6 +11,7 @@ interface DocumentFormatter {
              return when(file.extension.lowercase()) {
                  "clink" -> ConfluencePagesFormatter(file = file, keywordExtractor = keywordExtractor, client = client)
                  "json" -> JsonFormatter(file, keywordExtractor)
+                 "pdf" -> PdfFormatter(file, keywordExtractor)
                  "txt" -> PlainTextFormatter(file, keywordExtractor)
                  else -> throw IllegalArgumentException("Unknown formatter for $file")
              }
