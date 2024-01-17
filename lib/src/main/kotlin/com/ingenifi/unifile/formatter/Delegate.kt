@@ -14,11 +14,12 @@ class Delegate(private val source: Source, private val keywordExtractor: Keyword
         }
     }
 
-    fun format(number: Int, templatePath: String, replacements: Map<String, String> = mapOf(), extractPercentage: Double = 0.025): String {
+    fun format(number: Int, templatePath: String, replacements: Map<String, String> = mapOf(), extractPercentage: Double = 0.025, additionalKeywords : List<String> = listOf<String>()): String {
         val description = source.description()
         val title = source.title()
         val keywords = mutableSetOf<String>()
         keywords.addAll(keywordExtractor.extract(text = description, percentage = extractPercentage))
+        if (additionalKeywords.isNotEmpty()) keywords.addAll(additionalKeywords)
 
         var template = loadTemplate(templatePath)
 
