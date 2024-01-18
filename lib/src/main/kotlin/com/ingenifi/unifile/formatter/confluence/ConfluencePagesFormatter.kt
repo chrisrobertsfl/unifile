@@ -9,9 +9,11 @@ import io.ktor.client.*
 import kotlinx.coroutines.runBlocking
 import java.io.File
 
-data class ConfluencePagesFormatter(private val client: HttpClient, private val file: File, private val keywordExtractor: KeywordExtractor, private val verbosity: Verbosity) : DocumentFormatter,
+data class ConfluencePagesFormatter(private val properties: Map<String, String>, private val client: HttpClient, private val file: File, private val keywordExtractor: KeywordExtractor, private val verbosity: Verbosity) : DocumentFormatter,
     VerbosePrinting by VerbosePrinter(verbosity) {
-    private val api = ConfluenceApi(client, "TKMA5QX", "Kotlin2023!!") // TODO: System property
+    private val username = properties["username"] ?: throw IllegalArgumentException("User name not specified in properties")
+    private val password = properties["password"] ?: throw IllegalArgumentException("Password not specified in properties")
+    private val api = ConfluenceApi(client, username, password)
     private var lastNumber = 0
 
     override fun format(number: Int): String = runBlocking { formatSuspended(number) }

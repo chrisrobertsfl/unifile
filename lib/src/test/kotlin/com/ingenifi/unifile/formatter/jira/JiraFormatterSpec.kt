@@ -15,7 +15,7 @@ class JiraFormatterSpec : StringSpec({
     val client = UnsecuredHttpClient.create()
 
     "story" {
-        val formatter = JiraFormatter(file = File("src/test/resources/simple.jira"), client, keywordExtractor, Verbosity.NONE)
+        val formatter = JiraFormatter(file = File("src/test/resources/simple.jira"), properties = mapOf(), client = client, keywordExtractor =  keywordExtractor, verbosity = Verbosity.NONE)
         val text = formatter.format(1)
         println("formatter.lastNumber() = ${formatter.lastNumber()}")
         println(text)

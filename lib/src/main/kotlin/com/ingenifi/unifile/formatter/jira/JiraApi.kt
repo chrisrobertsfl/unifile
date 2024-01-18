@@ -39,7 +39,8 @@ class JiraApi(private val client: HttpClient, private val jiraBaseUrl: String, p
 
     fun getIssue(key: String): Map<String, Any>? = runBlocking {
         val authHeader = "Bearer $apiToken"
-        client.get("$jiraBaseUrl/rest/api/2/issue/$key") {
+        val urlString = "$jiraBaseUrl/rest/api/2/issue/$key"
+        client.get(urlString) {
             header("Authorization", authHeader)
             header("Accept", "application/json")
         }.body<HttpResponse>().let {

@@ -23,7 +23,6 @@ class Delegate(private val source: Source, private val keywordExtractor: Keyword
 
         var template = loadTemplate(templatePath)
 
-        // Standard and dynamic replacements
         template = template.replace("{number}", number.toString())
             .replace("{title}", title)
             .replace("{description}", description)

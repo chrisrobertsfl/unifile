@@ -5,15 +5,10 @@ import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
 
-
-// TODO:  Fix verbosity throughout the process
-// TODO:  Refactor in to smaller chunks
-// TODO:  Allowable extensions to funnel into plain text
-// TODO:  Simplify content converters with reading from pdf and asStream
 // TODO:  More formal testing
 
-data class UniFile(val input: InputPaths, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
-    private val documentFormatterFactory = DocumentFormatterFactory(keywordExtractor = KeywordExtractor(), client = UnsecuredHttpClient.create(), verbosity = verbosity.increasingBy(by = 2))
+data class UniFile(val input: InputPaths, val properties: Map<String, String>, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
+    private val documentFormatterFactory = DocumentFormatterFactory(properties = properties, keywordExtractor = KeywordExtractor(), client = UnsecuredHttpClient.create(), verbosity = verbosity.increasingBy(by = 2))
     private var documentNumber = 1
 
     fun combineFiles(output: OutputPath) {

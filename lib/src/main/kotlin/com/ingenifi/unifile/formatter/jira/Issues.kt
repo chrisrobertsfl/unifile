@@ -20,6 +20,7 @@ data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : Ve
     private fun children(key: String): MutableList<Issue> = api.getChildren(key).map { create(it) }.toMutableList()
 
     private fun type(data: Map<String, Any>?): String {
+
         val issueTypeMap = data?.get(ISSUE_TYPE) as Map<String, Any>
         val type = issueTypeMap["name"] as String
         return type.lowercase()

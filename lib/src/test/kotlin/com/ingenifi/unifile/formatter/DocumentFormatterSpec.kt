@@ -65,7 +65,7 @@ class DocumentFormatterSpec : StringSpec({
 
     "jira" {
         val formatter = JiraFormatter(
-            client = client, file = File("src/test/resources/simple.jira"), keywordExtractor = keywordExtractor, verbosity = Verbosity.NONE
+            client = client, file = File("src/test/resources/simple.jira"), keywordExtractor = keywordExtractor, properties = mapOf(), verbosity = Verbosity.NONE
         )
         val text = formatter.format(1)
         val lastNumber = formatter.lastNumber()
@@ -108,7 +108,7 @@ class DocumentFormatterSpec : StringSpec({
     }
 
     "confluence pages" {
-        val formatter = ConfluencePagesFormatter(client = client, file = File("src/test/resources/simple.confluence"), keywordExtractor = keywordExtractor, verbosity = Verbosity.NONE)
+        val formatter = ConfluencePagesFormatter(client = client, file = File("src/test/resources/simple.confluence"), keywordExtractor = keywordExtractor, properties = mapOf(), verbosity = Verbosity.NONE)
         val text = formatter.format(1)
         val lastNumber = formatter.lastNumber()
         println("lastNumber = ${lastNumber}")
