@@ -1,10 +1,9 @@
 package com.ingenifi.unifile
 
-import com.ingenifi.unifile.formatter.DocumentFormatter
+import com.ingenifi.unifile.formatter.DocumentFormatterFactory
 import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
-import org.slf4j.LoggerFactory
 
 
 // TODO:  Fix verbosity throughout the process
@@ -13,20 +12,22 @@ import org.slf4j.LoggerFactory
 // TODO:  Simplify content converters with reading from pdf and asStream
 // TODO:  More formal testing
 
-data class UniFile(val input: InputPaths, val maxFileSizeMB: Int = 19, val ejectBlankLines: Boolean = true, val verbose: Boolean = false) {
-    private val logger by lazy { LoggerFactory.getLogger(UniFile::class.java) }
+data class UniFile(val input: InputPaths, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
+    private val documentFormatterFactory = DocumentFormatterFactory(keywordExtractor = KeywordExtractor(), client = UnsecuredHttpClient.create(), verbosity = verbosity.increasingBy(by = 2))
+    private var documentNumber = 1
 
     fun combineFiles(output: OutputPath) {
-        val keywordExtractor = KeywordExtractor()
-        val client = UnsecuredHttpClient.create()
-        var documentNumber = 1
-        val documents = input.list.flatMap { it.findFiles() }.map {
-            if (verbose) println("$documentNumber Processing file:  $it")
-            DocumentFormatter.from(it, keywordExtractor, client).format(documentNumber++)
-        }.joinToString("\n")
+        verbosePrint("Processing files")
+        val withLevel = verbosity.increasedLevel()
+        val documents = input.allFiles().joinToString("\n") {
+            verbosePrint("Processing file #${documentNumber}: $it", withLevel = withLevel)
+            val documentFormatter = documentFormatterFactory.create(it)
+            documentFormatter.format(documentNumber++)
+        }
         output.write(documents)
     }
-
 }
+
+
 
 

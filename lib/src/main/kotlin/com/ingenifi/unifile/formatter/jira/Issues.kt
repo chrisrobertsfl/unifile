@@ -1,23 +1,25 @@
 package com.ingenifi.unifile.formatter.jira
 
-data class IssueFactory(private val api : JiraApi, private val verbose : Boolean = false) {
+import com.ingenifi.unifile.VerbosePrinter
+import com.ingenifi.unifile.VerbosePrinting
+import com.ingenifi.unifile.Verbosity
 
-    fun create(key : String) : Issue {
-        val data =  api.getIssue(key)
-        if (verbose) println("o Processing issue $key")
+data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
+
+    fun create(key: String): Issue {
+        verbosePrint("Retrieving issue $key from Jira")
+        val data = api.getIssue(key)
         return when (type(data)) {
             "epic" -> Epic(key = key, title = data?.get(EPIC_TITLE) as String, introduction = data[EPIC_INTRO] as String, description = data[DESCRIPTION] as String, children = children(key))
             "story" -> Story(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String)
             "spike" -> Spike(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String)
-                else -> throw IllegalArgumentException("no can handle")
+            else -> throw IllegalArgumentException("no can handle")
         }
     }
 
-     fun children(key : String) : MutableList<Issue> = api.getChildren(key)
-         .map { create(it) }
-         .toMutableList()
+    private fun children(key: String): MutableList<Issue> = api.getChildren(key).map { create(it) }.toMutableList()
 
-    private fun type(data : Map<String, Any>?)  : String {
+    private fun type(data: Map<String, Any>?): String {
         val issueTypeMap = data?.get(ISSUE_TYPE) as Map<String, Any>
         val type = issueTypeMap["name"] as String
         return type.lowercase()
@@ -34,15 +36,9 @@ data class IssueFactory(private val api : JiraApi, private val verbose : Boolean
 }
 
 sealed interface Issue {
-    val key : String
+    val key: String
 }
-data class Epic(override val key : String, val title : String, val introduction : String, val description : String, val children : MutableList<Issue> = mutableListOf()) : Issue
-data class Story(override val key : String, val title : String, val description : String) : Issue
-data class Spike(override val key : String, val title : String, val description : String) : Issue
 
-
-
- interface IssueDocumentFormatter {
-    fun format(): String
-
-}
+data class Epic(override val key: String, val title: String, val introduction: String, val description: String, val children: MutableList<Issue> = mutableListOf()) : Issue
+data class Story(override val key: String, val title: String, val description: String) : Issue
+data class Spike(override val key: String, val title: String, val description: String) : Issue

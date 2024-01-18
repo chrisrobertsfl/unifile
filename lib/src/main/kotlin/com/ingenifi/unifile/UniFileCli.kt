@@ -24,20 +24,19 @@ class UniFileCli : Callable<Int> {
     private var verbose: Boolean = false
 
     override fun call(): Int {
+        val verbosity = Verbosity(verbose = verbose, level = 0)
+        val printer = VerbosePrinter(verbosity)
+
         if (inputPaths.isEmpty()) {
             CommandLine.usage(this, System.out)
             return 1
         }
         return try {
-            val output = OutputPath.from(outputPath)
-            val input = InputPaths(inputPaths.toList())
-            UniFile(input, verbose = verbose).combineFiles(output)
-            if (output is FileOutputPath) {
-                if (verbose) println("o Combined file created: ${output.path}")
-            }
-            else {
-                if (verbose) println("o Completed with output written to console")
-            }
+            val output = OutputPath.from(pathName = outputPath)
+            val input = InputPaths(paths = inputPaths.toList())
+            val uniFile = UniFile(input = input, verbosity = verbosity)
+            uniFile.combineFiles(output)
+            if (output is FileOutputPath) printer.verbosePrint("Combined file created: ${output.path}") else printer.verbosePrint("Completed with output written to console")
             0
         } catch (e: Exception) {
             logger.error("Failed to process files: {}", e.message, e)

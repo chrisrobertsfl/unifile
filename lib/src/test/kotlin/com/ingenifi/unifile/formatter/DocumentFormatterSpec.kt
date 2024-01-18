@@ -1,8 +1,7 @@
 package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.*
-import com.ingenifi.unifile.formatter.KeywordExtractor
-import com.ingenifi.unifile.formatter.*
+import com.ingenifi.unifile.UnsecuredHttpClient
+import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.confluence.ConfluenceApi
 import com.ingenifi.unifile.formatter.confluence.ConfluenceLink
 import com.ingenifi.unifile.formatter.confluence.ConfluencePageFormatter
@@ -65,9 +64,8 @@ class DocumentFormatterSpec : StringSpec({
     }
 
     "jira" {
-        val formatter = JiraFormatter(client = client,
-            file = File("src/test/resources/simple.jira"),
-            keywordExtractor = keywordExtractor
+        val formatter = JiraFormatter(
+            client = client, file = File("src/test/resources/simple.jira"), keywordExtractor = keywordExtractor, verbosity = Verbosity.NONE
         )
         val text = formatter.format(1)
         val lastNumber = formatter.lastNumber()
@@ -102,7 +100,7 @@ class DocumentFormatterSpec : StringSpec({
     "confluence" {
         val linkString = "https://confluence.kohls.com:8443/display/OE/Software+Quality+and+Performance"
         val link = ConfluenceLink.create(linkString, confluenceApi)
-        val formatter = ConfluencePageFormatter(link,keywordExtractor)
+        val formatter = ConfluencePageFormatter(link, keywordExtractor)
         val text = formatter.format(1)
         val lastNumber = formatter.lastNumber()
         println("lastNumber = ${lastNumber}")
@@ -110,7 +108,7 @@ class DocumentFormatterSpec : StringSpec({
     }
 
     "confluence pages" {
-        val formatter = ConfluencePagesFormatter(client = client, file = File("src/test/resources/simple.clink"), keywordExtractor = keywordExtractor)
+        val formatter = ConfluencePagesFormatter(client = client, file = File("src/test/resources/simple.confluence"), keywordExtractor = keywordExtractor, verbosity = Verbosity.NONE)
         val text = formatter.format(1)
         val lastNumber = formatter.lastNumber()
         println("lastNumber = ${lastNumber}")
