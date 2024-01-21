@@ -4,4 +4,3 @@ interface DocumentFormatter {
     fun format(number: Int): String
     fun lastNumber(): Int
 }
-

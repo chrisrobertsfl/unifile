@@ -38,8 +38,10 @@ data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : Ve
 
 sealed interface Issue {
     val key: String
+    val title : String
+    val description : String
 }
 
-data class Epic(override val key: String, val title: String, val introduction: String, val description: String, val children: MutableList<Issue> = mutableListOf()) : Issue
-data class Story(override val key: String, val title: String, val description: String) : Issue
-data class Spike(override val key: String, val title: String, val description: String) : Issue
+data class Epic(override val key: String, override val title: String, val introduction: String, override val description: String, val children: MutableList<Issue> = mutableListOf()) : Issue
+data class Story(override val key: String, override val title: String, override val description: String) : Issue
+data class Spike(override val key: String, override val title: String, override val description: String) : Issue

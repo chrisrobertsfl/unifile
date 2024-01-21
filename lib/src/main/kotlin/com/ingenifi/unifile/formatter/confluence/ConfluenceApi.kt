@@ -6,15 +6,12 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import org.jsoup.Jsoup
-import org.slf4j.LoggerFactory
 import java.util.*
 
 class ConfluenceApi(
     private val client: HttpClient, user: String, password: String, private val apiUrlPattern: String = "https://confluence.kohls.com:8443/rest/api/content/%s?expand=body.view"
 ) {
     private val encodedCredentials = Base64.getEncoder().encodeToString("$user:$password".toByteArray())
-
-    private val logger by lazy { LoggerFactory.getLogger(ConfluenceApi::class.java) }
 
     suspend fun fetchPageId(url: String): String? {
         val doc = Jsoup.parse(httpGet(url))

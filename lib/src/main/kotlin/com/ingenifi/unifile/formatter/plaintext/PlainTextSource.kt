@@ -1,9 +1,8 @@
 package com.ingenifi.unifile.formatter.plaintext
 
-import com.ingenifi.unifile.formatter.Source
+import com.ingenifi.unifile.formatter.FileSource
 import java.io.File
 
-class PlainTextSource(private val file: File): Source {
+class PlainTextSource(override val file: File) : FileSource {
     override fun description(): String = file.readText()
-    override fun title(): String = file.name
 }

@@ -1,11 +1,13 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.formatter.confluence.ConfluenceApi
+import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.FileOutputPath
 import com.ingenifi.unifile.output.OutputPath
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
-import java.io.File
 import java.util.*
 import java.util.concurrent.Callable
 
@@ -14,7 +16,7 @@ import java.util.concurrent.Callable
 )
 class UniFileCli : Callable<Int> {
 
-    private val logger = LoggerFactory.getLogger(UniFileCli::class.java)
+    private val logger by lazy { LoggerFactory.getLogger(UniFileCli::class.java) }
 
     @CommandLine.Option(names = ["-i", "--input"], description = ["Input files or directories"])
     private var inputPaths: Array<String> = arrayOf()
@@ -29,21 +31,6 @@ class UniFileCli : Callable<Int> {
     private var verbose: Boolean = false
 
 
-    private fun loadProperties(): Map<String, String> {
-        val properties = Properties()
-        val propertiesMap = mutableMapOf<String, String>()
-        val propertiesFile = File(propertiesFilePath ?: System.getProperty("user.home") + File.separator + "unifile.properties")
-        if (propertiesFile.exists()) {
-            properties.load(propertiesFile.inputStream())
-            properties.forEach { (key, value) ->
-                propertiesMap[key.toString()] = value.toString()
-            }
-        } else {
-            logger.warn("Properties file not found: ${propertiesFile.path}")
-        }
-        return propertiesMap
-    }
-
     override fun call(): Int {
         val verbosity = Verbosity(verbose = verbose, level = 0)
         val printer = VerbosePrinter(verbosity)
@@ -54,7 +41,10 @@ class UniFileCli : Callable<Int> {
         return try {
             val output = OutputPath.from(pathName = outputPath)
             val input = InputPaths(paths = inputPaths.toList())
-            val uniFile = UniFile(input = input, properties = loadProperties(), verbosity = verbosity)
+            val parameterStore = ParameterStore.loadProperties(filePath = propertiesFilePath, logger = logger)
+            val keywordExtractor = KeywordExtractor(percentage = 0.1)
+            val toc = TableOfContents()
+            val uniFile = UniFile(input = input, keywordExtractor = keywordExtractor, parameterStore = parameterStore, toc = toc, verbosity = verbosity)
             uniFile.combineFiles(output)
             if (output is FileOutputPath) printer.verbosePrint("Combined file created: ${output.path}") else printer.verbosePrint("Completed with output written to console")
             0

@@ -1,12 +1,12 @@
 package com.ingenifi.unifile.formatter.xml
 
-import com.ingenifi.unifile.formatter.Source
+import com.ingenifi.unifile.formatter.FileSource
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
-class XmlSource(private val file : File) : Source {
+class XmlSource(override val file: File) : FileSource {
     override fun description(): String {
         val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(file)

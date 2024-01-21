@@ -1,0 +1,180 @@
+o Processing files
+  o Processing file #1: simple.txt
+  o Processing file #2: simple.pdf
+  o Processing file #3: simple.json
+  o Processing file #4: simple.jira
+      o Retrieving issue OMO-2094 from Jira
+        o Processing story OMO-2094: 'Review and Update the Kafka Consumer Lag for OLM'
+      o Retrieving issue OMO-1986 from Jira
+        o Processing spike OMO-1986: 'Spike: PAYPAL order return failure - partial cancellation'
+      o Retrieving issue OMO-1968 from Jira
+      o Retrieving issue OMO-2125 from Jira
+      o Retrieving issue OMO-2077 from Jira
+      o Retrieving issue OMO-2069 from Jira
+      o Retrieving issue OMO-2068 from Jira
+      o Retrieving issue OMO-2066 from Jira
+      o Retrieving issue OMO-2065 from Jira
+      o Retrieving issue OMO-2063 from Jira
+      o Retrieving issue OMO-2054 from Jira
+      o Retrieving issue OMO-1988 from Jira
+      o Retrieving issue OMO-1982 from Jira
+      o Retrieving issue OMO-1981 from Jira
+      o Retrieving issue OMO-1980 from Jira
+      o Retrieving issue OMO-1976 from Jira
+      o Retrieving issue OMO-1975 from Jira
+      o Retrieving issue OMO-1973 from Jira
+      o Retrieving issue OMO-1971 from Jira
+      o Retrieving issue OMO-850 from Jira
+        o Processing epic OMO-1968: 'Ship to Home Phase 0' with 17 children
+          o Processing child story OMO-2125: 'Investigate EFC6 S2H Shipment Delayed Email Integration '
+          o Processing child story OMO-2077: 'Order Router - Retry flow processing'
+          o Processing child story OMO-2069: 'Order Router Metrics Dashboard for Ship to Home'
+          o Processing child story OMO-2068: 'Implementing Logging for Order Router'
+          o Processing child story OMO-2066: 'How to split SF as separate microservices'
+          o Processing child story OMO-2065: 'Checkout JSON->XML: Understand the possibly dynamic aspects of the conversion code'
+          o Processing child story OMO-2063: 'Kafka Message Handling in Order Router'
+          o Processing child story OMO-2054: 'Design Approach for Order Comparison in OMS and OLM'
+          o Processing child story OMO-1988: 'Convert Checkout's Order JSON to Existing MQ's Order XML'
+          o Processing child story OMO-1982: 'Validate Order Consistency Between New Kafka Topic and Existing MQ'
+          o Processing child story OMO-1981: 'Develop Microservice for Post-Checkout Order Filtering'
+          o Processing child story OMO-1980: 'Connect to Checkout's Existing Kafka Topic and Analyze Order Data'
+          o Processing child story OMO-1976: 'nOLM's Role in Setting Estimated Shipment Dates'
+          o Processing child story OMO-1975: 'Optimal Approach for Demand Updates Post-Cancellation'
+          o Processing child story OMO-1973: 'Investigating Trigger Events for Shipment Delays Email Notifications in nOLM'
+          o Processing child story OMO-1971: 'Optimizing nOLM Email Notifications for 'Shipped' Status'
+          o Processing child story OMO-850: 'Learn about Current Customer Comm. for Pack Slip Email (n/a for BOPUS today)'
+      o Retrieving issue OMO-1969 from Jira
+      o Retrieving issue OMO-2056 from Jira
+      o Retrieving issue OMO-1993 from Jira
+      o Retrieving issue OMO-1992 from Jira
+      o Retrieving issue OMO-1991 from Jira
+        o Processing epic OMO-1969: 'Ship to Home Phase 1' with 4 children
+          o Processing child story OMO-2056: ' Playbook Creation for Phase 1 Launch'
+          o Processing child story OMO-1993: 'Back-Out Plan for Post-Checkout Failures'
+          o Processing child story OMO-1992: 'Post Checkout Dashboard with Key Metrics'
+          o Processing child story OMO-1991: 'Kafka to MQ Order Handling'
+      o Retrieving issue OMO-1970 from Jira
+      o Retrieving issue OMO-2071 from Jira
+      o Retrieving issue OMO-2070 from Jira
+      o Retrieving issue OMO-1997 from Jira
+      o Retrieving issue OMO-1996 from Jira
+      o Retrieving issue OMO-1995 from Jira
+        o Processing epic OMO-1970: 'Ship to Home Phase 2' with 5 children
+          o Processing child story OMO-2071: 'OLM Sourcing Facade Metrics Dashboard for Ship to Home'
+          o Processing child story OMO-2070: 'Implementing Logging for OLM Sourcing Facade'
+          o Processing child story OMO-1997: 'OLM Sourcing Facade Dashboard with Key Metrics'
+          o Processing child story OMO-1996: 'Order Comparison for Sourcing Facade and Request MQ'
+          o Processing child story OMO-1995: 'OLM Sourcing Facade Collaboration with Promising and Sourcing Team'
+      o Retrieving issue OMO-1972 from Jira
+      o Retrieving issue OMO-2005 from Jira
+      o Retrieving issue OMO-2004 from Jira
+      o Retrieving issue OMO-2003 from Jira
+      o Retrieving issue OMO-2002 from Jira
+      o Retrieving issue OMO-2001 from Jira
+      o Retrieving issue OMO-2000 from Jira
+      o Retrieving issue OMO-1999 from Jira
+      o Retrieving issue OLM-1384 from Jira
+        o Processing epic OMO-1972: 'Ship to Home Phase 3' with 8 children
+          o Processing child story OMO-2005: 'Adding MongoDB for Sourcing Data in Facade'
+          o Processing child story OMO-2004: 'Kafka Response Topic and Lag on Dashboard'
+          o Processing child story OMO-2003: 'Load Test for Sourcing Facade'
+          o Processing child story OMO-2002: 'OMS Shift from MQ to Kafka'
+          o Processing child story OMO-2001: 'Facade-to-OMS Response Routing via Kafka'
+          o Processing child story OMO-2000: 'OLM Facade Handling MQ Responses and Kafka Topic'
+          o Processing child story OMO-1999: 'OLM Sourcing Facade integration with MQ Topics'
+          o Processing child story OLM-1384: 'Referencing ShipNode in existing OMS for Sourcing'
+      o Retrieving issue OMO-1974 from Jira
+      o Retrieving issue OMO-2079 from Jira
+      o Retrieving issue OMO-2078 from Jira
+      o Retrieving issue OMO-2055 from Jira
+      o Retrieving issue OMO-2024 from Jira
+      o Retrieving issue OMO-2023 from Jira
+      o Retrieving issue OMO-2021 from Jira
+      o Retrieving issue OMO-2020 from Jira
+      o Retrieving issue OMO-2018 from Jira
+      o Retrieving issue OMO-2017 from Jira
+      o Retrieving issue OMO-1467 from Jira
+      o Retrieving issue OMO-1372 from Jira
+        o Processing epic OMO-1974: 'Ship to Home Phase 4' with 11 children
+          o Processing child story OMO-2079: 'Discuss Modernization Efforts of the PackSlip Email Trigger Endpoint'
+          o Processing child story OMO-2078: 'Understand Packslip View and Email Endpoints'
+          o Processing child story OMO-2055: 'Ensuring Effective Throttling in the Order Router'
+          o Processing child story OMO-2024: 'OLM Sourcing Response Verification in Mongo Database'
+          o Processing child story OMO-2023: 'E2E Testing for Post Checkout and OLM Workflow'
+          o Processing child story OMO-2021: 'Detailed Validation for Order and Shipment Creation in OLM'
+          o Processing child story OMO-2020: 'Post Checkout Order Filtering to Create Order Topic'
+          o Processing child story OMO-2018: 'Update Post Checkout with Order Throttling Feature'
+          o Processing child story OMO-2017: 'Integration of Post Checkout with Sourcing Facade'
+          o Processing child story OMO-1467: 'Write Message to legacy Cancel MQ for Stores when S2H Ships'
+          o Processing child story OMO-1372: 'OLM Gateway OTS Order Detail Endpoint - Decrypt ShipTo encrypted values from nOLM'
+      o Retrieving issue OMO-2008 from Jira
+      o Retrieving issue OMO-2130 from Jira
+      o Retrieving issue OMO-2128 from Jira
+      o Retrieving issue OMO-2124 from Jira
+      o Retrieving issue OMO-2123 from Jira
+      o Retrieving issue OMO-2122 from Jira
+      o Retrieving issue OMO-2121 from Jira
+      o Retrieving issue OMO-2117 from Jira
+      o Retrieving issue OMO-2107 from Jira
+      o Retrieving issue OMO-2091 from Jira
+      o Retrieving issue OMO-2088 from Jira
+      o Retrieving issue OMO-2062 from Jira
+      o Retrieving issue OMO-2053 from Jira
+      o Retrieving issue OMO-2048 from Jira
+      o Retrieving issue OMO-2047 from Jira
+      o Retrieving issue OMO-2046 from Jira
+      o Retrieving issue OMO-2045 from Jira
+      o Retrieving issue OMO-2043 from Jira
+      o Retrieving issue OMO-2042 from Jira
+      o Retrieving issue OMO-2041 from Jira
+      o Retrieving issue OMO-2040 from Jira
+      o Retrieving issue OMO-2039 from Jira
+      o Retrieving issue OMO-2038 from Jira
+      o Retrieving issue OMO-2037 from Jira
+      o Retrieving issue OMO-2036 from Jira
+      o Retrieving issue OMO-2035 from Jira
+      o Retrieving issue OMO-2034 from Jira
+      o Retrieving issue OMO-2033 from Jira
+      o Retrieving issue OMO-2032 from Jira
+      o Retrieving issue OMO-2031 from Jira
+      o Retrieving issue OMO-2030 from Jira
+      o Retrieving issue OMO-2029 from Jira
+      o Retrieving issue OMO-2028 from Jira
+      o Retrieving issue OMO-2027 from Jira
+      o Retrieving issue OMO-1989 from Jira
+        o Processing epic OMO-2008: 'Ship to Home Phase 5' with 34 children
+          o Processing child story OMO-2130: 'Investigate if current message OLM sends to GIV for demand/supply for Created status will work for EFC shipments'
+          o Processing child story OMO-2128: 'Exploring Shipment Creation for S2H'
+          o Processing child story OMO-2124: 'Investigate Shipment Confirmation API'
+          o Processing child story OMO-2123: 'Create empty EFC ACL application'
+          o Processing child story OMO-2122: 'Get EFC6 Kafka Connection Details for all Appropriate Environments'
+          o Processing child story OMO-2121: 'Decide Kafka topic and format EFC ACL will consume from for EFC processing'
+          o Processing child story OMO-2117: 'Investigate Red/Yellow fields for EFC6 Mapping'
+          o Processing child story OMO-2107: 'Understand the message that goes to all EFCs'
+          o Processing child story OMO-2091: 'Understand changes to populating OverallTotals for Ship To Home orders'
+          o Processing child story OMO-2088: 'Understanding Mapping for EFC6 with Customer Fulfillment'
+          o Processing child story OMO-2062: 'Research Existing Checkout team integration with TVS'
+          o Processing child story OMO-2053: 'Handling Earned KC Values in S2H Orders'
+          o Processing child story OMO-2048: 'Integrate with Other EFCs (Phase X)'
+          o Processing child story OMO-2047: 'Develop Scheduler for Auto-Cancelling Orders with Delayed EFC Updates'
+          o Processing child story OMO-2046: 'Identifying Automatic Order Cancellation After Delayed Updates from EFC'
+          o Processing child story OMO-2045: 'Enhance Cancel Shipment Processor for EFC Confirmations'
+          o Processing child story OMO-2043: 'XML Converter Update for EFC6 Orders'
+          o Processing child story OMO-2042: 'VGC Activator Review for EFC6 Compatibility'
+          o Processing child story OMO-2041: 'Enhancing Store Fulfillment for EFC6'
+          o Processing child story OMO-2040: 'Store Commerce Proxy Adaptation for EFC6'
+          o Processing child story OMO-2039: 'Store Commerce ACL Alignment with EFC6'
+          o Processing child story OMO-2038: 'Shipment Fulfillment Processor Update for EFC6'
+          o Processing child story OMO-2037: 'Order Create Process Review for EFC6'
+          o Processing child story OMO-2036: 'Updating OLM Payment Cancel for EFC6'
+          o Processing child story OMO-2035: 'OLM Gateway Compatibility with EFC6'
+          o Processing child story OMO-2034: 'Adapting Invoice for EFC6 Orders'
+          o Processing child story OMO-2033: 'Tailoring Hard Totals for EFC6 Order Processing'
+          o Processing child story OMO-2032: 'Checking Expire Shipment Processor with EFC6'
+          o Processing child story OMO-2031: 'Error Reprocessor's Readiness for EFC6 Orders'
+          o Processing child story OMO-2030: 'Error Consumer Effectiveness in EFC6-Integrated Environment'
+          o Processing child story OMO-2029: 'Customer Notification Compatibility with EFC6 Order Processing'
+          o Processing child story OMO-2028: 'Alignment of Cancel Shipment Processor with EFC6 Fulfillment'
+          o Processing child story OMO-2027: 'Integration with EFC6'
+          o Processing child story OMO-1989: 'Assess Feasibility of 30-Min Grace Period in OLM'
+o Combined file created: output.txt

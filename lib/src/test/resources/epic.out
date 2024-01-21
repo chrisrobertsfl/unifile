@@ -1,0 +1,499 @@
+==========================================================================================
+                                    Table of Contents                                     
+==========================================================================================
+1 .................................................................. File name: simple.txt
+2.1 ............................. Investigate EFC6 S2H Shipment Delayed Email Integration 
+2 ............................... Investigate EFC6 S2H Shipment Delayed Email Integration 
+2.2 ................................................. Order Router - Retry flow processing
+2 ................................................... Order Router - Retry flow processing
+2.3 ...................................... Order Router Metrics Dashboard for Ship to Home
+2 ........................................ Order Router Metrics Dashboard for Ship to Home
+2.4 ................................................ Implementing Logging for Order Router
+2 .................................................. Implementing Logging for Order Router
+2.5 ............................................ How to split SF as separate microservices
+2 .............................................. How to split SF as separate microservices
+2.6 ... Checkout JSON->XML: Understand the possibly dynamic aspects of the conversion code
+2 ..... Checkout JSON->XML: Understand the possibly dynamic aspects of the conversion code
+2.7 ............................................... Kafka Message Handling in Order Router
+2 ................................................. Kafka Message Handling in Order Router
+2.8 .................................. Design Approach for Order Comparison in OMS and OLM
+2 .................................... Design Approach for Order Comparison in OMS and OLM
+2.9 ............................. Convert Checkout's Order JSON to Existing MQ's Order XML
+2 ............................... Convert Checkout's Order JSON to Existing MQ's Order XML
+2.10 .................. Validate Order Consistency Between New Kafka Topic and Existing MQ
+2 ..................... Validate Order Consistency Between New Kafka Topic and Existing MQ
+2.11 .............................. Develop Microservice for Post-Checkout Order Filtering
+2 ................................. Develop Microservice for Post-Checkout Order Filtering
+2.12 ................... Connect to Checkout's Existing Kafka Topic and Analyze Order Data
+2 ...................... Connect to Checkout's Existing Kafka Topic and Analyze Order Data
+2.13 ..................................... nOLM's Role in Setting Estimated Shipment Dates
+2 ........................................ nOLM's Role in Setting Estimated Shipment Dates
+2.14 ............................... Optimal Approach for Demand Updates Post-Cancellation
+2 .................................. Optimal Approach for Demand Updates Post-Cancellation
+2.15 ........ Investigating Trigger Events for Shipment Delays Email Notifications in nOLM
+2 ........... Investigating Trigger Events for Shipment Delays Email Notifications in nOLM
+2.16 ............................ Optimizing nOLM Email Notifications for 'Shipped' Status
+2 ............................... Optimizing nOLM Email Notifications for 'Shipped' Status
+2.17 ........ Learn about Current Customer Comm. for Pack Slip Email (n/a for BOPUS today)
+2 ........... Learn about Current Customer Comm. for Pack Slip Email (n/a for BOPUS today)
+2 ................................................................... Ship to Home Phase 0
+
+
+=====================================================================
+Document 1: File name: simple.txt
+=====================================================================
+- Introduction:
+keywords are: simple, txt
+
+- Description
+Hello PDF
+
+
+
+
+=====================================================================
+Document 2: OMO-1968 - Ship to Home Phase 0
+=====================================================================
+- Introduction:
+Able to validate the performance of adding the post checkout filtering
+
+keywords are: parent, epic, OMO-1968, Ship to Home Phase 0
+
+- Description
+As OLM,
+
+I want to be able to validate the performance of adding the post checkout filtering,
+
+So that we could use this new service to filter orders to OLM.
+
+ 
+
+Link to the STH Miro Board: https://miro.com/app/board/uXjVNPa9pHc=/
+
+- Section  2.2: OMO-2125 - Investigate EFC6 S2H Shipment Delayed Email Integration 
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-2125, Ship to Home Phase 0
+
+- Description
+*As* the OLM team
+*I want to* understand the flow of a Shipment Delay email from an EFC.
+*Because* we want to provide Shipment Delayed emails for S2H as a new feature.
+
+*This spike is ready for acceptance when:*
+ # We have clarity on how/when EFCs send Shipment Delay notifications
+ ## Specifically EFC6
+ # Propose a design for OLM to integrate with EFC Shipment Delay Notifications and send a Shipment Delayed email.
+ # Create Stories to implement the design
+
+*Notes & Assumptions:*
+ * Prior research done on Shipment Delayed emails [https://confluence.kohls.com:8443/display/OE/OMO-1973%3A+Investigating+Trigger+Events+for+Delayed+Email+Notifications+in+nOLM]
+ * EFC sided delays were chosen over Carrier Delays due to inconsistencies between carrier notifications. 
+
+- Section  2.2: OMO-2077 - Order Router - Retry flow processing
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-2077, Ship to Home Phase 0
+
+- Description
+*As* the OLM Router
+*I want to* publish to OLM_ERROR topic on processing errors
+*So that* order gets processed through existing retry flow.
+
+ 
+
+*Acceptance Criteria:*
+ * When service consumes invalid json ,json gets stored in error-detail collection marked as false for retry.
+
+*Note:*
+ * Invoice service is a good example for reference.
+
+- Section  2.2: OMO-2069 - Order Router Metrics Dashboard for Ship to Home
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-2069, Ship to Home Phase 0
+
+- Description
+*As the* Order Router system,
+*I want to* create a dashboard showing key performance metrics for Ship to Home orders,
+*So that* we can monitor and improve system performance.
+
+*Acceptance Criteria:*
+*Given* the Order Router is processing Ship to Home orders,
+*When* checking the dashboard,
+*Then* it should display important metrics like processing times and error rates.
+
+- Section  2.2: OMO-2068 - Implementing Logging for Order Router
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-2068, Ship to Home Phase 0
+
+- Description
+*As the* Order Router system{*},{*}
+*I want to* implement logging with relevant information for troubleshooting,
+*So that* errors during the Ship to Home process can be quickly identified and resolved.
+
+*Acceptance Criteria:*
+*Given* an error occurs in the Ship to Home process,
+*When* the Order Router processes the order,
+*Then* logs should capture detailed error information and relevant data for resolution.
+
+*Notes:*
+ * Emphasize capturing key data points help in diagnosing and solving issues.
+
+- Section  2.2: OMO-2066 - How to split SF as separate microservices
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-2066, Ship to Home Phase 0
+
+- Description
+*As* an OLM engineer
+*I want to* research how to split the Store Fulfillment app into separate apps
+*Because we* want to prepare Store Fulfillment to support S2H
+
+This spike is ready for acceptance when:
+* document an approach on how to split the Store Fulfillment into separate apps
+** API vs kafka consumer
+** ideally each app should be responsible for one major task
+* discuss with team on the design approach
+* create stories to implement the changes
+* reference OMO-1825
+
+- Section  2.2: OMO-2065 - Checkout JSON->XML: Understand the possibly dynamic aspects of the conversion code
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-2065, Ship to Home Phase 0
+
+- Description
+*As* OLM
+*I want to* understand the possibly dynamic aspects of Checkout's conversion code
+*Because* anything dynamic might impact the conversion approach
+
+*This spike is ready for acceptance when:*
+ # We have clarity on any aspect of the conversion code that could be dynamic
+ ## Examples:
+ ### BossSwitchUtil (Spring Bean)
+ ### OrderManager (Spring Bean)
+ ### CartUtil (Spring Bean)
+ ### OMSXmlConfiguration (part of JSON model, also a Spring Bean)
+ #### Pulls values from a config file
+ ### Anything else you can find that might be dynamic
+ # If there are dynamic aspects of the conversion, conduct analysis on what we should do or how that changes things.
+ # We have a page in confluence to document our findings and analysis
+ # If needed, we have new spikes & stories written based on the findings
+
+*Notes & Assumptions:*
+ * Access to Checkout code (and relevant class) can be found here:
+ ** [https://confluence.kohls.com:8443/display/OE/OMS-1980+Analyze+Checkout%27s+Order+Data]
+ * You probably need to connect with a Checkout engineer to help answer some of these questions
+ ** Chinmaya Kumar Swain (Staff Eng)
+ ** Tarun Agarwal (Eng Manager)
+ ** Maybe others ... ?
+
+- Section  2.2: OMO-2063 - Kafka Message Handling in Order Router
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-2063, Ship to Home Phase 0
+
+- Description
+*As* the Order Router system,
+*I want to* investigate the message handling from the new Kafka Topic (order-asynch-topic)
+*Because* we need to resolve issues with the auto-commit flag causing duplicate messages when off and no consumption when on.
+
+*Acceptance Criteria:*
+ # Understand the cause of duplicate messages with auto-commit off.
+ # Determine why turning auto-commit on stops message consumption.
+ # Develop a strategy for accurate message handling.
+
+*Notes:*
+ * Focus on practical and reliable solutions.
+ * Document all findings.
+
+- Section  2.2: OMO-2054 - Design Approach for Order Comparison in OMS and OLM
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-2054, Ship to Home Phase 0
+
+- Description
+*As the* OLM Development Team,
+*I want to* investigate design options for comparing orders between OMS and OLM,
+*Because* accurate order comparison is essential for our order router to preserve functionality when orders are routed to it from Checkout
+
+*This spike is ready for acceptance when:*
+ # *We explore* design options for enabling order comparison through OMSe
+ # *We propose* a design for capturing and comparing orders from MQ, considering the constraints in accessing the live OMS database.
+
+*Notes & Assumptions:*
+ * Direct querying of the OMS database is currently limited, and may need alternative design approaches.
+ ** For instance this data may be available via the Checkout team's DB
+ * Consider talking also to SRE teams to see what other capabilities we have for fetching orders from OMS system
+ * The spike should result in a clear design proposal documented for future implementation.
+
+- Section  2.2: OMO-1988 - Convert Checkout's Order JSON to Existing MQ's Order XML
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-1988, Ship to Home Phase 0
+
+- Description
+*As an OLM Engineer,*
+
+*I want to* convert order data from JSON to XML in Post Checkout,
+
+*So that* when we convert it to Order XML, it is identical to what Checkout is posting on the Existing MQ.
+
+{*}Acceptance Criteria{*}:
+ * *Given* order data in JSON format from Checkout's Kafka topic,
+ * *When* this data is converted to XML format,
+ * *Then* the converted XML order data should be identical to the Order XML posted by Checkout on the Existing MQ.
+
+{*}Notes & Assumptions{*}:
+ * Investigate the possibility of reusing or adapting code from Chinmaya on the Checkout team for this conversion.
+
+- Section  2.2: OMO-1982 - Validate Order Consistency Between New Kafka Topic and Existing MQ
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-1982, Ship to Home Phase 0
+
+- Description
+*As an* OLM Engineer,
+*I want to* implement or perform an order comparison check,
+*So that* I can confirm the new Kafka topic is receiving the same orders as the existing MQ.
+
+{*}Acceptance Criteria 1{*}:
+ * *Given* orders are published to both the new Kafka topic and existing MQ,
+ * *When* these orders are processed,
+ * *Then* there should be a match in the order data received in both systems.
+
+{*}Acceptance Criteria 2{*}:
+ * *Given* orders are published to both the new Kafka topic and existing MQ,
+ * *When* these orders are processed,
+ * *Then* orders should be saved to a mongo DB for future auditing purposes.
+
+{*}Notes & Assumptions{*}:
+ * Can the OMS passive DB used for comparing the OMS vs OLM (mongo)?
+ * Discrepancies, if any, should be logged and investigated.
+ * Identify a way to automate the auditing process is in scope.
+ * This story is critical for ensuring data integrity and system reliability.
+ * Link to the STH Phase 0 Miro: [https://miro.com/app/board/uXjVNPa9pHc=/]
+
+- Section  2.2: OMO-1981 - Develop Microservice for Post-Checkout Order Filtering
+
+- Introduction:
+This is a child story of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, story, OMO-1981, Ship to Home Phase 0
+
+- Description
+*As an* OLM Engineer,
+*I want to* develop a microservice for post-checkout filtering,
+*So that* I can audit and validate orders without impacting existing order flows.
+
+{*}Acceptance Criteria 1{*}:
+ * *Given* an order is sent to the new Kafka topic,
+ * *When* the a order is pass to the microservice,
+ * *Then* it should receive the order without modifying it and the order could be logged.
+
+{*}Notes & Assumptions{*}:
+ * The microservice should be capable of handling high throughput.
+ * This microservice is for auditing purposes and should not alter the order data.
+
+- Section  2.2: OMO-1980 - Connect to Checkout's Existing Kafka Topic and Analyze Order Data
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-1980, Ship to Home Phase 0
+
+- Description
+*As an OLM Engineer,*
+
+*I want to* connect to the existing Kafka topic from the Checkout team,
+
+*So that* I can integrate with the topic and analyze the structure of the order data in JSON format.
+
+{*}Acceptance Criteria{*}:
+ * *Given* the existing Kafka topic from the Checkout team,
+ * *When* an order is captured,
+ * *Then* analyze the data to understand its structure and content.
+
+{*}Notes & Assumptions{*}:
+ * The Kafka topic is capturing 100% of post-checkout orders in JSON format.
+ * The analysis will focus on understanding the JSON structure so that we can understand what it would take to move it to an identical Order XML that is currently being posted to Existing MQ from Checkout
+
+- Section  2.2: OMO-1976 - nOLM's Role in Setting Estimated Shipment Dates
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-1976, Ship to Home Phase 0
+
+- Description
+*As* the nOLM system,
+
+*I want to* understand how the current system determines estimated shipment dates when an order is created,
+
+*Because* this understanding is important to sticking to accurate shipping threshold mapping which comes in from OMSe for delivery.
+
+*This spike is ready for acceptance when:*
+ # We have clarity on nOLM's process for assigning shipment dates during order creation by looking at Order XML in order-create
+ # We document the procedure and any insights as we lead up to our Phase 4 Scenario
+
+*Notes & Assumptions:*
+ * The investigation should consider existing shipping threshold mappings in OMSe
+ * Phase 4 Scenario can be used for a context to get insights into this process
+ * Relevant Confluence page for this investigation: https://confluence.kohls.com:8443/display/OE/OMO-1976+nOLM%27s+Role+in+Setting+Estimated+Shipment+Dates
+
+- Section  2.2: OMO-1975 - Optimal Approach for Demand Updates Post-Cancellation
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-1975, Ship to Home Phase 0
+
+- Description
+*As* the nOLM system,
+
+*I want to* determine whether demand updates following cancellations should be routed through OLM or directly from EFC,
+
+*Because* this will help streamline cancellation handling and inventory accuracy.
+
+*This spike is ready for acceptance when:*
+ # We identify the how demand updates should be appropriately handled after cancellations
+ # (Optional) We look for opportunities for an efficient pathway f this is feasible
+ # Document findings on Confluence.
+
+*Notes & Assumptions:*
+ * The decision impacts the accuracy of inventory management
+ * We should look at what OMSe is doing today
+ * This will involve working with Customer Fulfillment team to understand what is done upon cancellation
+ * Relevant Confluence page for this investigation: [insert confluence link].
+
+- Section  2.2: OMO-1973 - Investigating Trigger Events for Shipment Delays Email Notifications in nOLM
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: child, spike, OMO-1973, Ship to Home Phase 0
+
+- Description
+*As* the nOLM system,
+
+*I want to* investigate & identify the specific event/condition(s) that triggers shipment delayed email notifications,
+
+*Because* understanding this trigger is important to addressing how to define this new email type, and modernizing customer communication.
+
+*This spike is ready for acceptance when:*
+ # Does this email exist in OMSe today?
+ # We determine the event or condition(s) that leads to the sending of shipment delayed emails.
+ # We document our findings and potential underlying cause that can help us define shipment delayed emails
+ # Followup story is create to implement this new email (OOM team)
+
+*Notes & Assumptions:*
+ *  The nOLM process with systems like Customer Fulfillment/Carrier services
+ * Relevant Confluence page for findings
+
+- Section  2.2: OMO-1971 - Optimizing nOLM Email Notifications for 'Shipped' Status
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: email, child, spike, OMO-1971, Ship to Home Phase 0
+
+- Description
+*As* the nOLM system,
+
+*I want to* evaluate the timing mechanism for 'Shipped' status email notifications,
+
+*Because* timely communication is important for accurate customer updates.
+h3. This spike is ready for acceptance when:
+ # We analyze the current lag between marking a shipment as 'Shipped' and sending the corresponding email.
+ # We explore the possibility of syncing with a new carrier feed for real-time shipment status.
+
+h3. Notes & Assumptions:
+ * The scope of this spike is for
+ ** Ship to home only (fulfill by EFCs) with an expectation to expand into SFSs in the future.
+ ** SLSQ Single Shipnode with PayPal orders
+ ** New spikes will be created for MLMQ scenarios (depending on the complexity) 
+ * Understanding the existing gap in email notification timing is key
+ * Technical feasibility and integration with a new carrier feed will be investigated.
+ * Relevant insights and findings to be documented on Confluence: [insert confluence link].
+
+- Section  2.2: OMO-850 - Learn about Current Customer Comm. for Pack Slip Email (n/a for BOPUS today)
+
+- Introduction:
+This is a child spike of epic OMO-1968, "Ship to Home Phase 0"
+
+keywords are: pickup, email, child, spike, OMO-850, Ship to Home Phase 0
+
+- Description
+*WE SHOULD* understand when, why, and what +Customer Communication+ is done today by the legacy solution, and what service it interacts with, during fulfillment, pickup, cancels etc. for BOPUS shipments
+
+*BEFORE* we implement +Customer Communication+ for BOPUS
+
+*BECAUSE* we want to provide similar functionality for BOPUS orders processed by new OLM in the future, to insure +Customer Communication+ is properly triggered during appropriate times, and need a deeper understanding of the current functionality before determining how to approach it for new OLM. This will help us sort out the stories that are needed and reduce the risk of missing something important.
+
+*We will know we are done when ({color:#ff8b00}highlighted in Orange is in scope{color}):*
+ * When the current +Customer Communication+ (email and text if it's available and requested by the customer) by the legacy solution throughout order processing for BOPUS shipments is well understood
+ ** {color:#172b4d}Ready for Pickup (and text){color}
+ ** {color:#172b4d}Ready for Pickup Initial Reminder{color}
+ ** {color:#172b4d}Ready for Pickup Final Reminder{color}
+ ** {color:#172b4d}Ready for Pickup - APP (Alternate Pickup person emails) {color}
+ *** {color:#172b4d}Ready for pickup - APP{color}
+ *** {color:#172b4d}Ready for Pickup Initial Reminder - APP{color}
+ *** {color:#172b4d}Ready for Pickup Final Reminder - APP{color}
+ ** -----------------------------------------------
+ ** {color:#ff8b00}Pack Slip email (generated after ready for pickup when you go online to lookup your order and click the button of print pack slip) {color}
+ ** -----------------------------------------------
+ ** Store Order Complete (aka Customer Picked Up)
+ ** Store Order Complete (aka Customer Picked Up) APP (Alternate Pickup person emails)
+ ** -----------------------------------------------
+ ** Order Cancellation KI
+ ** -----------------------------------------------
+ ** Order Modification KI Responsive Email (Order Modified email, part of the order was cancelled - not applicable to SLSQ)
+ ** -----------------------------------------------
+ ** Store Order Delayed Responsive Email (BOPUS order delayed email)
+ ** -----------------------------------------------
+ ** Ready for Pickup - APP Changed - should be covered within Ready for Pickup (Changes made to the alternate pickup person email)
+ ** Ready for Pickup - APP Removed - should be covered within Ready for Pickup (Alternative deleted email - only goes to the customer)
+ ** Ready for Pickup - No longer APP - should be covered within Ready for Pickup (Alternative removed - only goes to the alternative)
+
+ * When we clearly understood what services the current solution interacts with to initiate +Customer Communication+ 
+ * Document the payload/data that is included when we trigger that email and mapping the source for each attribute
+ * Exception handling is well understood
+ * All the learnings are documented in a Confluence Page
+
+*Notes/Assumptions:*
+ * Wallet and Account own the page that triggers the email, start with them first
+ * +Customer Communication+ is required for active mode of our first thin slice
+ * We need to develop this in the future but it does not apply to SLSQ or may be owned by the returns team (mapping required)
+ ** Order Modification KI Responsive Email
+ ** Store Order Customer Cancelled (aka Auto Refund)
+ ** Store Order Customer Cancelled (aka Auto Refund) APP
+
+*Reference:*
+ * [https://confluence.kohls.com:8443/display/OE/1.1+OMO-28+-+Analysis+and+Design]
+ * Transactional Email UAT Spreadsheet (OCF Tab): [https://docs.google.com/spreadsheets/d/1YBuIG2XTguKkmz-gUknz_FM06LGvkT_f-IVwjib04b0/edit#gid=2073458429]
+ * Link to an assortment of production email examples: [https://miro.com/app/board/uXjVOU0EyYI=/?moveToWidget=3458764538551545135&cot=14]
+ * Link to Customer Comm. BT Transactional Emails list: [https://docs.google.com/spreadsheets/d/159Zo99VUGPTzAdjGS1imvV6h_my2g82Ulff87mBoGzQ/edit#gid=0]
+
+
