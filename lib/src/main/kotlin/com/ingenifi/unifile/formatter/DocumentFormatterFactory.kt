@@ -5,6 +5,7 @@ import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.confluence.ConfluencePagesFormatter
+import com.ingenifi.unifile.formatter.conversation.TranscriptFormatter
 import com.ingenifi.unifile.formatter.excel.ExcelFormatter
 import com.ingenifi.unifile.formatter.jira.JiraFormatter
 import com.ingenifi.unifile.formatter.json.JsonFormatter
@@ -14,6 +15,7 @@ import com.ingenifi.unifile.formatter.plaintext.PlainTextFormatter
 import com.ingenifi.unifile.formatter.powerpoint.PowerPointFormatter
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.formatter.word.WordFormatter
+import com.ingenifi.unifile.formatter.xml.XmlFormatter
 import io.ktor.client.*
 import java.io.File
 
@@ -22,6 +24,7 @@ data class DocumentFormatterFactory(val parameterStore: ParameterStore, val keyw
     fun create(file: File): DocumentFormatter {
         return when (file.extension.lowercase()) {
             "confluence" -> ConfluencePagesFormatter(file = file, keywordExtractor = keywordExtractor, parameterStore = parameterStore, client = client, toc = toc, verbosity = verbosity)
+            "transcript" -> TranscriptFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
             "doc" -> WordFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "docx" -> WordFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "jira" -> JiraFormatter(file = file, keywordExtractor = keywordExtractor, parameterStore = parameterStore, client = client, toc = toc, verbosity = verbosity)
@@ -33,6 +36,7 @@ data class DocumentFormatterFactory(val parameterStore: ParameterStore, val keyw
             "txt" -> PlainTextFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "xls" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "xlsx" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
+            "xml" -> XmlFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
 
             else -> throw IllegalArgumentException("Unknown formatter for extension ${file.extension.lowercase()}: given ${file.name}")
         }

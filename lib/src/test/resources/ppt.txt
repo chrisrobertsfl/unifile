@@ -1,0 +1,2076 @@
+===========================
+     Table of Contents     
+===========================
+1 .. File name: simple.pptx
+
+
+=====================================================================
+Document 1: File name: simple.pptx
+=====================================================================
+- Introduction:
+This is a powerpoint document converted from ppt(x) to pdf and then to plain text.
+
+keywords are: kohls, customers, outcomes, mins, metrics, 2, assumptions, 1, users, 3, products, experiment, 5, goals, solve, sales, 6, teams, ideas, roadmap, persona, hypothesis, objectives, based, strategies, 4, understand, simple, pptx
+
+- Description
+Becoming America’s most 
+Kohl’s Way Workshop (combined)
+engaging retailer
+August 2022
+Time Topic
+10 mins Introductions, Outcomes, and Map of what you will learn.
+30 mins First Activity
+Section 1 
+30 mins The Kohl’s Way and Our Product Org Transformation
+Agenda 
+10 mins Break
+30 mins Methodology Discussion 
+10 mins Q&A
+2.0 hours Total Time
+Reference Links
+● “Beginning the Kohl’s Way” - Kohl’s CTO 
+● 6 Things Customer-Centric Companies Do Differently - Forbes (5mins)
+●
+As Target Tops $100 Billion In Revenue, Meet The CIO Who Made That Possible Digitally  
+(March 2022)
+● American Airlines Transformation Case Study
+● The Power of WIP Limits
+● (Milkshake: “Jobs to be done” Video) https://www.youtube.com/watch?v=sfGtw2C95Ms
+2
+Outcome & Learning Objectives
+Outcome: 
+● Inform and motivate all Interested Parties to practice user-
+centered, data-driven prioritization to deliver consistent, 
+incremental value for Kohl’s.
+Learning Objectives:
+● Understand, advocate, and actively participate in a new 
+work structure (OGSMs, roles, responsibilities) and 
+methods using Lean Product Management.
+5
+Expectations
+Lean / agile Familiarity
+New to all of this
+○ Talk about your experiences ○ Ask lots of questions
+○ Be the advocate for this with your peers ○ Challenge what we are saying
+○ Give examples of what good looks like ○ Share your experiences through the lens of 
+how things could have been different
+○ Challenge what we are saying
+Remember that 
+we are ALL on a 
+Journey and 
+everyone is at a 
+different place!
+6
+First Activity
+Scenario:  1000 people walk into the store today but only 500 
+walk out with having purchased something.  How do you fix 
+this?
+1. 5 mins -  Introductions in small groups (name, area, time 
+with Kohls) - Breakout groups
+2. 15 mins - Discussion (use miro)
+○ (5 mins total) Brainstorm (3mins) on the best solution 
+to fix this problem and put on stickies (group picks 
+the best - 2mins).
+○ (10 mins) Record your reasons for this solution, any 
+concerns you have with it, and the method you used 
+to determine the solution. 
+○
+Pick someone to report back to the large group.
+3. Large group discussion after next small group activity
+7
+This may be new…
+Being uncomfortable.
+You might feel uncomfortable. Good. This new way of working 
+expects you get comfortable being uncomfortable.
+Do you know what your role is with respect to a 
+balanced team?
+Thinking differently.
+This may be challenging your thinking. Good. Part of our new 
+way of working is finding opportunities to be more creative. Try 
+new things and consider new possibilities.
+Do you know what a balanced team expects from 
+you?
+Let’s get started!
+8
+Map of what you will 
+●The Kohl’s Way
+learn
+The Kohl’s Way and Our 
+Methodology Knowledge
+○ Product Principles & Context
+Prod Org Transformation
+○
+Summary
+●
+What is a team in balance?
+○ Why Change?
+●Who are the players and what is my role?
+●
+Product Org Transformation
+○ Definitions ●What is User Centricity?
+○ How is a Product Different 
+●Lean - Iterate quickly to prove we are on 
+than a Project?
+track to getting the value expected in 
+○ Project vs Project Delivery 
+solving end-user / customer problems.
+models
+●What is Extreme Programming?
+●KT Way Site for Product Details
+Governance Knowledge
+Ways of Working Knowledge 
+●
+Governance (Growth 
+●Outcomes vs Features
+Development Boards and 
+●
+How do we align?
+OBRs (outcome based 
+●What problems are we solving? 
+roadmaps)
+(Does this work matter?)
+●2x2 for Prioritization
+●Measuring Success - What is 
+our success criteria? (If we don’t 
+know this how do we know 
+when have met the goals?)
+●Continuously Test and Learn 
+through MVP.  If it is not working 
+9
+then pivot.
+Section 
+Section 2
+1
+The Kohl’s Way!
+“…The insights around today’s consumer preferences have served as the basis of our new long-term 
+strategic framework that will pave the path for a bigger, bolder, customer-centric future at Kohl's.”
+“...As an organization, we have been fostering a more courageous culture to set the stage for the next era at 
+Kohl's.”
+—Michelle Gass
+https://www.linkedin.com/pulse/its-privilege-lead-during-uncertain-time-pull-lessons-michelle-gass/?published=t
+11
+Summary of The Kohl’s Way
+End-Users & Customers have 
+Kohl’s has Objectives & 
+PROBLEMS with their 
+Goals
+interaction with Kohl’s
+BT needs to 
+specifically 
+understand the 
+success measures 
+so they can 
+The team working in “balance” 
+become part of 
+iteratively using data to deliver the accountable 
+team.
+Products End-Users & Customers love 
+by solving their most important and 
+valuable problems!
+12
+Why Change?
+● Spent too much money without company 
+growth
+● Didn’t always get the outcomes desired or 
+expected
+● Didn’t always work on the most valuable things
+● Didn’t focus on the customer need
+● Left unfinished work in our wake
+● Didn’t allow flexibility to change direction
+● Outputs mattered more than Outcomes
+Customer-centric companies are all about their customers and make every decision 
+and strategic move with customers in mind. In turn, customer-centric companies are 
+60% more profitable than companies that aren’t.   
+6 Things Customer-Centric Companies Do Differently
+13
+Is an end-
+Kohl’s Way Principles
+user a 
+customer
+? Why?
+● Evidence > Opinion
+● Behavior > Intent
+● Result > “Being Right”
+● Outcomes > Features
+● Balance > Hierarchy
+● Users > Sponsors
+●
+Software > Specifications
+● Understanding the problem before coming up with solutions
+● Shorten all feedback loops
+14
+Product Org
+Transformation
+15
+What is a Project
+●
+A project is a temporary piece of work which falls 
+outside 'business as usual' day-to-day operations and 
+can be anything from moving offices or building a website 
+to carrying out major construction work or complex 
+statistical analysis. 
+●
+Some businesses are entirely project-based.  Sponsors 
+find out something they think you need and get funding.
+Associate Guided Checkout
+What is a Product? 
+Inventory 
+Management & 
+●
+Any enduring capability that creates user and business 
+Accuracy
+value.
+● Products ultimately solve a user/customer problem
+●
+Kohl’s Way:  Products are managed by Product Teams (or 
+teams in Balance) that live in our overall Product 
+Organization
+Lots of info at: Kohl’s Way Intranet
+16
+How is a Project different than a Product?
+                                                
+(Project) Sponsor-driven
+(Product) User-driven
+○ Annual funding events from sponsors ○ Pre-allocated funding for continuous 
+improvements of a core set of capabilities
+○ Teams formed to deliver projects and then 
+moved to next project or disbanded ○ Continuous validation and learning over time
+○
+○ Lots of up-front definition Building in smaller increments to decrease risk
+○ ○
+Commitment to lists of deliverable features Autonomous Balanced Teams governed by 
+Growth Development Boards to deliver maximum 
+○
+Timelines & cost are fixed
+customer value
+Continual value delivery, quick end-
+Execute the project. Build, deliver, 
+user / customer feedback loops and 
+move on.
+iteration
+17
+From
+Sponsor Driven Projects (How Projects delivered 
+outputs)
+Kohl’s has a business 
+problem that needs to be 
+solved.  Reduce expenses by 
+$.
+Sponsor Projects
+● Improve customer search 
+option
+●
+Improve Rewards lookup 
+Where is the end-user or 
+option 
+customer? ●
+Add ‘Your Price’ feature to 
+CSC
+Is the customer happy?
+Is the company happy?
+Thinking back to the first a 
+activity, what’s the problem 
+with posing a solution first???
+Status Meetings
+18
+From
+User Driven Products (How The Kohl’s Way 
+delivers value)
+Teams working in 
+Balance
+As a Customer 
+Problems (Wants / Needs) (problem) I am not 
+happy with the amount of 
+time it takes to get help 
+from your call center,
+To
+What's the most 
+important problem. Did 
+we solve your problem?
+End Users & Customers Satisfaction
+Where is the end-user or 
+customer?
+Is the customer happy?
+Growth Development Boards / Discuss Value 
+How could we 
+Is company happy? & Outcomes 
+“Reduce the amount of time 
+it takes when I call to solve 
+the problem”? Use 
+customers phone number to 
+auto find customer profile.
+How could we 
+“Don’t require me to call you 
+at all!”?
+Other solution ideas?
+19
+Methodology Knowledge
+22
+Working together to build better products
+Designers, Product Managers and Engineers 
+make up the balanced team but it doesn’t stop 
+there. A balanced team is cross-functional 
+and could be made up of many, diverse 
+practitioners.
+User
+The key is allowing the users to drive our 
+products’ direction.
+This means connecting team members directly 
+with users and empowering them to make 
+decisions as close as possible to delivery.
+These disciplines working together
+“in balance”
+23
+We Work Differently
+We Work Differently
+Small teams that…
+● are empowered with autonomy to make 
+and act on product decisions 
+● are highly collaborative and 
+communicative
+●
+“sit” together
+● are committed to a change in behavior, 
+not a specific solution
+● constantly test their ideas 
+● have shortened feedback loops with 
+customers
+● ship features often 
+● celebrate learning & failures
+● embrace change with new information
+24
+Diverse parts of a team “in balance”
+Designers
+Product Managers
+• Specialize in user-centricity to 
+• Reduce risk by validating 
+facilitate and guide the product 
+learnings through 
+team’s design decisions
+experimentation to ensure 
+value can be delivered
+User
+Driven
+Product
+SRE
+•
+Work with the balanced 
+Engineers
+teams to ensure robust and 
+reliable services for all 
+• Guide the product’s 
+products
+implementation and
+help the team understand the 
+technical feasibility of product 
+decisions
+…and many others
+25
+Other Valuable Perspectives 
+Product Management itself thrives on 
+diversity. In product development, teams are 
+strengthened by having a variety of 
+backgrounds, perspectives and 
+opinions in the room, as any product leader 
+will tell you.
+Having a diverse workforce has a knock-on 
+positive effect on a company’s outputs. That’s 
+especially true in the tech sector. Products 
+are made for everyone, which means 
+your products need to be built by 
+everyone.
+Different perspectives and backgrounds lead to 
+different opportunities for us to solve with our 
+technology
+26
+What’s My Role in delivering the PRODUCT?
+As a member of this group, you might 
+Definition As a member of this group, you will….
+commit to…
+Who is responsible for doing the actual work for ● Pair or work closely with your team members ● Working full-time with the team
+the project task. ● Working across organization for continuous discovery
+RESPONSIBLE
+● Gather feedback and implement changes based on 
+insights
+Who is accountable for the success of the task ● Unblock the team ● Attend a weekly check-in meeting 
+and is a key decision-maker. Typically the product ● Communicate with executive stakeholders ● Work with the team on as-needed basis and 
+leader or business partner ● Prioritize work at a high level based on roadmap with being on call to manage blockers
+ACCOUNTABLE
+the balanced team.
+● Provide feedback of guard-rails for success
+Who needs to be consulted for details and ● Provide feedback as a subject matter expert ● Make time for ad-hoc interviews and feedback 
+additional info. Typically the person (or team) to sessions
+be consulted will be the subject matter expert.
+CONSULTED
+● ●
+Who needs to be kept informed of major updates. Updates related workflows based on product Read an email update once a week
+●
+Typically senior leadership. improvements (informed) Review / interact with the blogs and 
+● Provide feedback through proper channels drumbeats
+INFORMED
+(informed)
+BUSINESS BUSINESS SENIOR 
+PRODUCT DATA PRODUCT END-USER / SENIOR KT 
+DESIGNER ENGINEER DOMAIN SRE SECURITY DOMAIN BUSINESS 
+MANAGER SCIENCE LEADER CUSTOMER LEADER
+LEADER EXPERT LEADER
+R R R R A A A A C C I I
+The team will outline the appropriate RACI for their need to execute against strategies.  Sometimes people will move in and out of this global view.  (IE: Business 
+Partner in the day-to-day may be responsible for deliverables or maybe Data Science is not.)
+27
+The Kohl’s Way Methodologies
+Extreme 
+User Centered 
+Programming 
+Design
+Development
+Lean Product
+Management
+28
+User-Centered Design (UCD) 
+Practices
+UCD is a product design philosophy that emphasises designing 
+the product around the problems a user is having, 
+rather than designing what the users say they want.
+Design
+We aim to design a solution that solves user and 
+business problems. 
+User Centered 
+It prioritizes contact with end users, and not proxies, in order to 
+Design
+determine value. We take an evidence-based approach.
+Ensuring the software solves a 
+real problem for real users in a 
+PRACTICES
+desirable and usable product.
+■ Persona definition
+■ Ethnographic studies
+■ User Interviews
+■ Prototype creation
+29
+Video Time
+Click on the Image to Launch YouTube Video
+Design
+30
+Learn
+Lean Product Management 
+Practices
+Lean is a product methodology designed to decrease risk and 
+Product
+reduce waste through constant validated learning.
+Managemen
+t
+Lean
+Reducing the risk of building the 
+wrong thing while comfortably 
+Measure
+changing direction.
+PRACTICES
+■ Identify & test assumptions
+■ Lean experiments
+■ Data driven decisions
+■ Minimum Viable Product 
+(MVP) definition
+Legacy Waterfall Method of Building Software (Value Delivered at the End (*Maybe*))
+Lean Product Management Method of Building Software (Iterative Value Delivered)
+31
+Build
+Why ask Why? (Examples)
+These questions are asked not because there is a lack of trust in someone's effort or knowledge but to 
+work to ensure we are understanding root problems.  Root problems identification opens the doors to 
+many solution possibilities that may be better strategies than the one identified.
+Product
+Managemen
+t
+32
+Extreme Programming (XP) Practices
+Agility is the ability to react to change. 
+We practice a flavor of agile called Extreme 
+Programming (XP).
+Development
+XP ensures a team builds working software at a 
+Extreme 
+consistent speed and quality in the face 
+Programming
+of changing requirements
+Building working software at a 
+consistent speed and quality in the 
+We assume collaborative, cross-
+face of changing requirements.
+PRACTICES
+functional and self-organizing teams 
+that deliver software in an incremental and 
+■ Paired Programming
+iterative way.
+■ Test-Driven Development
+■ Short iterations
+■ Continuous Integration / 
+Continuous Deployment
+33
+Extreme Programming (XP) & Balanced Team Values
+XP is much more than just a development 
+methodology, it is a set of values that inform 
+whole team interaction.
+Respect
+Communication
+“If members of a team don’t care about each other and 
+“When problems arise in development, most 
+what they are doing [and] don’t care about a project, 
+often someone already knows the solution; but 
+nothing can save it”
+that knowledge doesn’t get through to someone 
+with the power to make the change”
+Simplicity
+Feedback
+“What is the simplest thing that could possibly 
+“The sooner you know, the 
+work?”
+sooner you can adapt.”
+Courage
+“Courage is effective action 
+in the face of fear”
+34
+Things to keep in mind…
+• Products are focused first on customer / user 
+A fundamental belief is 
+needs
+Users
+that 
+○ Solving Customer/End-User problems, and fast 
+● If we begin with the user 
+feedback cycles.
+and make them happy,  
+Needs
+business success will 
+follow.
+• Products live in perpetuity (not until some 
+Uses
+project ends) 
+● We can’t start from what 
+the business wants and 
+○ They have a vision and a roadmap that is 
+impose new behaviors on 
+Features
+decoupled from the funding cycle.
+users.  They may have a 
+bad experience and never 
+adopt our product.  
+•
+A diverse set of perspectives will create the greatest 
+Deliver
+● But if we instead give 
+value for our customers and Kohl’s.
+them what they demand, 
+they’ll use it and pay for it 
+Learn
+with money or time.  And 
+• Focus on delivering continuous and consistent 
+that will create positive 
+value, and validating if we’re still on course (OGSMs, 
+business outcomes for us.
+OBRs) 35
+Homework Activity  
+Let’s think about solving customer problems 
+and being “lean” in our approach..
+1. 7 mins - Watch Nordstrom Innovation Lab Video 
+together? 
+Video Link
+2. 5 mins - Discuss the following:
+○
+What did you think was good?
+○
+What did you think was not good?
+3. 8 mins - In large groups teams will discuss their 
+findings
+Kohl’s Way Workshop v4 (combined)
+Becoming America’s most 
+engaging retailer
+Section 2
+January 2023
+Time Topic
+30 mins Long Break!
+Section 2 
+60 mins Activity: Miro Tips / Problem statements
+45 mins Activity: Persona 
+Agenda
+(all times are approximate)
+30 mins Journey Map
+30 mins Activity: Metrics
+30 mins Activity: Finish Metrics or Start Solution Ideas
+65 mins Activity:  Assumptions
+30 mins Long Break
+45 mins Activity: Validated Learning - Hypotheses and Experiment and 
+MVP
+10 mins Break
+65 mins Governance Takeaways and Final Retro
+39
+Ways of Working Knowledge 
+●Outcomes vs Features
+●How do we align?
+●What problems are we solving? (Does 
+this work matter?)
+●2x2 for Prioritization
+●Measuring Success - What is our 
+success criteria? (If we don’t know this 
+how do we know when have met the 
+goals?)
+●
+Continuously Test and Learn through 
+MVP.  If it is not working then pivot.
+40
+We begin with outcomes
+“...but what exactly is an outcome?” 
+—Kohl’s team member
+An outcome is a result. It’s 
+the change that signals we are 
+achieving business and user 
+goals.
+If you don’t know where you want to go, you 
+probably won’t get there.
+41
+Why not start with a list of Features?
+FEATURES LIST
+Identifying Features 
+first...
+Tries to predict what people will 
+want without having any real 
+evidence it will solve an end-
+user / customer problem
+42
+Difference Between Outcomes and Features
+What is our outcome? How will we achieve the outcome?
+All of these features each solved their own problem.  
+How can we make Mario 
+Jump higher? A 
+Mushroom.  
+How can we help Mario 
+kill enemies? A Fireball 
+Flower.  
+What if we run out of 
+"Sell the result, not the process. Don’t talk about the 
+lives and our game is 
+magic flower, talk about who Super Mario becomes after 
+over?  Extra Life.
+he eats the flower. Know clearly what your product is 
+43
+making people better at." - Enzo Avigo - PM at Intercom
+Balanced Teams Liberating Constraints………
+Outcome Factory > Feature 
+Factory
+“[In a] feature factory some forces outside of the 
+team decides [what to work on] and the team just 
+“does” [it].  That is not our model.  We are an 
+outcome factory and the team continuously finds the 
+path to great outcomes.”  - Paul Gaffney
+Authority > Consensus
+“I believe authority is earned rather than granted.  That 
+said, every product team has complete decision rights 
+on their work.  I repeat: every product team has 
+complete decision rights on their work.
+The product team via the product leader as their agent 
+must actually decide what to work on.”  - Paul 
+Gaffney
+4
+44
+4
+How do we align?
+45
+OGSM (Objectives, Goals, Strategies, Measures) Framework
+Total 
+Company 
+Objectives
+Goals
+Strategies
+Measures
+Strategies
+Measures
+Strategies
+Measures
+Strategies
+Measures
+Strategies
+Measures
+46
+OBJECTIVES
+Without projects, how do you know what to work 
+on?
+Experience Outcome: Customers are driven to shop Kohl’s versus competitors as they frictionlessly gain access to assortments that were not 
+previously available.
+Corp 
+Objectives Goals Strategies Measures
+Strategy
+Effortless Improve Customer Simplified & Improve CSAT by 5%
+Experience (what Engagement 5% Elevated Stores 
+does the company Shopping 
+Incremental 
+want) Experience
+digital revenue 
+Increase Sales in 
+increases by 
+FY 2021 by $1B Profitable Digital 
+$500M
+Growth
+Portfolio Strategy
+O G S M
+Profitable Digital Incremental Improve Search Increase Search 
+Growth profitability and Sales in FY 2021 
+digital revenue 
+relevancy by $250M
+increases by 
+$500M
+Enable quick 
+expansion of Digital Increase 
+Assortment to meet 
+Sales in FY 
+new customer 
+2021 by 
+demands
+$250M
+Balanced Team / Product Strategy O G S M
+Create a Marketplace Increase Sales in FY 2021 by $200M
+Enable quick Increase 
+that delivers products 
+expansion of Digital 
+Sales in FY 
+customers desire.
+Assortment to meet 
+2021 by 
+Increase Sales in FY 2021 by $25M
+new customer 
+$250M
+Test new vendors to 
+47
+demands
+support D&I initiatives.
+Increase Sales in FY 2021 by $25M
+Faster time to market of 
+new products.
+Leveraging the Lean Framework
+“What should we work 
+Prioritize to ensure we are solving the highest value 
+on next?”
+problems for our end-users.
+There are many ways to problem solve and identify 
+challenges.
+The process we are using is called Discovery & 
+Framing. D&F can give you new tools and skills to 
+guide your products from a different perspective.
+49
+Discovery & Framing
+Is this solution easy to use?
+50
+Product Discovery Goals
+Answers Key Questions / 
+Address Key Risks:
+➢ Will they buy/use it (value)
+➢ Can they use it? (usability)
+➢
+Can we build it? (feasibility)
+➢ Can it work for our business? 
+(viability)
+But Also:
+➢ Should we build it? (ethics)
+51
+Identifying Problems
+52
+Focus on Customer Problems (Examples)
+Industry Customer Problem What companies solve this?
+Uber / Lyft
+There are not enough taxi cabs, drivers are 
+Transportation
+rude, and I can’t pay with a credit card
+Netflix, Disney+
+Movie I don’t know what movies are available 
+Entertainment before my trip to the store, I don’t like late 
+fees, and I don’t have time to go to the rental 
+store
+Kohl’s Self Pickup, Self Returns
+Retail I’m super busy and I can’t take standing in lines 
+to pick-up or return my merchandise so I need to 
+find a retailer who will make this easy for me.
+53
+What happens when you focus on 
+business problems (examples)?
+Industry Customer Problem What companies and Business 
+Problem didn’t solve this??
+There are not enough taxi cabs, drivers are Yellow CAB:  We don’t have visibility into 
+Transportation
+rude, and I can’t pay with a credit card our customers, we don’t earn loyalty, and 
+(Uber / Lyft)
+we don’t get a ‘unfair’ share of customer 
+wallet
+Movie I don’t know what movies are available BlockBuster: Local stores cause me to 
+Entertainment before my trip to the store, I don’t like late have too much or too little stock, we can’t 
+(Netflix / Disney+) fees, and I don’t have time to go to the rental manage expectations of availability.  
+store Difficult to personalize recommendations 
+Retail (Kohl’s Self I’m super busy and I can’t take standing in lines Kohl’s:  I need to make the POS transactions 2 
+Pickup, Self Returns) to pick-up or return my merchandise so I need to seconds faster to save labor.
+find a retailer who will make this easy for me.
+Does anyone else have an idea of a past or 
+potential “business problem” here?
+54
+Why Iterate quickly?  -- Old vs New Example
+Annual Revenue
+● Scope of project: ~130K skus
+● Capabilities: Customers cannot use any 
+offers, discounts, Kohl’s Cash, or Yes2You 
+Legacy / 
+rewards (except associate discount), CAN’T 
+return to stores, ARE NOT buying products 
+Waterfall 
+offered
+Methodology
+$6.8m $233k
+● Status: Initiative shut down Summer 2016, no 
+additional funding or Business Case 
+INVEST TOTAL SALES
+allocated to improve
+(Development Time Run time Mar ‘15 - Aug ‘15
+12-18 months) (6 months)
+● Scope of MVP: ~3000 skus
+Kohl’s 
+● Capabilities:  Customers cannot use any 
+Lean
+offers, discounts (except associate 
+discount), CAN earn and redeem Kohl’s 
+Marketplace
+Product 
+Cash and rewards, CAN return to stores, 
+ARE finding products they desire
+Management 
+$335k
+$1.58M
+● Status: Backlog continuously prioritized 
+Methodology
+TOTAL SALES
+with ongoing funding.
+Development time
+Run time Nov ‘20 - Feb ‘21
+(<6 months)
+(~4-6 months)
+Why Iterate quickly?  -- Old vs New Example
+UPDATE
+Annual Revenue
+● Scope of project: ~130K skus
+● Capabilities: Customers cannot use any 
+offers, discounts, Kohl’s Cash, or Yes2You 
+Legacy / 
+rewards (except associate discount), CAN’T 
+return to stores, ARE NOT buying products 
+Waterfall 
+offered
+Methodology
+$6.8m $233k
+● Status: Initiative shut down Summer 2016, no 
+additional funding or Business Case 
+INVEST TOTAL SALES
+allocated to improve
+(Development Time Run time Mar ‘15 - Aug ‘15
+12-18 months) (6 months)
+● Scope: ~18000 skus
+Kohl’s 
+● Capabilities:  Customers cannot use any 
+Lean
+offers, discounts (except associate 
+discount), CAN earn and redeem Kohl’s 
+Marketplace
+Product 
+Cash and Can earn rewards, CAN return 
+to stores, ARE finding products they 
+Management 
+$7.3M
+desire.  
+$3.8M
+Methodology
+TOTAL SALES
+● Status: Backlog continuously prioritized 
+with ongoing funding.
+Development time
+(~18 months) Run time Oct ‘20 - Dec ‘21
+(14 months)
+Why Iterate quickly?  -- Old vs New Example
+UPDATE June 
+3, 2022
+Annual Revenue
+● Scope of project: ~130K skus
+● Capabilities: Customers cannot use any 
+offers, discounts, Kohl’s Cash, or Yes2You 
+Legacy / 
+rewards (except associate discount), CAN’T 
+return to stores, ARE NOT buying products 
+Waterfall 
+offered
+Methodology
+$6.8m $233k
+● Status: Initiative shut down Summer 2016, no 
+additional funding or Business Case 
+INVEST TOTAL SALES
+allocated to improve
+(Development Time Run time Mar ‘15 - Aug ‘15
+12-18 months) (6 months)
+● Scope: ~33000 published skus (~9k live 
+Kohl’s based on inventory available)
+Lean
+● Capabilities:  Customers cannot use any 
+offers, discounts (except associate 
+Marketplace
+Product 
+discount), DEC 2021: CAN earn and 
+redeem Kohl’s Cash and  JUNE 3, 2022: 
+Management 
+$12.5M
+Can earn and redeem Kohl’s Cash 
+$4.44M
+(again :) ) Can earn rewards, CAN return 
+Methodology
+TOTAL SALES
+to stores, ARE finding products they 
+Development time desire.  
+(~23 months) Run time Oct ‘20 - May 2022
+(19 months)
+● Status: Backlog continuously prioritized 
+with ongoing funding.
+A Word About our “Classroom” Setting
+We are in a “classroom” setting, so many activities we do 
+today will be artificially fast without the research that 
+you would normally gather.
+We will make bigger assumptions in these exercises 
+than we would normally do but these are obvious 
+examples of validated learning that we would need to do.
+58
+Miro Context
+Go to Miro board  (link)
+59
+Activity  
+Let’s start by thinking about customer problems at 
+Kohl’s…
+Brainstor
+m
+Identify problems for this scenario:  1000 people walk into the store today but only 
+10 ideas in 6 mins. 
+500 walk out with having purchased something.
+● You will work individually at first
+● Base it off your experience as a Kohl’s customer / end user
+● Write your problem statements on post-it notes (note: a problem statement 
+will answer the question: “What’s a possible reason 500 people walked 
+out empty-handed?”)
+● One problem statement per post-it
+● Try to get to 10 problem statements!
+6 Minutes
+Note: Remember, these are not business problems as customers don’t care that Kohl’s wants more 
+60
+sales.
+Work Individually
+Activity  
+Let’s prioritize the top problems to solve for your 
+customer.
+Step 1: Focus on the most important problems.
+There’s always going to be more problems to tackle than you have people, 
+time or money to solve.
+● Select your top 2 problems (as individuals) and drag them to the 2x2
+1 min
+61
+Work Individually
+Hmmmm…….Now What?
+Use these New Observations:  
+●
+Of people purchasing they use coupons
+● People not purchasing don’t ask questions
+● 52 people said they could not find the item they 
+wanted
+1 mins
+62
+Breakout groups
+Main Group:  See meeting invite
+Group 1 Breakout Meeting: meet.google.com/ovi-yuam-mcg
+Group 2 Breakout Meeting: meet.google.com/dgv-vtvo-kst
+Group 3 Breakout Meeting: meet.google.com/auo-bxkp-ozj
+Group 4 Breakout Meeting: meet.google.com/dzt-hgkq-wic
+Group 5 Breakout Meeting: meet.google.com/esm-guiv-oya
+Group 6 Breakout Meeting: meet.google.com/cuf-esiv-ryu
+Group 7 Breakout Meeting: meet.google.com/kao-tbaw-woq
+Group 8 Breakout Meeting: meet.google.com/hbs-igtw-bew
+Breakout Group Assignment Spreadsheet
+63
+working in your group
+Activity  
+Let’s prioritize the top problems to solve for Kohl’s 
+customers.
+Step 2: In your group, prioritize your top problems based on 
+Happens 
+frequency (and the new information):
+all the time
+Happens only 
+occasionally
+10 Minutes 
+65
+Activity
+working in your group
+Activity  
+Let’s prioritize the top problems to solve for Kohl’s 
+customers.
+Step 3: Now, move your problems along the X axis based on 
+Happens 
+all the time
+pain:
+Mildly Extremely 
+annoying painful
+Happens only 
+occasionally
+8 mins
+66
+working in your group
+Activity  
+Let’s prioritize the top problems to solve for Kohl’s 
+customers.
+Step 4: In your group, agree on your number 1 problem to 
+Happens 
+all the time
+solve:
+Here’s where you’d want to focus on!   
+PICK ONE to use for next activity!
+Mildly Extremely 
+annoying painful
+Happens only 
+occasionally
+Combined
+67
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+Place your problem 
+here!
+USERS & CUSTOMERS USER BENEFITS
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+68
+Personas
+69
+Personas
+Use personas to avoid solving 
+for yourself (you are not the 
+customer)
+● A representation of a group of users
+● Created by identifying trends in user 
+research
+● Summarizes research in digestible 
+format
+● Gives research a face and a name and 
+helps us empathize
+● It does not represent one person
+● Simple, iterative, easy to use, human, 
+and useful
+70
+“If we solve for 
+everyone, 
+we delight no one.”
+—Alan Cooper
+71
+Activity  
+Persona details:
+Name & Sketch Behaviors
+● Giving our persona a name and a face helps ● Typical behaviors this persona exhibits
+with empathy as we build a solution that solves ● Also articulate the behaviors he or she exhibits 
+their problem because of the problem they are dealing with
+Demographics Needs & Goals
+● What are the demographics of our persona - ● What does our persona need, what are they wishing 
+use ranges to accomplish
+72
+Activity  
+As a group, create your persona (example):
+Name & Sketch Behaviors
+● Travels all over the world
+● Loves meeting sales partners in person
+● Checks his email compulsively
+● Checks the stock market on his iPad first 
+thing in the morning
+Demographics Needs & Goals
+● 55 years old ● Bob needs to understand how his sales 
+● Married with 2 kids team is trending
+● Lives in Boston ● Bob needs to know who to talk to if his 
+● Works at a large multinational numbers are under target
+organization
+73
+working in your group
+Activity  
+As a group, decide on your most important group 
+of users (persona) to focus on and create your 
+persona
+Keep your prioritized problem in mind!
+● Who cares most about this / is impacted most by it?
+● Who would feel immediate relief if you’d solve for them?
+20 
+74
+Minutes
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+USERS & CUSTOMERS USER BENEFITS
+Place your persona 
+here!
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+75
+Journey Maps
+76
+Journey Maps...
+● A journey map is one way of helping to define the value you can 
+bring to a user through understanding the emotional 
+engagement at each touchpoint of a user’s journey
+● Emotional engagement is what brings people back to a product, 
+even if it is functional
+● It is especially important when your product is used at a time of 
+need. A bad user experience just makes things worse
+● From an existing journey, you can then design an ideal one
+● Understanding a customer’s journey can help you define the value 
+proposition for your product
+77
+Journey Maps
+Learnings
+Learnings
+Learnings
+78
+working in your group
+Activity  
+As a group, put together the Journey Map for your 
+defined problem.
+What does the experience look like for your persona?
+● Use red/yellow/green, they are universally understood 
+● 😀 … above the line
+● 😐 … at the line 
+● 😕 … below the line
+15 
+79
+Minutes
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+USERS & CUSTOMERS USER BENEFITS
+Place your journey 
+map here!
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+80
+Measuring Success
+81
+Metrics tell us whether we’ve made the right 
+progress
+Metrics help us determine, 
+through data, whether we 
+ARE WE 
+FIRST PEAK
+HERE? OR 
+are where we need to be or 
+THERE?
+not.
+They may also help us 
+VISION
+understand whether our plan 
+CURRENT 
+is feasible or not.
+STATE
+82
+What makes a good metric?
+● Actionable: A good metric changes how we behave. This is the most important 
+quality in a metric: it tells us what we should do differently based on the change 
+we see (or not). It helps us make a decision.
+● Accessible: A good metric is easy to understand and remember. If people don’t 
+understand the metric, they won’t remember it or think about it which means they 
+won’t take action on it. We should be able to easily get the data, and the feedback 
+loop between taking action and seeing results should be short.
+●
+Auditable: The metric has to be credible to the people who drive the vision; 
+everyone including sponsors and skeptics should be able to audit it. We should be 
+scientific in our approach. i.e. you need good reason to believe that the effort 
+influenced your defined metrics.
+83
+End User/Customer Metrics vs Business Metrics
+Customer Performance Indicators (CPIs) - Customer 
+Centric:
+● Time, convenience, options, savings, recognition
+Key Performance Indicators (KPIs) - Company/Business 
+Centric:
+● Revenue, growth, profitability, liquidity, NPS
+Focusing on the outcomes important to the customer (CPIs), the better the company 
+Automated instant quote vs agent 
+Payment flexibility by offering 
+telephone quote
+will likely perform on the outcome important to the business (KPIs)
+multiple payment options
+CPI - Convenience
+CPI - Options, Convenience 
+KPI - Acquisition, Growth
+KPI - Growth, Retention 
+Sales
+Customer Service addressing 
+Marketing
+Family demographic shopping
+issue first time 
+CPI - Options, savings
+CPI - First time resolution
+KPI - Retention, Loyalty
+KPI - Retention
+Customer Service
+Product
+84
+Examples
+Vanity (Don’t do this) Actionable (Do this!)
+Number of visits Funnel, cohort analysis
+Time on site, number of pages # of Sessions per user
+Emails collected Email actions (clicks)
+Number of downloads User activation
+Resources
+https://uxdesign.cc/how-to-measure-progress-with-outcomes-985fb118fb56
+https://www.clearpointstrategy.com/set-leading-indicators/
+https://hbr.org/2020/04/the-most-important-metrics-youre-not-tracking-yet
+85
+Example of Kohl’s Test Metrics / Results
+Problem: Out of stocks are a growing issue for online orders
+Hypothesis: if customers know inventory is low, they would accelerate placing an order (instead of just 
+letting the item sit in their cart) and would be more understanding if an item did cancel.
+Risks: some customers would see the badge and abandon if inventory was low
+86
+TBD
+How do we measure user success?
+Call out “user/customer” metrics for one of the 
+problem statements below:
+1. As a Kohl’s Customer (“put in the problem statement you 
+came up with above”)
+2. As a Kohl’s end-user (“put in the problem statement you 
+came up with above”)
+ 5 mins in small 5 min large group 
+3 mins Brainstorm
+group discussion
+87
+working individually
+Activity  
+Individually, brainstorm 5-10 metrics that will help you know 
+if you are achieving your end-user goals.
+How would you measure whether you are meeting the end-user needs 
+you’ve identified?
+Reference problem statement, persona and journey map
+Write each metric on one post-it note 
+ANY BUSINESS METRICS identified move over to the 
+Business Metric column.
+10 
+88
+Minutes
+working in your group
+Activity  
+In your group, discuss the end user metrics each 
+team member brought forward and pick your top 3 
+metrics
+Remember:
+● The metric needs to help us answer the question - “have we met 
+the need of our persona with this solution”
+● This is not a business metric - our customers don’t care how what 
+they do helps our company perform better
+15 
+89
+Minutes
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+Place your 
+business metrics 
+here!
+USERS & CUSTOMERS USER BENEFITS
+Place your user 
+metrics here!
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+92
+Solution Ideas!
+93
+Example  
+Customer Problem: Kohl’s wasn’t able to send me the item 
+I ordered even though they confirmed my order.
+Solution Idea - WHAT do we do? Solution - HOW will we do it?
+Change GIV’s algorithm to improve store inventory
+Improve our inventory accuracy
+Include a recommendation engine at Point of 
+Give the customer an option for a 
+Commerce.
+similar/alternate product
+Update m.com to include a backorder feature.
+Allow backorders
+Implement Wayfair
+Use marketplace to source to the actual 
+vendor
+94
+working individually
+Activity  
+Let’s find solution ideas to your customer’s top 
+problem.
+Think back to your problem statement, your persona, the journey map 
+and success measures:
+● What Idea would you have to solve for that?
+● First, take a couple of minutes to individually come up with 
+solution ideas
+● Then, discuss with your group and agree on the one solution idea 
+you want to focus on
+3 min individual 
+95
+brainstorm
+individual then as a group
+Activity  
+Let’s find solution ideas to your customer’s top 
+problem (pick 2 each).
+Use the 2x2 to help prioritize your solution ideas:
+More important
+to users and business
+harder to Easier to 
+deliver deliver
+Less important
+to users and business
+ 3 mins individually and then 13 Minutes for 
+96
+groups
+working in your group
+Activity  
+Let’s find solution ideas to your customer’s top 
+problem.
+Pick the 1 solution idea to start with:
+More important
+As a team select 
+to users and business
+the ONE solution 
+Here’s where you’d idea you will use 
+want to focus on!
+for the next step.
+harder to Easier to 
+deliver deliver
+Less important
+to users and business
+97
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+Place your top solution 
+idea here!
+USERS & CUSTOMERS USER BENEFITS
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+99
+Assumptions & Leap of 
+Faith
+10
+0
+Leap of Faith Assumptions
+So far we’ve defined a problem, a persona and a potential solution 
+idea. But until tested, all the work is based on assumptions.
+We will focus on identifying leap of faith assumptions. These are 
+assumptions that, if we get them wrong, will jeopardize the success of 
+our initiative.
+As we begin to test our assumptions, these are the assumptions 
+we should test first. 
+10
+1
+Assumptions
+Until tested, assumptions are risk.
+There are several categories of assumptions:
+● User & Customer Needs, Problems, or Opportunities
+● Business Needs, Problems, or Opportunities
+● Solutions
+10
+2
+working individually
+Activity  
+Let’s de-risk your potential solution.
+Take your top solution idea and and brainstorm:
+What needs to hold true in order for your solution to be a success?
+Write down all the assumptions you have around your solution idea.
+▪ Work individually
+▪ Try to get to 10
+▪ 1 assumption per post-it
+▪ Try to do this as fast as possible
+▪ Keep writing - you want to get every thought out there
+3 Minutes
+10
+3
+individual then as a group
+Activity  
+Let’s de-risk your potential solution.
+Individually brainstorm ideas  then….
+Take your top 2 assumptions, put it on a 2x2 and prioritize as a 
+group:
+More likely to
+kill your solution
+Know more Know less 
+about about
+Less likely to
+kill your solution 3 min individually then 12 
+10
+Minutes 4
+working in your group
+Activity  
+Let’s de-risk your potential solution.
+Take your top 2 assumptions, put it on a 2x2 and prioritize as a 
+group:
+More likely to
+As a team select 
+kill your solution
+the ONE 
+Here’s where you’d assumption you 
+want to focus on!
+will use for the 
+next step.
+Know more Know less 
+about about
+Less likely to
+kill your solution
+Combined
+10
+5
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+USERS & CUSTOMERS USER BENEFITS
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+Place your other 
+Place your most critical 
+prioritized
+assumption here!
+assumptions here!
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+10
+7
+Break (10 mins)
+See time remaining in Miro
+10
+8
+Lean Experiments
+10
+9
+How do we Validate our Assumptions?
+The Scientific Method
+●
+Make observations
+● Formulate a hypothesis
+● Design an experiment to test the 
+hypothesis
+● State the indicators to evaluate if the 
+experiment has succeeded
+● Conduct the experiment
+● Evaluate the results of the experiment
+● Accept or reject the hypothesis
+● If necessary, make and test a new 
+hypothesis
+11
+0
+Experimental Design Example - AirBnB
+OBSERVATION
+that end-users view lots of listings but rarely book any 
+We have observed ____________________________________________ 
+HYPOTHESIS
+more bookings
+We believe that b_e_t_te_r_ p_h_o_t_o_s _o_f_ t_h_e_ l_ist__e_d_ re__n_ta_l_s will result in ______________ 
+EVIDENCE (Success measure)
+                                                                          50% increase in 
+We will know that our hypothesis is valid if we observe/measure ___________
+bookings for our NY listing within one week
+                           ____________________________________
+TEST
+visit one of our NY properties, take professional photos of 
+We will do/make _______________________________________________
+them and upload these photos to the site
+                           __________________________________
+11
+1
+Helix 1/3
+Data Science 
+Product name Date
+Experiment
+Hypothesis Advertising is a driver of demand at Kohl’s. The inclusion of advertising events as 
+signals in our demand prediction model will improve the accuracy of our 
+predictions.
+Evidence / Success measure
+We will know this hypothesis is true if we see a decrease in 
+the model error metric (WMAPE). WMAPE compares the 
+percentage difference between actual demand and the 
+model’s predicted demand, a lower value is better.
+Test
+To get that evidence we will measure the model’s WMAPE before and after the 
+inclusion of advertising event signals and observe the difference. In our case, we 
+saw a 0.5% decrease in the WMAPE, which was significant.
+Few Days
+Time + Costs Pivot or persevere 
+date
+11
+2
+Experiment Types
+1. Qualitative interview (a.k.a. Get Out of the Building)
+2. Smoke Test (Video, Landing Page, Sales pitch, Crowdfunding)
+3. Concierge Testing
+4. Wizard of Oz Testing
+5. Solution (Prototype) Test
+6. A/B Test (Multivariate test)
+Additional definition/details: 
+https://medium.com/lean-startup-circle/how-to-conduct-lean-experiments-aecc6aae17c5
+NOTE: Surveys are NOT RECOMMENDED
+(https://medium.com/research-things/on-surveys-5a73dda5e9a0#.jgluyyiui)`
+11
+3
+Experiment Template 
+Product name Date
+Hypothesis We believe that…
+Evidence / Success measure
+We will know this hypothesis is true if…
+Test
+To get that evidence we will do/make…
+Time + Costs Pivot or persevere 
+date
+11
+4
+working in your group
+Activity  
+Let’s create your own experiment in order to 
+validate your leap of faith assumption as quickly 
+and cheaply as possible.
+Use the template provided:
+● Fill in your leap of faith assumption “We believe…” (Hypothesis)
+● Think about the leanest way to validate this assumption “To get 
+that evidence, we will do/make...” (Test)
+● Think about how you’d know whether you have validated or 
+invalidated the assumption “We will know the assumption is true 
+if…” (Success Measure)
+● Think about what it would roughly cost and when you are ready 
+to check in on the results
+25 
+11
+5
+Minutes
+LEAN CANVAS
+PROBLEM BUSINESS OUTCOMES
+SOLUTION IDEAS
+USERS & CUSTOMERS USER BENEFITS
+ASSUMPTIONS LEAP OF FAITH EXPERIMENT TO TEST FIRST
+ASSUMPTION
+Place your Experiment 
+here!
+* We are using a derivative of Jeff Gothelf’s version from Lean UX
+11
+6
+LET’S TAKE A MOMENT 
+TO…
+Learn from others
+Any thoughts about the “Solution” 
+you came up with in activity 1 and 
+its relation (or not) to the problems 
+you just identified?
+?
+Was it bad to come up with 
+a solution first, why?
+Hey, everyone!
+?
+Type answers into chat……..
+11
+7
+Build Just Enough!
+11
+8
+Building just enough
+● Minimum Viable Product (MVP)
+○ This is not a proof of concept, aka PoC
+○ Get feedback by trying a real idea and then measuring it 
+against potential customers to validate the effect. 
+(Validated Learning)
+○ Move quickly from thinking about a problem to delivering 
+actual value. 
+○ Adjust based on what we heard and observed.
+Yeah but why?
+● Reduce the risk of building the wrong thing and to gain evidence 
+that you are on the path to meet your outcomes.
+11
+9
+Methodology Differences
+12
+0
+12
+1
+Applying the Methodologies to Software
+12
+2
+Governance Knowledge
+●
+Governance (Growth 
+Development Boards and OBRs 
+(outcome based roadmaps)
+12
+4
+Growth Board Discussions
+12
+5
+We’re introducing Growth Development Boards to 
+guide Governance
+● Ensure Objectives, Goals, Strategies, 
+Measures (OGSM) alignment
+● Review a summary of product initiatives
+● Discuss outcomes achieved and lessons 
+learned
+● Prioritize the next cycle of product work 
+(Outcome-Based Roadmap)
+● Formalize any requests for help from 
+leadership
+12
+6
+OGSMs 
+Overall Enablement
+OBJECTIVE: GOALS: STRATEGY: MEASUREMENTS:
+Enabling product managers to ● Increase in Product Habits Qtr/Qtr 1. Enablement Workshops ● Product Habit Levels
+relentlessly improve their product ● Decrease in OP Model being a reason 2. PM Office Hours ● Pulse Survey
+management practices and principles for leaving Kohl’s 3. Essential Habits of the Successful ● Manager Survey
+● Survey results more positive than Product Manager ● Stakeholder Survey
+previous by 50 BPS 4. PM Pairing
+Enablement Workshops Product Management Office Hours Product Habit Pairing
+OBJECTIVE: OBJECTIVE: OBJECTIVE:
+Create common understanding of Kohl’s Way Take a product management practice / skill / principle and Lay the foundation for the product management practice under 
+Kohl’s Way Workshops discuss in depth successful ways of implementing with a team. the Kohl’s Way principles and continuous engagement for Kohl’s 
+Way growth.
+STRATEGY :
+STRATEGY : 1. One facilitator poses questions to the group about a principle STRATEGY :
+1. Discuss the activities that lead a team to be highly functioning of product management 1. Present the product-focused habits and what “good” looks 
+and demonstrate that a PM is successful 2. Feedback from the participants to understand what success like for each of them
+2. Perform group activities that enable team members to use the looks like 2. Survey the team for their self evaluations and promote 
+skills they learned discussions about why they rated themselves that way
+3. Discuss the why behind what we are doing with group sharing 3. Capture action items during the discussion and areas of 
+sessions and retros improvement
+METRICS :
+Retrospective feedback, participation, post-workshop surveys, 
+METRICS : METRICS :
+robust list of topics
+Retrospective feedback, participation, post-workshop surveys Increase in total habit score from one session to the next, action 
+items being discussed in retros by the team, align on product 
+management habits that identify growth and success
+12
+7
+PRODUCT ENABLEMENT OUTCOME ROADMAP (OBR)
+NOW
+NEXT LATER
+Level of Certainty over time
+Strategy Lay the PM Foundation Better Cross-Team Collaboration Lay the PM Foundation
+What strategies will our 
+Understanding Roles and Responsibilities Understanding Roles and Responsibilities Better Cross-Team Collaboration
+outcomes address?
+Create a Common Understanding of the Create a Common Understanding of the 
+Kohl’s Way Kohl’s Way
+• More effective transfer of foundational • Product Managers are sharpening each • We have written and iterated on a Kohl’s Way 
+Outcomes 
+product management principles so that PMs other’s skills and learning new techniques that Product Playbook so that PdM’s are enabled 
+Why are our outputs 
+can make more effective and impactful makes the discipline more mature and to find solutions and activities to common 
+important? decisions effective problems, shorten the learning curve for 
+associates that are being on-boarded, and tell 
+the story of the Kohl’s Way to our partners 
+• An expert understanding of our users so that • Balanced teams fully understand how to 
+How will they take us 
+and potential employee candidates
+we better target solutions to our top problems leverage Kohl’s Way principles to strengthen 
+closer to our goals?
+within enablement their stakeholder relationships 
+1.The Essential Habits of the Successful Product 1.Updated KT Way workshops with measurable 1.Kohl’s Way Product Playbook with clearly 
+Outputs
+Manager data collection defined Roles and Practices, as well as 
+What features will we 
+2.Single-day pairing sessions with PMs to 2.PM roundtables to share success stories outlining the key habits of the successful 
+deliver? sharpen skills and gather data for future around a given principle PdM
+impact 3.Map for roles and responsibilities in and out 
+3.Personas for the PMs based on data gathered of KT
+in pairing sessions
+• Baselining product habits • New survey data pre/post workshop
+Measures
+• Progression on the habit scale • Participation in roundtables and office hours
+What will  indicate a 
+• Post-pairing surveys • Medium articles written
+milestone / outcome 
+achievement?
+12
+8
+Takeaway - as you engage with the Balanced 
+Teams.
+● What problem are we solving? (how do we 
+know it’s really a problem?)
+● Who are we solving the problem for? 
+(target market)
+● What business objective are we focused 
+on? (Objective)
+● How do we know that we’ve succeeded 
+(Key Results)
+12
+9
+If you’re interested in learning more
+Internal resources and Tech Talks
+Paul Gaffney “Beginning the Kohl’s Way”
+●
+●
+As Target Tops $100 Billion In Revenue, Meet The CIO Who Made That P
+ossible Digitally
+● KT Blog on Outcomes
+● Kohl’s Way OGSM Framework Info
+OGSM Tech Talk Video (~1Hr)
+●
+Escape from Features to Outcomes (5 min read)
+●
+Outcomes vs Outputs (5 min video)
+●
+What gets measured gets done
+●
+Books
+● The Lean Startup by Eric Reiss
+INSPIRED by Marty Cagan
+●
+● Outcomes over Output by Josh Seiden
+Sites
+The Power of WIP Limits
+●
+https://amz.run/4O9r
+Mind the Product
+●
+Silicon Valley Product Group (SVPG)
+● 13
+0
+More on Metrics (CPIs vs KPIs)
+●
+LET’S TAKE A FEW 
+MINUTES TO…
+Learn from others
+Looking back, what did you 
+What is one method or mindset 
+notice about how this all 
+you could use tomorrow?
+works?
+?
+?
+Better yet, how might you 
+make the process work for 
+you?
+Hey, everyone!
+?
+Type your answers to these questions in the chat box.
+13
+1
+Appendix
+From Product Practice v4
+13
+2
+How you can use Discovery & Framing
+Is the What are 
+What’s the Is this solution easy to use?
+What are the 
+problem potential 
+most 
+problems?
+worth solutions?
+valuable 
+solving?
+solution?
+~1 to 3 weeks ~1 to 3 weeks
+D&F Will define your MVP and set of stories Should take no more than 2 to 6 weeks (highly dependent on ALL team 
+the team will execute. members and stakeholders collaborative time together).
+13
+3
+What is Discovery?
+Objectives Example Activities
+● Understand what problem the product will solve
+● Conducting ethnographic research
+● Understand users, customers, domain ● Competitive/market analysis
+● Defining user personas
+● Identify opportunities and constraints
+● Synthesizing insights
+● Ensure we solve the right problems
+● Exploring the product proposition
+13
+4
+What is Framing?
+Objectives Example Activities
+● Validate the riskiest assumptions early
+● Shape high level experience framework
+● Establish models and frame solutions ● Technical spikes
+● Service blueprints
+● Remove enough uncertainty so we can begin 
+development and be confident we are heading 
+● Develop workflows
+in the right direction
+● Scenario mapping
+● Reduce risk through constant user validation
+● Prioritise MVP features
+13
+5
+● Balance Team: The team that works to build the software
+○ Product Management, Engineer, Design 
+○ Sometimes SOE, Digital, Marketing, Logistics
+○ The list of all the teams is here
+● OGSM Objectives, Goals, Strategies, Measures
+○ Framework that connects the work a team does into business until goals
+Returns for example
+■
+○ Gives teams a way to talk about one thing (strategy) that meets many goals
+● Outcome Based Roadmap
+○ Details what the team is building that meets the goals and objectives
+○ Are often synthesized up according to initiative or org chart
+■
+KT Roadmap
+■ Sephora OBR
+Decoder 
+■ Returns OBR
+● Growth Board
+Ring ○ Where we all come together to review OGSM, Roadmaps and work being done. This is 
+our “formal” opportunity to change what’s happening via Pivot or Persevere 
+■ Ex Amazon Self Returns Pilot 
+● Drum Beats 
+○ Weekly reports of what teams are achieving, planning on doing next and risks
+These are unfortunately hard to find, ask the KT product lead for your area to help
+○
+● Daily Blogs
+○ A place where the teams talk about how they are working, show demos and sometimes 
+just talk about life. Informative and good chance to directly interact w/o a meeting
+13
+6
+Additional definitions
+● Kohl’s - used to represent all Associates (we, our, us, me) employed with Kohl’s.
+● Stakeholder - Any party invested in delivering value to Kohl’s Customers, End-Users and Kohl’s Associates.
+● Associate - someone employed by Kohl’s (aka end-user or customer)
+● User - A Kohl’s associate that utilizes Kohl’s assets (aka end-user or customer).
+● Customer - Someone who purchases merchandise from Kohl’s.  This term is also frequently used synonymously to refer to Kohl’s 
+Associates or End-Users receiving a service.
+● Outcome - A behavioral change that signals we are achieving business and user goals. It is not a focus on red/yellow/green state 
+of a given activity or output but about getting the result Kohl’s and our customers expected.
+● Product - any enduring capability for Kohl’s that represents a customer, end-user and business value stream. Products can be 
+physical, digital, or both.
+● Feature list - Commonly referred to as a list of improvements to software.  Individually, these items may or may not contribute to 
+a desired outcome but may have been promised as part of an annual funding exercise or an “ask” to do something.
+● Lean Product Practice - is the management of the complete life cycle of a product applying the principles and practices of 
+Lean Startup, Lean Customer Development, Business Modelling and Financial Viability, Outcome-driven Innovation, Behavioral 
+Economics and Strategy.
+● Growth Development Board - Where we all come together to review OGSM, Roadmaps and work being done. This is our 
+“formal” opportunity to change what’s happening via Pivot or Persevere 
+13
+7
+13
+8
+Creating OGSMs
+Keep them focused, simple, and make sure the numbers add up
+Objectives: What Goals: Numbers to Strategies: How do 
+Measures: Quantify 
+do you intend to quantify the you intend to 
+ways to stay on track
+achieve? objectives achieve?
+What, not how Are you making The bets you’re making in Numeric, traceable, 
+quantifiable progress? pursuit of the objective (ideally) predictive, and 
+Focused – how will the 
+owned by a single person
+world be different? Goals should directly Specific & differentiated – 
+imply achievement would you choose not to Not just what’s easy to 
+Form your group’s 
+pursue these strategies? collect 
+external commitments How do you know you’re 
+not already there? Bad: Excellence in Tip: Look for ways to 
+Bad: Implement a user 
+execution game the numbers
+portal by Q3 Bad: Increase customer 
+sign-ups by 5% Good: Create a mobile Bad: Team velocity
+Good: Be our 
+app; Populate app with 
+customers’ one-stop- Good: Customer churn Good: Feature delivery 
+both educational and 
+shop for their finance reduced to X%; Y% of frequency; feature usage; 
+customer-specific data
+tasks and questions customers engage resulting bus. decisions 
+weekly
+13
+9
+Are The Outcomes Clearly Articulated
+A well-articulated outcome describes the value that a team intends to create, for who and for which persona. A well-articulated 
+outcome says more about the impact on the user and less about the details of the solution. It is also valuable to mention how you 
+plan on achieving the outcome to give a sense of general direction the team plans to take.
+For Saikiran Yerram, Senior Product Manager at Pivotal San Francisco, he “has consistently seen solution based roadmaps such 
+as "Doing X will solve Y" instead of "Solving Y will achieve <some desired outcome>.” The best outcomes based roadmaps 
+clearly show what will the user do more (or less) once the problem Y is solved.”  
+When looking at your outcome be sure to ask yourself these questions:
+●
+Does it elucidate who the outcome is meant to help? Outcomes could be for customers, business or even your team.
+●
+What is the impact you hope to achieve?
+●
+Why is working on this outcome the most valuable thing you could be doing with your time? What are you deprioritizing to 
+work on this? Listing the other outcomes that your team *could* work on but have decided not to is great way of showing 
+what you factored into your prioritization decision. It also helps to break out your roadmap into short-term, mid-term, long-
+term so you can lay out how you are prioritizing your work. As you are articulating outcomes for mid and long term think 
+about what you are hoping to learn/validate instead of the thing you plan on building.
+● Does it align with the priorities of your business?
+https://tanzu.vmware.com/content/blog/do-you-have-a-good-outcome-oriented-roadmap
+14
+0
+How Good Are Your Metrics
+Identifying metrics that tell you that you are making progress can be difficult. Often, it’s tempting to measure output and call 
+it a day once it's shipped. However, a good metric tells you whether and by how much you were able to impact or add value 
+for your persona. When looking at your metrics of success ask yourself these questions:
+ 
+●
+Do your metric(s) measure whether or not the outcome (not output) has been achieved? Beware of vanity/proxy 
+metrics that appear correlative, but are not. Example: high acquisition numbers do not indicate that you are actually 
+solving the problem for the user. Dan Jahner, Senior Product Manager at Pivotal San Francisco, “tests for whether a 
+set of metrics are sufficient by trying to envision ways in which the metrics could be achieved without actually 
+affecting the outcomes they intend to measure.”
+●
+Is the metric measureable? Take a moment to think about whether you can actually measure it and if it is easy to 
+measure.
+●
+Do you have a baseline (or can you afford the time to get one) to be able to see progress? Prototyping, user 
+interviews, current product instrumentation, and customer support tickets are all quick ways to achieve a baseline.
+●
+Are your metrics a mix of quantitative and qualitative? Quantitative metrics will only give you a signal of where to 
+look. Qualitative metrics help you understand the signals and build the story.
+14
+1
+Test 4:  Does Your Roadmap Represent an Aligned Viewpoint?
+A roadmap at its core is a way of communicating priorities that are shared by the team and leadership or the team and 
+customers/users. It is the cornerstone that can be used to make sure that everyone is on the same page on priorities and 
+outcomes.
+Building a roadmap that represents your point of view is easy. Building a roadmap that represents a viewpoint that is 
+aligned with the team and leadership is much harder. So ask yourself:
+● Was your team involved in building the roadmap? Would they be able to represent and speak to the roadmap as well 
+as you?
+●
+Can you clearly connect the priorities outlined to one or more business objectives?
+● Were your leaders/stakeholders involved as you were iterating on the roadmap?
+Test 5: Is Your Roadmap Easy to Discover and Consume?
+As mentioned earlier, a roadmap is a communication tool. It helps to communicate the shared priorities of the team 
+externally to stakeholders like leadership, customers, users, marketing, sales, etc. The last thing you want to do is get on 
+a call every time someone wants to understand what the team is working on. Ask yourself:
+●
+Is your roadmap easy to find? One easy trick is to link to it in your communications.
+● What is the context people need to have to understand your roadmap? Provide references to material that helps 
+with building context.
+●
+Who is your audience? You might need different framing and information for internal stakeholders vs external 
+stakeholders.
+14
+2
+Growth and Development Board 
+“Tips”
+● Growth Development Board discussions are highly facilitated 
+sessions.
+●
+Meetings will start with a Facilitator defining the rules of the meeting 
+and their role is to ensure the meeting stays on track and with the 
+core GDB members only.
+● Only Growth Development Board members actively engage
+●
+Extended team invitees are there for listening and information only
+●
+We want transparency and openness but also a productive 
+conversation in a short amount of time.
+● Discussions with this cross-functional team are focused on 
+delivering business value.
+●
+Data will be used to make transparent pivot or persevere decisions 
+about approaches to delivering value.
+●
+Products have been aligned to Company Strategies
+● Cadence has been set to accomodate 2 products per session (Each Product discussion occurs 
+every other month)
+●
+Purpose is to discuss contributions occurring and if the data is supporting outcomes to persevere 
+or pivot.
+14
+3
+Making Metrics Actionable
+14
+4
+How do we Validate our Assumptions?
+The Scientific Method
+●
+Make observations
+● Formulate a hypothesis
+● Design an experiment to test the 
+hypothesis
+● State the indicators to evaluate if the 
+experiment has succeeded
+● Conduct the experiment
+● Evaluate the results of the experiment
+● Accept or reject the hypothesis
+● If necessary, make and test a new 
+hypothesis
+14
+5
+Experiment Types
+1. Qualitative interview (a.k.a. Get Out of the Building)
+2. Smoke Test (Video, Landing Page, Sales pitch, Crowdfunding)
+3. Concierge Testing
+4. Wizard of Oz Testing
+5. Solution Test
+6. A/B Test (Multivariate test)
+Additional definition/details: 
+https://medium.com/lean-startup-circle/how-to-conduct-lean-experiments-aecc6aae17c5
+NOTE: Surveys are NOT RECOMMENDED
+(https://medium.com/research-things/on-surveys-5a73dda5e9a0#.jgluyyiui)
+14
+6
+Experiment Template 
+Product name Date
+Hypothesis We believe that…
+Evidence / Success measure
+We will know this hypothesis is true if…
+Test
+To get that evidence we will do/make…
+Time + Costs Pivot or persevere 
+date
+14
+7
+Appendix
+From Kohls Way Workshop v3
+15
+2
+PM Should have 3 touch points per week with the 
+customers for at least 45 mins each time 
+(interviews or getting feedback or demos)
+PM Should spend first 15 mins of each day 
+studying data/dashboards and understanding 
+anomalies (breathing the data and know what is 
+going on)
+16
+6
+What is a user story?
+A user story defines the who, what and why of the functionality being 
+built.
+It uses clear, unambiguous and non-technical language to 
+communicate a value-adding outcome for a user.
+Stories are an invitation for a conversation; they are not set in stone 
+to dictate the work to be done.  They are living documents that serve 
+the purpose of the team aligning on the reason behind working on 
+something.
+18
+0
+19
+4
+19
+5
+Should describe a 
+vertical slice of 
+implementation (or a 
+whole slice of the 
+cake of value) versus 
+horizontal slice which 
+doesn’t put value to 
+the user (ie: a 
+foundational layer is 
+too big to take on as 
+an epic).
+19
+6
+How do we handle technical documentation OR 
+more detailed documentation that a balanced 
+team can refer to.
+Talk about a story (user value) versus a “chore” (something technical engineers need to 
+get done)
+20
+4
+
+

@@ -10,8 +10,7 @@ data class PowerPointFormatter(val file: File, private val keywordExtractor: Key
     private val delegate = Delegate(PowerPointSource(file), keywordExtractor, toc)
     override fun format(number: Int): String = delegate.format(
         number,
-        templatePath = "powerpoint-document.tmpl",
-        replacements = mapOf<String, String>("filename" to file.name))
+        templatePath = "powerpoint-document.tmpl")
     override fun lastNumber(): Int = delegate.lastNumber()
 }
 

@@ -5,5 +5,4 @@ import java.io.File
 
 class KotlinSource(override val file: File) : FileSource {
     override fun description(): String = file.readText()
-    override fun title(): String = file.name
 }

@@ -52,6 +52,4 @@ class XmlSource(override val file: File) : FileSource {
         return false
     }
 
-    override fun title(): String = file.name
-
 }
