@@ -11,8 +11,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.runBlocking
 
-// TODO:  More formal testing
-
 data class UniFile(
     val input: InputPaths,
     val client: HttpClient = UnsecuredHttpClient.create(),
@@ -23,7 +21,6 @@ data class UniFile(
 ) : VerbosePrinting by VerbosePrinter(verbosity) {
     private val documentFormatterFactory =
         DocumentFormatterFactory(parameterStore = parameterStore, keywordExtractor = keywordExtractor, client = client, toc = toc, verbosity = verbosity.increasingBy(by = 2))
-    private var documentNumber = 1
 
     fun combineFiles(output: OutputPath) = runBlocking {
         verbosePrint("Processing files")
