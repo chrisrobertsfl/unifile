@@ -3,6 +3,10 @@ package com.ingenifi.unifile.formatter.jira
 import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import com.ingenifi.unifile.Verbosity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.runBlocking
 
 data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
 
@@ -17,8 +21,13 @@ data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : Ve
         }
     }
 
-    private fun children(key: String): MutableList<Issue> = api.getChildren(key).map { create(it) }.toMutableList()
-
+    private fun children(key: String): MutableList<Issue> = runBlocking(Dispatchers.IO) {
+        api.getChildren(key).map { childKey ->
+            async {
+                create(childKey)
+            }
+        }.awaitAll().toMutableList()
+    }
     private fun type(data: Map<String, Any>?): String {
 
         val issueTypeMap = data?.get(ISSUE_TYPE) as Map<String, Any>

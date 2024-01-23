@@ -31,7 +31,7 @@ data class UniFile(
 
         // Launching a coroutine for parallel processing
         val documents = input.allFiles().mapIndexed { index, file ->
-            async(Dispatchers.Default) {
+            async(Dispatchers.IO) {
                 verbosePrint("Processing file #${index + 1}: $file", withLevel = withLevel)
                 val documentFormatter = documentFormatterFactory.create(file)
                 documentFormatter.format(index + 1)
