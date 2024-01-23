@@ -23,16 +23,16 @@ data class EpicChildFormatter(
 
     private var lastNumber = 0
     override fun format(number: Int): String {
-        val source = IssueSource(issue = issue, headingNumber = SectionNumber(number, childNumber))
+        val source = IssueSource(issue = issue, headingNumber = SectionNumber(listOf(number, childNumber)))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing child story '${issue.key} - ${issue.title}'")
         lastNumber = number
         return delegate.format(
-            number, templatePath = templatePath, replacements = replacements(), additionalKeywords = additionalKeywords()
+            number, templatePath = templatePath, replacements = replacements(source), additionalKeywords = additionalKeywords()
         )
     }
 
-    private fun replacements() = mapOf<String, String>("epicKey" to epic.key, "epicTitle" to epic.title)
+    private fun replacements(source : IssueSource) = mapOf<String, String>("headingNumber" to source.headingNumber.asString(), "epicKey" to epic.key, "epicTitle" to epic.title)
 
     private fun additionalKeywords(): MutableList<String> {
         val keywords = mutableListOf<String>()

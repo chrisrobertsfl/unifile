@@ -19,7 +19,7 @@ data class EpicFormatter(private val epic: Epic, val keywordExtractor: KeywordEx
     VerbosePrinting by VerbosePrinter(verbosity) {
     private var lastNumber = 0
     override fun format(number: Int): String = runBlocking {
-        val source = IssueSource(issue = epic, headingNumber = DocumentNumber(number))
+        val source = IssueSource(issue = epic, headingNumber = DocumentNumber(listOf(number)))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing epic '${source.title()}' with ${epic.children.size} children")
         val childVerbosity = verbosity.increasingBy(1)

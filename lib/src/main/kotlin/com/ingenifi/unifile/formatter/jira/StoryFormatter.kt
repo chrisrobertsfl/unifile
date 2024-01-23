@@ -18,7 +18,7 @@ data class StoryFormatter(private val story: Story, val keywordExtractor: Keywor
     private var lastNumber = 0
 
     override fun format(number: Int): String {
-        val source = IssueSource(issue = story, headingNumber = DocumentNumber(number))
+        val source = IssueSource(issue = story, headingNumber = DocumentNumber(listOf(number)))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing story ${story.key}: '${story.title}'")
         lastNumber = number

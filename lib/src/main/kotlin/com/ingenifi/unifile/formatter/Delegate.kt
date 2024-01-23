@@ -26,7 +26,7 @@ class Delegate(private val source: Source, private val keywordExtractor: Keyword
         )
         val formattedContent = template.applyReplacements(replacementsWithDefaults)
 
-        val entry = if (source is IssueSource) source.entry() else Entry(title = title, headingNumber = DocumentNumber(documentNumber))
+        val entry = if (source is IssueSource) source.entry() else Entry(title = title, headingNumber = DocumentNumber(listOf(documentNumber)))
         toc.addEntry(entry)
         lastNumber += 1
         return formattedContent

@@ -7,16 +7,8 @@ interface HeadingNumber {
     val type : String
     fun asString(): String = levels.joinToString(".")
     val levels : List<Int>
+    data class Delegate(override val type : String, override val levels: List<Int>) : HeadingNumber
+
 }
-data class DocumentNumber(override val levels: List<Int>) : HeadingNumber {
-
-    override val type: String = "Document"
-    constructor(vararg levels: Int) : this(levels.toList())
-}
-
-
-data class SectionNumber(override val levels: List<Int>) : HeadingNumber {
-
-    override val type: String = "Section"
-    constructor(vararg levels: Int) : this(levels.toList())
-}
+data class DocumentNumber(override val levels: List<Int>) : HeadingNumber by HeadingNumber.Delegate("Document", levels)
+data class SectionNumber(override val levels: List<Int>) : HeadingNumber by HeadingNumber.Delegate("Section", levels)

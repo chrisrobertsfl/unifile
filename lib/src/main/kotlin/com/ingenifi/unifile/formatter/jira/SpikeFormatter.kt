@@ -17,7 +17,7 @@ data class SpikeFormatter(private val spike: Spike, val keywordExtractor: Keywor
     private var lastNumber = 0
 
     override fun format(number: Int): String {
-        val source = IssueSource(issue = spike, headingNumber = DocumentNumber(number))
+        val source = IssueSource(issue = spike, headingNumber = DocumentNumber(listOf(number)))
         val delegate = Delegate(source, keywordExtractor, toc)
 
         verbosePrint("Processing spike ${spike.key}: '${spike.title}'")
