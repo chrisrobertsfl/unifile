@@ -6,7 +6,10 @@ import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
 import io.ktor.client.*
-import org.slf4j.LoggerFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.runBlocking
 
 // TODO:  More formal testing
 
@@ -18,17 +21,23 @@ data class UniFile(
     val toc: TableOfContents,
     val verbosity: Verbosity
 ) : VerbosePrinting by VerbosePrinter(verbosity) {
-    private val documentFormatterFactory = DocumentFormatterFactory(parameterStore = parameterStore, keywordExtractor = keywordExtractor, client = client, toc = toc, verbosity = verbosity.increasingBy(by = 2))
+    private val documentFormatterFactory =
+        DocumentFormatterFactory(parameterStore = parameterStore, keywordExtractor = keywordExtractor, client = client, toc = toc, verbosity = verbosity.increasingBy(by = 2))
     private var documentNumber = 1
 
-    fun combineFiles(output: OutputPath) {
+    fun combineFiles(output: OutputPath) = runBlocking {
         verbosePrint("Processing files")
         val withLevel = verbosity.increasedLevel()
-        val documents = input.allFiles().joinToString("\n") {
-            verbosePrint("Processing file #${documentNumber}: $it", withLevel = withLevel)
-            val documentFormatter = documentFormatterFactory.create(it)
-            documentFormatter.format(documentNumber++)
-        }
+
+        // Launching a coroutine for parallel processing
+        val documents = input.allFiles().mapIndexed { index, file ->
+            async(Dispatchers.Default) {
+                verbosePrint("Processing file #${index + 1}: $file", withLevel = withLevel)
+                val documentFormatter = documentFormatterFactory.create(file)
+                documentFormatter.format(index + 1)
+            }
+        }.awaitAll().joinToString("\n")
+
         val entireOutput = buildString {
             if (toc.hasEntries()) {
                 append(toc.format())
@@ -36,6 +45,7 @@ data class UniFile(
             }
             append(documents)
         }
+
         output.write(entireOutput)
     }
 }
