@@ -6,30 +6,35 @@ data class JustifiedTableOfContentsFormatter(val leaderChar: Char = '.', val hea
     override fun format(entries: List<Entry>): String {
         if (entries.isEmpty()) return ""
 
-        // Collect and sort section numbers
-        val sortedSections = SectionSorter(entries.map { it.sectionNumber }).sortSections().distinct()
-
-        // Create a map for quick lookup
-        val titleMap = entries.associate { it.sectionNumber to it.title }
+        val sortedHeadingNumbers = HeadingNumberSorter(entries.map { it.headingNumber }).sortHeadingNumbers().distinct()
+        val titleMap = entries.associate { it.headingNumber to it.title }
 
         // Format sorted entries
-        val maxSectionNumberLength = sortedSections.maxOf { it.toString().length }
+        val maxPrefixLength = entries.maxOf { getPrefix(it.headingNumber).length }
         val maxTitleLength = entries.maxOf { it.title.length }
-        val totalLength = maxSectionNumberLength + maxTitleLength + 3
+        val totalLength = maxPrefixLength + maxTitleLength + 3
 
-        val tocEntries = sortedSections.joinToString(separator = "\n") { sectionNumber ->
-            val title = titleMap[sectionNumber] ?: ""
-            val sectionNumberStr = sectionNumber.toString()
-            val leaderCount = totalLength - sectionNumberStr.length - title.length - 1
+        val tocEntries = sortedHeadingNumbers.joinToString(separator = "\n") { headingNumber ->
+            val title = titleMap[headingNumber] ?: ""
+            val prefix = getPrefix(headingNumber)
+            val leaderCount = totalLength - prefix.length - title.length - 1
             val leaders = leaderChar.toString().repeat(max(0, leaderCount))
-            "$sectionNumberStr $leaders $title"
+            "$prefix $leaders $title"
         }
 
         // Create and format the header
         val maxEntryLength = tocEntries.split("\n").maxOf { it.length }
         val headerString = formatHeader(header, maxEntryLength)
 
-        return headerString + tocEntries
+        return headerString + "\n" + tocEntries
+    }
+
+    private fun getPrefix(headingNumber: HeadingNumber): String {
+        return when (headingNumber) {
+            is DocumentNumber -> "Document ${headingNumber.asString()}"
+            is SectionNumber -> "Section ${headingNumber.asString()}"
+            else -> headingNumber.asString()
+        }
     }
 
     private fun formatHeader(header: Header, maxWidth: Int): String {

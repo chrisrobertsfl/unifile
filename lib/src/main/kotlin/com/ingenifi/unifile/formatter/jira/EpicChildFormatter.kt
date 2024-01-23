@@ -21,10 +21,9 @@ data class EpicChildFormatter(
     val additionalKeywords: List<String>
 ) : DocumentFormatter, VerbosePrinting by VerbosePrinter(verbosity) {
 
-
     private var lastNumber = 0
     override fun format(number: Int): String {
-        val source = IssueSource(issue = issue, sectionNumber = SectionNumber(number, childNumber))
+        val source = IssueSource(issue = issue, headingNumber = SectionNumber(number, childNumber))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing child story '${issue.key} - ${issue.title}'")
         lastNumber = number

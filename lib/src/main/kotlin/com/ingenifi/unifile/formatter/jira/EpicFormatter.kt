@@ -7,6 +7,7 @@ import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.IssueSource
 import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.formatter.toc.DocumentNumber
 import com.ingenifi.unifile.formatter.toc.SectionNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +19,7 @@ data class EpicFormatter(private val epic: Epic, val keywordExtractor: KeywordEx
     VerbosePrinting by VerbosePrinter(verbosity) {
     private var lastNumber = 0
     override fun format(number: Int): String = runBlocking {
-        val source = IssueSource(issue = epic, sectionNumber = SectionNumber(number))
+        val source = IssueSource(issue = epic, headingNumber = DocumentNumber(number))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing epic '${source.title()}' with ${epic.children.size} children")
         val childVerbosity = verbosity.increasingBy(1)

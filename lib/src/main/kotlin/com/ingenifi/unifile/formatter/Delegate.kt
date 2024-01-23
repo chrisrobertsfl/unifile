@@ -1,5 +1,6 @@
 package com.ingenifi.unifile.formatter
 
+import com.ingenifi.unifile.formatter.toc.DocumentNumber
 import com.ingenifi.unifile.formatter.toc.Entry
 import com.ingenifi.unifile.formatter.toc.SectionNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
@@ -25,7 +26,7 @@ class Delegate(private val source: Source, private val keywordExtractor: Keyword
         )
         val formattedContent = template.applyReplacements(replacementsWithDefaults)
 
-        val entry = if (source is IssueSource) source.entry() else Entry(title = title, sectionNumber = SectionNumber(documentNumber))
+        val entry = if (source is IssueSource) source.entry() else Entry(title = title, headingNumber = DocumentNumber(documentNumber))
         toc.addEntry(entry)
         lastNumber += 1
         return formattedContent
