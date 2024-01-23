@@ -1,5 +1,6 @@
 package com.ingenifi.unifile
 
+import com.google.common.base.Stopwatch
 import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.formatter.confluence.ConfluenceApi
 import com.ingenifi.unifile.formatter.toc.TableOfContents
@@ -45,7 +46,10 @@ class UniFileCli : Callable<Int> {
             val keywordExtractor = KeywordExtractor(percentage = 0.1)
             val toc = TableOfContents()
             val uniFile = UniFile(input = input, keywordExtractor = keywordExtractor, parameterStore = parameterStore, toc = toc, verbosity = verbosity)
+            val stopwatch = Stopwatch.createStarted()
             uniFile.combineFiles(output)
+            val elapsed = stopwatch.stop().elapsed().toSeconds()
+            printer.verbosePrint("Processing took $elapsed seconds")
             if (output is FileOutputPath) printer.verbosePrint("Combined file created: ${output.path}") else printer.verbosePrint("Completed with output written to console")
             0
         } catch (e: Exception) {

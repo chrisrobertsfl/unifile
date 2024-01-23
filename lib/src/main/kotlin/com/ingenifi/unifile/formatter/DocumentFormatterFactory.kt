@@ -13,6 +13,8 @@ import com.ingenifi.unifile.formatter.kotlin.KotlinFormatter
 import com.ingenifi.unifile.formatter.pdf.PdfFormatter
 import com.ingenifi.unifile.formatter.plaintext.PlainTextFormatter
 import com.ingenifi.unifile.formatter.powerpoint.PowerPointFormatter
+import com.ingenifi.unifile.formatter.properites.PropertiesFormatter
+import com.ingenifi.unifile.formatter.properites.TemplateFormatter
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.formatter.word.WordFormatter
 import com.ingenifi.unifile.formatter.xml.XmlFormatter
@@ -24,7 +26,6 @@ data class DocumentFormatterFactory(val parameterStore: ParameterStore, val keyw
     fun create(file: File): DocumentFormatter {
         return when (file.extension.lowercase()) {
             "confluence" -> ConfluencePagesFormatter(file = file, keywordExtractor = keywordExtractor, parameterStore = parameterStore, client = client, toc = toc, verbosity = verbosity)
-            "transcript" -> TranscriptFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
             "doc" -> WordFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "docx" -> WordFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "jira" -> JiraFormatter(file = file, keywordExtractor = keywordExtractor, parameterStore = parameterStore, client = client, toc = toc, verbosity = verbosity)
@@ -33,6 +34,9 @@ data class DocumentFormatterFactory(val parameterStore: ParameterStore, val keyw
             "pdf" -> PdfFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "ppt" -> PowerPointFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "pptx" -> PowerPointFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
+            "properties" -> PropertiesFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
+            "tmpl" -> TemplateFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
+            "transcript" -> TranscriptFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
             "txt" -> PlainTextFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "xls" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
             "xlsx" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
