@@ -8,7 +8,6 @@ import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.IssueSource
 import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.DocumentNumber
-import com.ingenifi.unifile.formatter.toc.SectionNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

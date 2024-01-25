@@ -4,7 +4,5 @@ import com.ingenifi.unifile.formatter.FileSource
 import java.io.File
 
 data class ExcelSource(override val file: File) : FileSource {
-    override fun description(): String = file.toText()
-    private fun File.toText(): String = ExcelConverter().convert(this)
-
+    override fun description(): String = "The following worksheets are sub sections below:"
 }

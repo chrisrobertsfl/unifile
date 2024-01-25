@@ -38,10 +38,9 @@ data class DocumentFormatterFactory(val parameterStore: ParameterStore, val keyw
             "tmpl" -> TemplateFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
             "transcript" -> TranscriptFormatter(file = file, keywordExtractor = keywordExtractor,  toc = toc)
             "txt" -> PlainTextFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
-            "xls" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
-            "xlsx" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
+            "xls" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc, verbosity = verbosity)
+            "xlsx" -> ExcelFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc, verbosity = verbosity)
             "xml" -> XmlFormatter(file = file, keywordExtractor = keywordExtractor, toc = toc)
-
             else -> throw IllegalArgumentException("Unknown formatter for extension ${file.extension.lowercase()}: given ${file.name}")
         }
     }

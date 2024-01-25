@@ -25,8 +25,11 @@ interface FileSource : Source {
     override fun title(): String = "File name: ${file.name}"
 }
 
-data class IssueSource(val issue: Issue, val headingNumber : HeadingNumber) : Source {
+interface EntrySource : Source {
+    val headingNumber : HeadingNumber
+     fun entry() : Entry = Entry(headingNumber = headingNumber, title = title())
+}
+data class IssueSource(val issue: Issue, override val headingNumber : HeadingNumber) : EntrySource {
     override fun description(): String = issue.description
     override fun title(): String = "${issue.key} - ${issue.title}"
-    fun entry() : Entry = Entry(headingNumber = headingNumber, title = title())
 }

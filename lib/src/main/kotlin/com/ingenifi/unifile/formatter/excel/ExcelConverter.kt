@@ -8,35 +8,41 @@ import java.io.StringWriter
 
 class ExcelConverter {
 
-    fun convert(excelFile: File): String {
+    fun convert(excelFile: File): Map<String, String> {
         return convertToCsv(excelFile)
     }
 
-    private fun convertToCsv(excelFile: File): String {
+    private fun convertToCsv(excelFile: File): Map<String, String> {
         FileInputStream(excelFile).use { fis ->
             val workbook = XSSFWorkbook(fis)
-            val sheet = workbook.getSheetAt(0) // Assuming the first sheet
-            val stringWriter = StringWriter()
+            val sheetsData = mutableMapOf<String, String>()
 
-            sheet.forEach { row ->
-                val rowValues = row.map { cell ->
-                    when (cell.cellType) {
-                        CellType.STRING -> cell.stringCellValue
-                        CellType.NUMERIC -> cell.numericCellValue.toString()
-                        CellType.BOOLEAN -> cell.booleanCellValue.toString()
-                        else -> ""
-                    }.replace("\"", "\"\"") // Escape double quotes
+            for (sheetIndex in 0 until workbook.numberOfSheets) {
+                val sheet = workbook.getSheetAt(sheetIndex)
+                val stringWriter = StringWriter()
+
+                sheet.forEach { row ->
+                    val rowValues = row.map { cell ->
+                        when (cell.cellType) {
+                            CellType.STRING -> cell.stringCellValue
+                            CellType.NUMERIC -> cell.numericCellValue.toString()
+                            CellType.BOOLEAN -> cell.booleanCellValue.toString()
+                            else -> ""
+                        }.replace("\"", "\"\"") // Escape double quotes
+                    }
+
+                    // Skip rows where all cells are empty
+                    if (rowValues.any { it.isNotEmpty() }) {
+                        val csvRow = rowValues.joinToString(",") { "\"$it\"" } // Quote each field
+                        stringWriter.write("$csvRow\n")
+                    }
                 }
 
-                // Skip rows where all cells are empty
-                if (rowValues.any { it.isNotEmpty() }) {
-                    val csvRow = rowValues.joinToString(",") { "\"$it\"" } // Quote each field
-                    stringWriter.write("$csvRow\n")
-                }
+                sheetsData[sheet.sheetName] = stringWriter.toString()
             }
 
             workbook.close()
-            return stringWriter.toString()
+            return sheetsData
         }
     }
 }
