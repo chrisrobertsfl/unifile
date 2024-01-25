@@ -22,14 +22,11 @@ data class ExcelFormatter(val file: File, private val keywordExtractor: KeywordE
     override fun format(number: Int): String {
         lastNumber = number
         val worksheetData = ExcelConverter().convert(file)
-        val workBookName = file.name
-        verbosePrint("Processing workbook '${workBookName}' with ${worksheetData.size} children")
+        verbosePrint("Processing workbook '${file.name}' with ${worksheetData.size} children")
         val childVerbosity = verbosity.increasingBy(1)
         var childNumber = 1
         val children = worksheetData.map {
-            WorkSheetFormatter(
-                name = it.key, description = it.value, childNumber = childNumber++, workbookName = workBookName, keywordExtractor = keywordExtractor, toc = toc, verbosity = childVerbosity
-            ).format(number)
+            WorkSheetFormatter(worksheet = it.value, childNumber = childNumber++, keywordExtractor = keywordExtractor, toc = toc, verbosity = childVerbosity).format(number)
         }.joinToString("\n")
         return delegate.format(lastNumber, templatePath = "excel-document.tmpl", replacements = mapOf("children" to children), additionalKeywords = listOf("workbook"))
 
@@ -38,15 +35,14 @@ data class ExcelFormatter(val file: File, private val keywordExtractor: KeywordE
     override fun lastNumber(): Int = lastNumber + 1
 }
 
-data class WorkSheetFormatter(
-    val name: String, val description: String, val workbookName: String, val childNumber: Int, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, val verbosity: Verbosity
+data class WorkSheetFormatter(val worksheet: WorkSheet, val childNumber: Int, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, val verbosity: Verbosity
 ) : DocumentFormatter, VerbosePrinting by VerbosePrinter(verbosity) {
     private var lastNumber = 0
     override fun format(number: Int): String {
         lastNumber = number
-        val source = WorkSheetSource(title = name, description = description, headingNumber = SectionNumber(listOf(number, childNumber)), workbookName = workbookName)
+        val source = WorkSheetSource(worksheet = worksheet, headingNumber = SectionNumber(listOf(number, childNumber)))
         val delegate = Delegate(source, keywordExtractor, toc)
-        verbosePrint("Processing worksheet '$name'")
+        verbosePrint("Processing worksheet '${source.title()}' from workbook '${source.workbookName()}")
         lastNumber = number
         return delegate.format(
             number, templatePath = "worksheet-document.tmpl", replacements = replacements(source), additionalKeywords = additionalKeywords(source)
@@ -55,19 +51,22 @@ data class WorkSheetFormatter(
 
     override fun lastNumber(): Int = lastNumber + 1
 
-    private fun replacements(source: WorkSheetSource) = mapOf<String, String>("headingNumber" to source.headingNumber.asString(), "workbookName" to workbookName)
+    private fun replacements(source: WorkSheetSource) = mapOf<String, String>("headingNumber" to source.headingNumber.asString(), "workbookName" to source.workbookName())
     private fun additionalKeywords(source: WorkSheetSource): List<String> {
         val keywords = mutableListOf<String>()
-        keywords.addAll(keywordExtractor.extract(description, percentage = 0.3))
+        keywords.addAll(source.header())
         keywords.add("worksheet")
-        keywords.add(source.workbookName)
+        keywords.add(source.workbookName())
         return keywords
 
     }
 }
 
-data class WorkSheetSource(val title: String, val description: String, override val headingNumber: HeadingNumber, val workbookName: String) : EntrySource {
-    override fun description(): String = description
-    override fun title(): String = title
+data class WorkSheetSource(val worksheet: WorkSheet, override val headingNumber: HeadingNumber) : EntrySource {
+    override fun description(): String = worksheet.toFullCsv()
+    override fun title(): String = worksheet.title
+
+    fun header() = worksheet.header
+    fun workbookName() : String = worksheet.workbookName
 }
 

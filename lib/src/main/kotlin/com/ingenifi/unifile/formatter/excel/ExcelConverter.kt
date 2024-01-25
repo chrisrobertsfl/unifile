@@ -8,18 +8,21 @@ import java.io.StringWriter
 
 class ExcelConverter {
 
-    fun convert(excelFile: File): Map<String, String> {
+    fun convert(excelFile: File): Map<String, WorkSheet> {
         return convertToCsv(excelFile)
     }
 
-    private fun convertToCsv(excelFile: File): Map<String, String> {
+    private fun convertToCsv(excelFile: File): Map<String, WorkSheet> {
         FileInputStream(excelFile).use { fis ->
             val workbook = XSSFWorkbook(fis)
-            val sheetsData = mutableMapOf<String, String>()
+            val sheetsData = mutableMapOf<String, WorkSheet>()
+            val workbookName = excelFile.name
 
             for (sheetIndex in 0 until workbook.numberOfSheets) {
                 val sheet = workbook.getSheetAt(sheetIndex)
-                val stringWriter = StringWriter()
+                var isFirstRow = true
+                var headers: List<String> = listOf()
+                val bodyWriter = StringWriter()
 
                 sheet.forEach { row ->
                     val rowValues = row.map { cell ->
@@ -31,14 +34,19 @@ class ExcelConverter {
                         }.replace("\"", "\"\"") // Escape double quotes
                     }
 
-                    // Skip rows where all cells are empty
                     if (rowValues.any { it.isNotEmpty() }) {
-                        val csvRow = rowValues.joinToString(",") { "\"$it\"" } // Quote each field
-                        stringWriter.write("$csvRow\n")
+                        val csvRow = rowValues.joinToString(",") { "\"$it\"" }
+
+                        if (isFirstRow) {
+                            headers = rowValues
+                            isFirstRow = false
+                        } else {
+                            bodyWriter.write("$csvRow\n")
+                        }
                     }
                 }
 
-                sheetsData[sheet.sheetName] = stringWriter.toString()
+                sheetsData[sheet.sheetName] = WorkSheet(workbookName, sheet.sheetName, headers, bodyWriter.toString())
             }
 
             workbook.close()

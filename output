@@ -40,6 +40,7 @@ Section 6.4 ................................................................ OMO
 Section 6.5 ................................................. OMO-1995 - OLM Sourcing Facade Collaboration with Promising and Sourcing Team
 Document 7 ................................................................................................ OMO-1972 - Ship to Home Phase 3
 Section 7.1 ......................................................................... OMO-2005 - Adding MongoDB for Sourcing Data in Facade
+Section 7.2 .......................................................................... OMO-2004 - Kafka Response Topic and Lag on Dashboard
 Section 7.3 ...................................................................................... OMO-2003 - Load Test for Sourcing Facade
 Section 7.4 ......................................................................................... OMO-2002 - OMS Shift from MQ to Kafka
 Section 7.5 ........................................................................... OMO-2001 - Facade-to-OMS Response Routing via Kafka
@@ -125,7 +126,7 @@ The following worksheets are sub sections below:
 - Introduction:
 This is a worksheet of workbook recipes.xlsx
 
-keywords are: 1, unititem, worksheet, recipes.xlsx
+keywords are: Unit, Item, worksheet, recipes.xlsx
 
 - Description
 "Unit","Item"
@@ -140,7 +141,7 @@ keywords are: 1, unititem, worksheet, recipes.xlsx
 - Introduction:
 This is a worksheet of workbook recipes.xlsx
 
-keywords are: sauce, pan, steptask, 10melt, worksheet, recipes.xlsx
+keywords are: Step, Task, worksheet, recipes.xlsx
 
 - Description
 "Step","Task"
