@@ -1,10 +1,8 @@
 package com.ingenifi.unifile.formatter.excel
 
-import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
 import java.io.FileInputStream
-import java.io.StringWriter
 
 class ExcelConverter {
 
@@ -20,33 +18,8 @@ class ExcelConverter {
 
             for (sheetIndex in 0 until workbook.numberOfSheets) {
                 val sheet = workbook.getSheetAt(sheetIndex)
-                var isFirstRow = true
-                var headers: List<String> = listOf()
-                val bodyWriter = StringWriter()
-
-                sheet.forEach { row ->
-                    val rowValues = row.map { cell ->
-                        when (cell.cellType) {
-                            CellType.STRING -> cell.stringCellValue
-                            CellType.NUMERIC -> cell.numericCellValue.toString()
-                            CellType.BOOLEAN -> cell.booleanCellValue.toString()
-                            else -> ""
-                        }.replace("\"", "\"\"") // Escape double quotes
-                    }
-
-                    if (rowValues.any { it.isNotEmpty() }) {
-                        val csvRow = rowValues.joinToString(",") { "\"$it\"" }
-
-                        if (isFirstRow) {
-                            headers = rowValues
-                            isFirstRow = false
-                        } else {
-                            bodyWriter.write("$csvRow\n")
-                        }
-                    }
-                }
-
-                sheetsData[sheet.sheetName] = WorkSheet(workbookName, sheet.sheetName, headers, bodyWriter.toString())
+                val sheetProcessor = SheetProcessor(sheet, workbookName)
+                sheetsData[sheet.sheetName] = sheetProcessor.process()
             }
 
             workbook.close()
