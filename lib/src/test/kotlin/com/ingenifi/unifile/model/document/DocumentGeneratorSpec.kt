@@ -57,17 +57,23 @@ class DocumentGeneratorSpec : FeatureSpec({
             val document = Document(
                 tableOfContents = tableOfContents, body = Body(
                     sections = listOf(
-                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")), text = Text("My first text")),
+                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")), text = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
                         Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), title = Title("My second title")), text = Text("My second text"))
 
                     )
                 )
             )
             DocumentGenerator(document).generate() shouldBe """
+                ==================
                 1. My first title
-                My first text
+                ==================
+                My first text is very long but is not considered in calculating the max border length for section headings
+                
+                ==================
                 2. My second title
+                ==================
                 My second text
+                
                 
             """.trimIndent()
         }
