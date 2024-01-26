@@ -78,5 +78,50 @@ class DocumentGeneratorSpec : FeatureSpec({
             """.trimIndent()
         }
     }
+
+    feature("document") {
+        scenario("Entire document is generated with justification") {
+            val body = Body(
+                sections = listOf(
+                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")), text = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
+                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), title = Title("My second title")), text = Text("My second text"))
+
+                )
+            )
+            val document = Document(
+                tableOfContents = TableOfContents(
+                    headings = listOf(
+                        Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")),
+                        Heading(sectionNumber = SectionNumber(levels = listOf(Level(1), Level(1))), title = Title("My first sub title")),
+                        Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), title = Title("My second title")),
+                        Heading(sectionNumber = SectionNumber(levels = listOf(Level(2), Level(1))), title = Title("My second sub title")),
+                        Heading(sectionNumber = SectionNumber(levels = listOf(Level(2), Level(1), Level(1))), title = Title("My second sub sub title")),
+                    )
+                ), body = body
+            )
+
+            DocumentGenerator(document = document, justifySectionNumbers = true).generate() shouldBe """
+            ==============================
+            Table Of Contents
+            ==============================
+                1. My first title
+              1.1. My first sub title
+                2. My second title
+              2.1. My second sub title
+            2.1.1. My second sub sub title
+            ==============================
+                1. My first title
+            ==============================
+            My first text is very long but is not considered in calculating the max border length for section headings
+            
+            ==============================
+                2. My second title
+            ==============================
+            My second text
+            
+           
+        """.trimIndent()
+        }
+    }
 })
 
