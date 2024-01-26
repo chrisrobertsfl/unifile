@@ -14,6 +14,6 @@ data class EpicSpikeFormatter(
     keywordExtractor = keywordExtractor,
     toc = toc,
     templatePath = "epic-spike-document.tmpl",
-    additionalKeywords = listOf("spike"),
+    additionalKeywords = listOf("spike") + epic.additionalKeywords,
     verbosity = verbosity
 )

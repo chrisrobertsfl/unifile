@@ -6,7 +6,7 @@ import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.KeywordExtractor
-import com.ingenifi.unifile.formatter.toc.SectionNumber
+import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
 data class WorkSheetFormatter(val worksheet: WorkSheet, val childNumber: Int, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, val verbosity: Verbosity
@@ -14,7 +14,7 @@ data class WorkSheetFormatter(val worksheet: WorkSheet, val childNumber: Int, va
     private var lastNumber = 0
     override fun format(number: Int): String {
         lastNumber = number
-        val source = WorkSheetSource(worksheet = worksheet, headingNumber = SectionNumber(listOf(number, childNumber)))
+        val source = WorkSheetSource(worksheet = worksheet, headingNumber = HeadingNumber(listOf(number, childNumber)))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing worksheet '${source.title()}' from workbook '${source.workbookName()}")
         lastNumber = number

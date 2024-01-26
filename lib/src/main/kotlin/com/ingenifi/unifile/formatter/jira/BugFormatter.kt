@@ -10,23 +10,25 @@ import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
-data class StoryFormatter(private val story: Story, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, private val verbosity: Verbosity) : DocumentFormatter,
+data class BugFormatter(private val bug: Bug, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, private val verbosity: Verbosity) : DocumentFormatter,
     VerbosePrinting by VerbosePrinter(verbosity) {
 
 
     private var lastNumber = 0
 
     override fun format(number: Int): String {
-        val source = IssueSource(issue = story, headingNumber = HeadingNumber(listOf(number)))
+        val source = IssueSource(issue = bug, headingNumber = HeadingNumber(listOf(number)))
         val delegate = Delegate(source, keywordExtractor, toc)
-        verbosePrint("Processing story ${story.key}: '${story.title}'")
+
+        verbosePrint("Processing bug ${bug.key}: '${bug.title}'")
+
         lastNumber = number
         val keywords = mutableListOf<String>()
-        keywords.add("story")
-        keywords.add(story.key)
-        keywords.addAll(story.additionalKeywords)
+        keywords.add("bug")
+        keywords.add(bug.key)
+        keywords.addAll(bug.additionalKeywords)
         return delegate.format(
-            number, templatePath = "story-document.tmpl", additionalKeywords = keywords
+            number, templatePath = "bug-document.tmpl", additionalKeywords = keywords
         )
     }
 

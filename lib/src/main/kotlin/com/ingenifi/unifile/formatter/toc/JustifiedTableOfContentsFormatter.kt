@@ -1,5 +1,6 @@
 package com.ingenifi.unifile.formatter.toc
 
+import java.lang.IllegalStateException
 import kotlin.math.max
 
 data class JustifiedTableOfContentsFormatter(val leaderChar: Char = '.', val header: Header = Header()) : TableOfContentsFormatter {
@@ -7,16 +8,17 @@ data class JustifiedTableOfContentsFormatter(val leaderChar: Char = '.', val hea
         if (entries.isEmpty()) return ""
 
         val sortedHeadingNumbers = HeadingNumberSorter(entries.map { it.headingNumber }).sortHeadingNumbers().distinct()
-        val titleMap = entries.associate { it.headingNumber to it.title }
+        val headingNumberToEntry = entries.associateBy { it.headingNumber }
 
         // Format sorted entries
-        val maxPrefixLength = entries.maxOf { getPrefix(it.headingNumber).length }
+        val maxPrefixLength = entries.maxOf { getPrefix(it).length }
         val maxTitleLength = entries.maxOf { it.title.length }
         val totalLength = maxPrefixLength + maxTitleLength + 3
 
         val tocEntries = sortedHeadingNumbers.joinToString(separator = "\n") { headingNumber ->
-            val title = titleMap[headingNumber] ?: ""
-            val prefix = getPrefix(headingNumber)
+            val entry = headingNumberToEntry[headingNumber] ?: throw IllegalStateException("No entry found for heading number ${headingNumber.asString()}")
+            val title = entry.title ?: ""
+            val prefix = getPrefix(entry)
             val leaderCount = totalLength - prefix.length - title.length - 1
             val leaders = leaderChar.toString().repeat(max(0, leaderCount))
             "$prefix $leaders $title"
@@ -29,12 +31,10 @@ data class JustifiedTableOfContentsFormatter(val leaderChar: Char = '.', val hea
         return headerString + "\n" + tocEntries
     }
 
-    private fun getPrefix(headingNumber: HeadingNumber): String {
-        return when (headingNumber) {
-            is DocumentNumber -> "Document ${headingNumber.asString()}"
-            is SectionNumber -> "Section ${headingNumber.asString()}"
-            else -> headingNumber.asString()
-        }
+    private fun getPrefix(entry: Entry): String {
+        val headingNumber = entry.headingNumber
+        val formattedPrefix = if (entry.prefix.isNotBlank()) "${entry.prefix} " else ""
+        return "${formattedPrefix}${headingNumber.asString()}"
     }
 
     private fun formatHeader(header: Header, maxWidth: Int): String {

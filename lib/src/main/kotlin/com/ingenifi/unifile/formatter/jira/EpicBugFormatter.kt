@@ -5,15 +5,15 @@ import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
-data class EpicStoryFormatter(
-    private val story: Story, private val epic: Epic, private val childNumber: Int, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, private val verbosity: Verbosity
+data class EpicBugFormatter(
+    private val bug: Bug, private val epic: Epic, private val childNumber: Int, val keywordExtractor: KeywordExtractor, val toc: TableOfContents, private val verbosity: Verbosity
 ) : DocumentFormatter by EpicChildFormatter(
-    issue = story,
+    issue = bug,
     epic = epic,
     childNumber = childNumber,
     keywordExtractor = keywordExtractor,
     toc = toc,
-    templatePath = "epic-story-document.tmpl",
-    additionalKeywords = listOf("story") + epic.additionalKeywords,
+    templatePath = "epic-bug-document.tmpl",
+    additionalKeywords = listOf("big") + epic.additionalKeywords,
     verbosity = verbosity
 )

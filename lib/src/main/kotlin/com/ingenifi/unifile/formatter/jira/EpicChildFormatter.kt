@@ -7,7 +7,7 @@ import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.IssueSource
 import com.ingenifi.unifile.formatter.KeywordExtractor
-import com.ingenifi.unifile.formatter.toc.SectionNumber
+import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
 data class EpicChildFormatter(
@@ -23,7 +23,7 @@ data class EpicChildFormatter(
 
     private var lastNumber = 0
     override fun format(number: Int): String {
-        val source = IssueSource(issue = issue, headingNumber = SectionNumber(listOf(number, childNumber)))
+        val source = IssueSource(issue = issue, headingNumber = HeadingNumber(listOf(number, childNumber)))
         val delegate = Delegate(source, keywordExtractor, toc)
         verbosePrint("Processing child story '${issue.key} - ${issue.title}'")
         lastNumber = number

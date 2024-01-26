@@ -27,7 +27,7 @@ data class JiraFormatter(
     private val factory = IssueFactory(api = api, verbosity = verbosity.increasingBy(1))
     private val issueVerbosity = factory.verbosity.increasingBy(1)
     private val documents = mutableListOf<String>()
-    private val keys = file.readLines()
+    private val keys = IssueKey.parse(file)
 
     override fun format(number: Int): String {
         lastNumber = number
@@ -42,7 +42,26 @@ data class JiraFormatter(
         is Epic -> EpicFormatter(epic = issue, keywordExtractor = keywordExtractor, toc = toc, verbosity = issueVerbosity).format(lastNumber++)
         is Story -> StoryFormatter(story = issue, keywordExtractor = keywordExtractor, toc = toc, verbosity = issueVerbosity).format(lastNumber++)
         is Spike -> SpikeFormatter(spike = issue, keywordExtractor = keywordExtractor, toc = toc, verbosity = issueVerbosity).format(lastNumber++)
+        is Bug -> BugFormatter(bug = issue, keywordExtractor = keywordExtractor, toc = toc, verbosity = issueVerbosity).format(lastNumber++)
     }
 
     override fun lastNumber(): Int = lastNumber
 }
+
+data class IssueKey(val key: String, val additionalKeywords: List<String> = listOf()) {
+    companion object {
+        fun parse(file: File): List<IssueKey> {
+            return file.readLines().map { line ->
+                val parts = line.split(":")
+                val key = parts[0]
+                val additionalKeywords = if (parts.size > 1) {
+                    parts[1].split(",").filter { it.isNotBlank() }.map { it.trim() }
+                } else {
+                    listOf()
+                }
+                IssueKey(key, additionalKeywords)
+            }
+        }
+    }
+}
+

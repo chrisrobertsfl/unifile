@@ -1,9 +1,8 @@
 package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.formatter.jira.Issue
+import com.ingenifi.unifile.formatter.jira.*
 import com.ingenifi.unifile.formatter.toc.Entry
 import com.ingenifi.unifile.formatter.toc.HeadingNumber
-import com.ingenifi.unifile.formatter.toc.SectionNumber
 import java.io.File
 
 interface Source {
@@ -26,10 +25,21 @@ interface FileSource : Source {
 }
 
 interface EntrySource : Source {
-    val headingNumber : HeadingNumber
-     fun entry() : Entry = Entry(headingNumber = headingNumber, title = title())
+    val headingNumber: HeadingNumber
+    fun entry(): Entry
 }
-data class IssueSource(val issue: Issue, override val headingNumber : HeadingNumber) : EntrySource {
+
+data class IssueSource(val issue: Issue, override val headingNumber: HeadingNumber) : EntrySource {
+
+    override fun entry(): Entry {
+        val prefix = when (issue) {
+            is Epic -> "Epic"
+            is Story -> "Story"
+            is Spike -> "Spike"
+            is Bug -> "Bug"
+        }
+        return Entry(prefix = prefix, headingNumber = headingNumber, title = title())
+    }
     override fun description(): String = issue.description
     override fun title(): String = "${issue.key} - ${issue.title}"
 }

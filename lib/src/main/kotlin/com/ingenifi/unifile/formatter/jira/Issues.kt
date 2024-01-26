@@ -10,21 +10,23 @@ import kotlinx.coroutines.runBlocking
 
 data class IssueFactory(private val api: JiraApi, val verbosity: Verbosity) : VerbosePrinting by VerbosePrinter(verbosity) {
 
-    fun create(key: String): Issue {
+    fun create(issueKey: IssueKey): Issue {
+        val key = issueKey.key
         verbosePrint("Retrieving issue $key from Jira")
         val data = api.getIssue(key)
-        return when (type(data)) {
-            "epic" -> Epic(key = key, title = data?.get(EPIC_TITLE) as String, introduction = data[EPIC_INTRO] as String, description = data[DESCRIPTION] as String, children = children(key))
-            "story" -> Story(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String)
-            "spike" -> Spike(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String)
-            else -> throw IllegalArgumentException("no can handle")
+        return when (val type = type(data)) {
+            "epic" -> Epic(key = key, title = data?.get(EPIC_TITLE) as String, introduction = data[EPIC_INTRO] as String, description = data[DESCRIPTION] as String, children = children(issueKey), additionalKeywords = issueKey.additionalKeywords)
+            "story" -> Story(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String, additionalKeywords = issueKey.additionalKeywords)
+            "spike" -> Spike(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String, additionalKeywords = issueKey.additionalKeywords)
+            "bug" -> Bug(key, title = data?.get(TITLE) as String, description = data[DESCRIPTION] as String, additionalKeywords = issueKey.additionalKeywords)
+            else -> throw IllegalArgumentException("no can handle: $type")
         }
     }
 
-    private fun children(key: String): MutableList<Issue> = runBlocking(Dispatchers.IO) {
-        api.getChildren(key).map { childKey ->
+    private fun children(issueKey: IssueKey): MutableList<Issue> = runBlocking(Dispatchers.IO) {
+        api.getChildren(issueKey.key).map { childKey ->
             async {
-                create(childKey)
+                create(IssueKey(key = childKey, additionalKeywords = issueKey.additionalKeywords))
             }
         }.awaitAll().toMutableList()
     }
@@ -51,6 +53,7 @@ sealed interface Issue {
     val description : String
 }
 
-data class Epic(override val key: String, override val title: String, val introduction: String, override val description: String, val children: MutableList<Issue> = mutableListOf()) : Issue
-data class Story(override val key: String, override val title: String, override val description: String) : Issue
-data class Spike(override val key: String, override val title: String, override val description: String) : Issue
+data class Epic(override val key: String, override val title: String, val introduction: String, override val description: String, val children: MutableList<Issue> = mutableListOf(), val additionalKeywords : List<String>) : Issue
+data class Story(override val key: String, override val title: String, override val description: String, val additionalKeywords : List<String>) : Issue
+data class Spike(override val key: String, override val title: String, override val description: String, val additionalKeywords : List<String>) : Issue
+data class Bug(override val key: String, override val title: String, override val description: String, val additionalKeywords : List<String>) : Issue
