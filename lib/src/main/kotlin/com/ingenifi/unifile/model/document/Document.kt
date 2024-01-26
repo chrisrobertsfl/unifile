@@ -3,7 +3,7 @@ package com.ingenifi.unifile.model.document
 data class Document(val tableOfContents : TableOfContents, val body : Body)
 data class TableOfContents(val header : String = "Table Of Contents", val headings : List<Heading>)
 data class Body(val sections : List<Section>)
-data class Section(val heading : Heading, val text : Text)
+data class Section(val heading : Heading, val text : BodyText)
 data class Heading(val headingName : HeadingName = HeadingName.None, val sectionNumber: SectionNumber, val title: Title)
  sealed interface HeadingName {
      val content : String

@@ -30,7 +30,7 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
         appendText(section.text)
     }
 
-    private fun StringBuilder.appendText(text: Text) {
+    private fun StringBuilder.appendText(text: BodyText) {
         appendLine(text.content)
         appendLine()
     }
