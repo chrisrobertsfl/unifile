@@ -36,8 +36,13 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     }
 
     private fun StringBuilder.appendHeading(heading: Heading) = appendLine(formatHeadingWithSectionNumber(heading))
-    private fun formatHeadingWithSectionNumber(heading: Heading) =
-        "${generateSectionNumber(heading.sectionNumber).padStartIfNeeded(maxSectionLength, ' ', justifySectionNumbers)} ${heading.title.content}"
+    private fun formatHeadingWithSectionNumber(heading: Heading) : String {
+        val headingName = when (heading.headingName) {
+            is HeadingName.None -> ""
+            is Name -> "${heading.headingName.content} - "
+        }
+        return "${generateSectionNumber(heading.sectionNumber).padStartIfNeeded(maxSectionLength, ' ', justifySectionNumbers)} ${headingName}${heading.title.content}"
+    }
 
     private fun generateSectionNumber(sectionNumber: SectionNumber) = sectionNumber.levels.joinToString(separator = ".") { "${it.number}" } + "."
     private fun determineMaximumSectionLength() = document.tableOfContents.headings.maxOfOrNull { generateSectionNumber(it.sectionNumber).length } ?: 0
