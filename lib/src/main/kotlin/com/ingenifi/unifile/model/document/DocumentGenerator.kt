@@ -16,6 +16,8 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
             appendLine(document.tableOfContents.header)
             appendLine(borderLine)
             document.tableOfContents.headings.forEach { appendHeading(it) }
+            appendLine()
+            appendLine()
         }
     }
 

@@ -32,6 +32,8 @@ class DocumentGeneratorSpec : FeatureSpec({
             2.1. My second sub title
             2.1.1. My second sub sub title
             
+            
+            
         """.trimIndent()
         }
 
@@ -45,6 +47,8 @@ class DocumentGeneratorSpec : FeatureSpec({
                 2. My second title
               2.1. My second sub title
             2.1.1. My second sub sub title
+            
+            
             
         """.trimIndent()
         }
@@ -109,6 +113,8 @@ class DocumentGeneratorSpec : FeatureSpec({
                 2. My second title
               2.1. My second sub title
             2.1.1. My second sub sub title
+            
+            
             ==============================
                 1. My first title
             ==============================
