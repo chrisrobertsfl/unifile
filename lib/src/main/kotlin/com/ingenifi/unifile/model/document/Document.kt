@@ -17,5 +17,8 @@ data class Name(override val content : String) : HeadingName
 data class SectionNumber(val levels : List<Level>)
 data class Level(val number : Int)
 data class Title(val content : String)
-data class Text(val content : String)
+interface BodyText {
+    val content : String
+}
+data class Text(override val content : String) : BodyText
 
