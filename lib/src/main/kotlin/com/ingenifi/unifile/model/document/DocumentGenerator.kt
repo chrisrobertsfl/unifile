@@ -27,12 +27,9 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
         appendText(section.text)
     }
 
-    private fun StringBuilder.appendText(text: Text) = append(text.content)
+    private fun StringBuilder.appendText(text: Text) = appendLine(text.content)
     private fun StringBuilder.appendHeading(heading: Heading) = appendLine(formatHeadingWithSectionNumber(heading))
-    private fun determineMaximumSectionLength() = document.tableOfContents.headings.maxOfOrNull { generateSectionNumber(it.sectionNumber).length } ?: 0
-    private fun determineMaximumHeadingLength(): Int = document.tableOfContents.headings
-            .map { heading -> formatHeadingWithSectionNumber(heading).length }
-            .maxOrNull() ?: 0
+
     private fun formatHeadingWithSectionNumber(heading: Heading): String {
         val sectionNumber = generateSectionNumber(heading.sectionNumber)
         val justifiedSectionNumber = sectionNumber.padStartIfNeeded(maxSectionLength, ' ', justifySectionNumbers)
@@ -40,5 +37,10 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     }
 
     private fun generateSectionNumber(sectionNumber: SectionNumber): String = sectionNumber.levels.joinToString(separator = ".") { "${it.number}" } + "."
+
+    private fun determineMaximumSectionLength() = document.tableOfContents.headings.maxOfOrNull { generateSectionNumber(it.sectionNumber).length } ?: 0
+    private fun determineMaximumHeadingLength(): Int = document.tableOfContents.headings
+        .map { heading -> formatHeadingWithSectionNumber(heading).length }
+        .maxOrNull() ?: 0
     private fun String.padStartIfNeeded(length: Int, padChar: Char, justify: Boolean) = if (justify) this.padStart(length, padChar) else this
 }
