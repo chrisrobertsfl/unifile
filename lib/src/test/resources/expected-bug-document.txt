@@ -1,0 +1,32 @@
+=============================================================================================
+Table Of Contents
+=============================================================================================
+1. Jira Spike - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
+
+
+=============================================================================================
+1. Jira Spike - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
+=============================================================================================
+- Jira Spike Keywords
+
+- Jira Spike Summary
+(no summary)
+- Jira Spike Detail
+*What happened?*
+
+It appears that Order Details UI displays Putaway Started and Putaway Completed as "In fulfillment" for OLM orders.
+
+*Given:*
+
+To replicate the issue, follow these steps:
+ # Get an order into putaway started or putaway completed status
+ # Look at Order Details page on kohls.com (any environment where OLM Gateway is enabled for Order Details)
+ # See how "In Fulfillment" is the status describing the status of the order
+
+*Actual:*
+
+The order status of Order Details for a Putaway Started/Completed status order is 'In Fulfillment"
+
+*Expected:* 
+
+We should send "Expired Pickup" as the status when mapping Putaway Started/Completed status for Order Details in the OLMToOMSOrderStatusDescriptionMapping class

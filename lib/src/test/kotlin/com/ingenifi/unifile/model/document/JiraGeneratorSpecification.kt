@@ -30,6 +30,10 @@ class JiraGeneratorSpecification : StringSpec({
     "generate spike" {
         validate("spike", generate("spike"))
     }
+
+    "generate bug" {
+        validate("bug", generate("bug"))
+    }
 })
 
 
@@ -46,6 +50,7 @@ data class JiraGenerator(val config: Config, val number: Int, val file: File) : 
         return when (issueData.type) {
             "story" -> JiraIssue.story(issueData)
             "spike" -> JiraIssue.spike(issueData)
+            "bug" -> JiraIssue.bug(issueData)
             else -> throw IllegalArgumentException("type '${issueData.type}' not yet supported")
         }
     }
@@ -53,6 +58,7 @@ data class JiraGenerator(val config: Config, val number: Int, val file: File) : 
     private fun createSection(jiraIssue: JiraIssue): List<Section> = when (jiraIssue) {
         is Story -> SectionCreator.StoryCreator(story = jiraIssue, keywordExtractor = config.keywordExtractor).create(number)
         is Spike -> SectionCreator.SpikeCreator(spike = jiraIssue, keywordExtractor = config.keywordExtractor).create(number)
+        is Bug -> SectionCreator.BugCreator(bug = jiraIssue, keywordExtractor = config.keywordExtractor).create(number)
 
         else -> throw IllegalArgumentException("type not yet supported")
     }
@@ -86,12 +92,27 @@ sealed interface SectionCreator {
             return listOf(section)
         }
     }
+
+
+    data class BugCreator(val bug: Bug, val keywordExtractor: KeywordExtractor) : SectionCreator {
+        override fun create(number: Int): List<Section> {
+            val headingName = Name("Jira Spike")
+            val sectionNumber = SectionNumber(number)
+            val title = Title(bug.title)
+            val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = title)
+            val keywords = KeywordsText.Keywords(keywordExtractor.extract(bug.detail))
+            val text = UnifileBodyText(headingName, keywords = keywords, detail = DetailText.Detail(bug.detail))
+            val section = Section(heading = heading, text = text)
+            return listOf(section)
+        }
+    }
 }
 
 data class IssueData(private val rawMap: Map<String, Any>?, val key: String, val type: String, val detail: String) {
-
-    fun getStoryTitle() = rawMap?.get("summary") as String
-    fun getSpikeTitle() = rawMap?.get("summary") as String
+    fun getStoryTitle() = getNonEpicTitle()
+    fun getSpikeTitle() = getNonEpicTitle()
+    fun getBugTitle() = getNonEpicTitle()
+    private fun getNonEpicTitle() = rawMap?.get("summary") as String
 
     companion object {
         fun from(key: String, rawMap: Map<String, Any>?): IssueData {
@@ -114,8 +135,11 @@ interface JiraIssue {
     companion object {
         fun story(issueData: IssueData): Story = Story(key = issueData.key, detail = issueData.detail, title = issueData.getStoryTitle())
         fun spike(issueData: IssueData): Spike = Spike(key = issueData.key, detail = issueData.detail, title = issueData.getSpikeTitle())
+        fun bug(issueData: IssueData): Bug = Bug(key = issueData.key, detail = issueData.detail, title = issueData.getBugTitle())
+
     }
 }
 
 data class Story(override val key: String, override val detail: String, val title: String) : JiraIssue
 data class Spike(override val key: String, override val detail: String, val title: String) : JiraIssue
+data class Bug(override val key: String, override val detail: String, val title: String) : JiraIssue
