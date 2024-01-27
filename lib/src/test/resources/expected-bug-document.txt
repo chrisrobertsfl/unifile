@@ -1,17 +1,17 @@
-=============================================================================================
+===========================================================================================
 Table Of Contents
-=============================================================================================
-1. Jira Spike - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
+===========================================================================================
+1. Jira Bug - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
 
 
-=============================================================================================
-1. Jira Spike - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
-=============================================================================================
-- Jira Spike Keywords
+===========================================================================================
+1. Jira Bug - Mapping on Kohl.com OrderDetails UI for Putaway Started and Putaway Completed
+===========================================================================================
+- Jira Bug Keywords
 
-- Jira Spike Summary
+- Jira Bug Summary
 (no summary)
-- Jira Spike Detail
+- Jira Bug Detail
 *What happened?*
 
 It appears that Order Details UI displays Putaway Started and Putaway Completed as "In fulfillment" for OLM orders.

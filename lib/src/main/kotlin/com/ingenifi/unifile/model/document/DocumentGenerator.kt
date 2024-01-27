@@ -12,16 +12,35 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
 
     private fun StringBuilder.appendTableOfContents() {
         if (document.tableOfContents.headings.isNotEmpty()) {
+            val sortedHeadings = document.tableOfContents.headings.sortedWith(Comparator { h1, h2 ->
+                compareSectionNumbers(h1.sectionNumber, h2.sectionNumber)
+            })
             appendLine(borderLine)
             appendLine(document.tableOfContents.header)
             appendLine(borderLine)
-            document.tableOfContents.headings.forEach { appendHeading(it) }
+            sortedHeadings.forEach { appendHeading(it) }
             appendLine()
             appendLine()
         }
     }
 
-    private fun StringBuilder.appendBody() = document.body.sections.forEach { appendSection(it) }
+    private fun compareSectionNumbers(sn1: SectionNumber, sn2: SectionNumber): Int {
+        val list1 = sn1.levels.map { it.number }
+        val list2 = sn2.levels.map { it.number }
+        val commonLength = minOf(list1.size, list2.size)
+
+        for (i in 0 until commonLength) {
+            if (list1[i] != list2[i]) {
+                return list1[i].compareTo(list2[i])
+            }
+        }
+
+        return list1.size.compareTo(list2.size)
+    }
+
+    private fun StringBuilder.appendBody() {
+        document.body.sections.forEach { appendSection(it) }
+    }
 
     private fun StringBuilder.appendSection(section: Section) {
         appendLine(borderLine)
@@ -35,7 +54,10 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
         appendLine()
     }
 
-    private fun StringBuilder.appendHeading(heading: Heading) = appendLine(formatHeadingWithSectionNumber(heading))
+    private fun StringBuilder.appendHeading(heading: Heading) {
+        appendLine(formatHeadingWithSectionNumber(heading))
+    }
+
     private fun formatHeadingWithSectionNumber(heading: Heading): String {
         val headingName = when (heading.headingName) {
             is HeadingName.None -> ""
@@ -45,7 +67,9 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     }
 
     private fun generateSectionNumber(sectionNumber: SectionNumber) = sectionNumber.levels.joinToString(separator = ".") { "${it.number}" } + "."
+
     private fun determineMaximumSectionLength() = document.tableOfContents.headings.maxOfOrNull { generateSectionNumber(it.sectionNumber).length } ?: 0
+
     private fun determineMaximumHeadingLength() =
         (document.tableOfContents.headings + document.body.sections.map { it.heading }).map { heading -> formatHeadingWithSectionNumber(heading).length }.maxOrNull() ?: 0
 
