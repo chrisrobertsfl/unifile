@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.formatter
 
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.Entry
 import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents

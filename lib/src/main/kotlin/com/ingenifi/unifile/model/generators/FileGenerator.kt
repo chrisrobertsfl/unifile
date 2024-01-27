@@ -1,7 +1,7 @@
 package com.ingenifi.unifile.model.generators
 
-import com.ingenifi.unifile.VerbosePrinter
-import com.ingenifi.unifile.VerbosePrinting
+import com.ingenifi.unifile.verbosity.VerbosePrinter
+import com.ingenifi.unifile.verbosity.VerbosePrinting
 import com.ingenifi.unifile.model.document.*
 import java.io.File
 

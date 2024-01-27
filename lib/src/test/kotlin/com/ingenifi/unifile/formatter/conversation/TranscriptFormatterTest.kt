@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.formatter.conversation
 
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.FunSpec

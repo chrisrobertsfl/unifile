@@ -1,8 +1,8 @@
 package com.ingenifi.unifile.formatter.jira
 
-import com.ingenifi.unifile.VerbosePrinter
-import com.ingenifi.unifile.VerbosePrinting
-import com.ingenifi.unifile.Verbosity
+import com.ingenifi.unifile.verbosity.VerbosePrinter
+import com.ingenifi.unifile.verbosity.VerbosePrinting
+import com.ingenifi.unifile.verbosity.Verbosity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

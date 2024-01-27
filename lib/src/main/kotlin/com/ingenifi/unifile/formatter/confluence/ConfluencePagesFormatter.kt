@@ -1,11 +1,11 @@
 package com.ingenifi.unifile.formatter.confluence
 
 import com.ingenifi.unifile.ParameterStore
-import com.ingenifi.unifile.VerbosePrinter
-import com.ingenifi.unifile.VerbosePrinting
-import com.ingenifi.unifile.Verbosity
+import com.ingenifi.unifile.verbosity.VerbosePrinter
+import com.ingenifi.unifile.verbosity.VerbosePrinting
+import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.model.generators.confluence.ConfluenceApi
 import io.ktor.client.*

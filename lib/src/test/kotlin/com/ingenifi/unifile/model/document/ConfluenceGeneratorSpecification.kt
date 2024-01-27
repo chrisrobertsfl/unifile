@@ -1,8 +1,8 @@
 package com.ingenifi.unifile.model.document
 
 import com.ingenifi.unifile.ParameterStore
-import com.ingenifi.unifile.Verbosity
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.confluence.ConfluenceGenerator
 import com.ingenifi.unifile.resourceAsFile

@@ -2,12 +2,14 @@ package com.ingenifi.unifile.model.document
 
 import com.ingenifi.unifile.*
 import com.ingenifi.unifile.formatter.jira.JiraApi
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
 import com.ingenifi.unifile.model.generators.jira.IssueCreator
 import com.ingenifi.unifile.model.generators.jira.SectionCreator
 import com.ingenifi.unifile.model.generators.jira.SectionCreatorConfig
+import com.ingenifi.unifile.verbosity.Verbosity
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.runBlocking

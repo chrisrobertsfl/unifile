@@ -2,7 +2,7 @@ package com.ingenifi.unifile.formatter.confluence
 
 import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
 data class ConfluencePageFormatter(private val link: ConfluenceLink, private val keywordExtractor: KeywordExtractor, val toc: TableOfContents) : DocumentFormatter {

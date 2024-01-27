@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.model.generators.jira
 
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.document.*
 
 data class BugCreator(val bug: Bug, val keywordExtractor: KeywordExtractor) : SectionCreator {

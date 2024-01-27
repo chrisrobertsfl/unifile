@@ -1,8 +1,8 @@
 package com.ingenifi.unifile.formatter.jira
 
-import com.ingenifi.unifile.Verbosity
+import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 
 data class EpicStoryFormatter(

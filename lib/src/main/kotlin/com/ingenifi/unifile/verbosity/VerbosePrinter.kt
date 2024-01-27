@@ -1,20 +1,4 @@
-package com.ingenifi.unifile
-
-interface VerbosePrinting {
-    fun verbosePrint(message: String)
-    fun verbosePrint(message: String, withLevel: Int)
-}
-
-data class Verbosity(val verbose : Boolean, val level : Int) {
-    fun increasedLevel(by : Int = 1): Int = level + by
-
-    fun increasingBy(by: Int = 1): Verbosity = copy(level = level + by)
-
-    companion object {
-        val NONE: Verbosity = Verbosity(false, 0)
-    }
-
-}
+package com.ingenifi.unifile.verbosity
 
 data class VerbosePrinter(val verbose: Boolean, val level: Int) : VerbosePrinting {
 

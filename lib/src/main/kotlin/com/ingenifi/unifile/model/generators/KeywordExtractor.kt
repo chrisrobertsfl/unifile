@@ -1,4 +1,4 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.model.generators
 
 import java.io.File
 import java.nio.charset.StandardCharsets

@@ -1,12 +1,12 @@
 package com.ingenifi.unifile.formatter.jira
 
-import com.ingenifi.unifile.VerbosePrinter
-import com.ingenifi.unifile.VerbosePrinting
-import com.ingenifi.unifile.Verbosity
+import com.ingenifi.unifile.verbosity.VerbosePrinter
+import com.ingenifi.unifile.verbosity.VerbosePrinting
+import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.IssueSource
-import com.ingenifi.unifile.KeywordExtractor
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import kotlinx.coroutines.Dispatchers
