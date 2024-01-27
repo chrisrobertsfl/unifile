@@ -1,5 +1,6 @@
 package com.ingenifi.unifile.model.document
 
+import com.ingenifi.unifile.model.generators.document.DocumentGenerator
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every

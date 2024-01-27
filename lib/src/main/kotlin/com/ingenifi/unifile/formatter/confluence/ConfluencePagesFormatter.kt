@@ -7,7 +7,7 @@ import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
-import com.ingenifi.unifile.model.document.ConfluenceApi
+import com.ingenifi.unifile.model.generators.confluence.ConfluenceApi
 import io.ktor.client.*
 import kotlinx.coroutines.runBlocking
 import java.io.File

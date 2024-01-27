@@ -1,10 +1,10 @@
 package com.ingenifi.unifile
 
 import com.ingenifi.unifile.input.InputPaths
-import com.ingenifi.unifile.model.document.Document
-import com.ingenifi.unifile.model.document.DocumentGenerator
-import com.ingenifi.unifile.model.document.SectionGenerator
-import com.ingenifi.unifile.model.document.SectionGeneratorFactory
+import com.ingenifi.unifile.model.document.*
+import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
+import com.ingenifi.unifile.model.generators.SectionGeneratorFactory
+import com.ingenifi.unifile.model.generators.document.DocumentGenerator
 import com.ingenifi.unifile.output.OutputPath
 import io.ktor.client.*
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +21,7 @@ data class UniFileRunner(
     val verbosity: Verbosity
 ) : VerbosePrinting by VerbosePrinter(verbosity) {
 
-    private val sectionGeneratorFactory = SectionGeneratorFactory(config = SectionGenerator.Config(keywordExtractor, verbosity))
+    private val sectionGeneratorFactory = SectionGeneratorFactory(config = SectionGeneratorConfig(keywordExtractor, verbosity))
     fun combineFiles(output: OutputPath) = runBlocking {
         verbosePrint("Processing files")
         val withLevel = verbosity.increasedLevel()

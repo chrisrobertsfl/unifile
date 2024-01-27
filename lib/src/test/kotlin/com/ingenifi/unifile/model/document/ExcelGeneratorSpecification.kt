@@ -2,7 +2,9 @@ package com.ingenifi.unifile.model.document
 
 import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.Verbosity
-import com.ingenifi.unifile.model.document.SectionGenerator.Config
+import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
+import com.ingenifi.unifile.model.generators.document.DocumentGenerator
+import com.ingenifi.unifile.model.generators.excel.ExcelGenerator
 import com.ingenifi.unifile.resourceAsString
 import com.ingenifi.unifile.resourceAsFile
 import io.kotest.core.spec.style.StringSpec
@@ -12,7 +14,7 @@ import io.mockk.mockk
 class ExcelGeneratorSpecification : StringSpec({
 
     "generate" {
-        val config = Config(keywordExtractor = KeywordExtractor(), verbosity = mockk<Verbosity>())
+        val config = SectionGeneratorConfig(keywordExtractor = KeywordExtractor(), verbosity = mockk<Verbosity>())
         val sections = ExcelGenerator(config = config, number = 1, file = resourceAsFile("xlsx")).generate()
         DocumentGenerator(Document(sections = sections)).generate() shouldBe resourceAsString("expected-excel-document.txt")
     }

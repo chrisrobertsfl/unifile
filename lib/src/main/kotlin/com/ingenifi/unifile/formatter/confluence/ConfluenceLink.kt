@@ -1,9 +1,9 @@
 package com.ingenifi.unifile.formatter.confluence
 
 import com.ingenifi.unifile.formatter.Source
-import com.ingenifi.unifile.model.document.ConfluenceApi
-import com.ingenifi.unifile.model.document.FetchOption
-import com.ingenifi.unifile.model.document.FetchResult
+import com.ingenifi.unifile.model.generators.confluence.ConfluenceApi
+import com.ingenifi.unifile.model.generators.confluence.FetchOption
+import com.ingenifi.unifile.model.generators.confluence.FetchResult
 
 data class ConfluenceLink(val link: String, val api: ConfluenceApi, val pageId: String, val result : FetchResult)  : Source {
 

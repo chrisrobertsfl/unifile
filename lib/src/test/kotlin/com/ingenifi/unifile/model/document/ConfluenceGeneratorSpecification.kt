@@ -3,7 +3,8 @@ package com.ingenifi.unifile.model.document
 import com.ingenifi.unifile.ParameterStore
 import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.KeywordExtractor
-import com.ingenifi.unifile.model.document.SectionGenerator.Config
+import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
+import com.ingenifi.unifile.model.generators.confluence.ConfluenceGenerator
 import com.ingenifi.unifile.resourceAsFile
 import com.ingenifi.unifile.vpnOn
 import io.kotest.core.spec.style.StringSpec
@@ -14,7 +15,7 @@ import io.mockk.mockk
 class ConfluenceGeneratorSpecification : StringSpec({
 
     "generate".config(enabledIf = { vpnOn() }) {
-        val config = Config(keywordExtractor = KeywordExtractor(), verbosity = mockk<Verbosity>(), parameterStore = ParameterStore.loadProperties())
+        val config = SectionGeneratorConfig(keywordExtractor = KeywordExtractor(), verbosity = mockk<Verbosity>(), parameterStore = ParameterStore.loadProperties())
         ConfluenceGenerator(config = config, number = 1, file = resourceAsFile("confluence")).generate() shouldBe listOf(
             Section(
                 heading = Heading(

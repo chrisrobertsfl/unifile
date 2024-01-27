@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.formatter.html
 
-import com.ingenifi.unifile.model.document.HtmlConverter
+import com.ingenifi.unifile.model.generators.html.HtmlConverter
 import com.ingenifi.unifile.resourceAsString
 import io.kotest.core.spec.style.StringSpec
 import org.jsoup.Jsoup

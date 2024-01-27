@@ -4,7 +4,12 @@ import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.model.document.DetailText.Detail
 import com.ingenifi.unifile.model.document.KeywordsText.Keywords
-import com.ingenifi.unifile.model.document.SectionGenerator.Config
+import com.ingenifi.unifile.model.generators.FileGenerator
+import com.ingenifi.unifile.model.generators.pdf.PdfGenerator
+import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
+import com.ingenifi.unifile.model.generators.document.DocumentGenerator
+import com.ingenifi.unifile.model.generators.text.TextGenerator
+import com.ingenifi.unifile.model.generators.xml.XmlGenerator
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -20,7 +25,7 @@ class SectionGeneratorSpecification : FeatureSpec({
         every { keywordExtractor.extractKeywords(any()) } returns expectedExtractedFileKeywords
         val allKeywords = expectedExtractedKeywords + expectedExtractedFileKeywords
         val verbosity = Verbosity(verbose = true, level = 0)
-        val config = Config(keywordExtractor = keywordExtractor, verbosity = verbosity)
+        val config = SectionGeneratorConfig(keywordExtractor = keywordExtractor, verbosity = verbosity)
         val file = File("src/test/resources/simple.txt")
         val headingNameString = "Text Document"
         val number = 1
