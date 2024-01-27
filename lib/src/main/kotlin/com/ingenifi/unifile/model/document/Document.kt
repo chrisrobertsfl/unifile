@@ -1,6 +1,8 @@
 package com.ingenifi.unifile.model.document
 
-data class Document(val tableOfContents : TableOfContents, val body : Body)
+data class Document(val tableOfContents : TableOfContents, val body : Body) {
+    constructor(sections : List<Section>) : this(tableOfContents = TableOfContents(headings = sections.map { it.heading }), body = Body(sections))
+}
 data class TableOfContents(val header : String = "Table Of Contents", val headings : List<Heading>)
 data class Body(val sections : List<Section>)
 data class Section(val heading : Heading, val text : BodyText)

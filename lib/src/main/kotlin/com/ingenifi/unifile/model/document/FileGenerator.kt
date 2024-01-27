@@ -6,8 +6,7 @@ import java.io.File
 
 data class FileGenerator(val config: SectionGenerator.Config, val number: Int, val file: File, val headingName: HeadingName, val detail: String = file.readText()) : SectionGenerator,
     VerbosePrinting by VerbosePrinter(config.verbosity) {
-    override fun sections(): List<Section> {
-        verbosePrint("detail is $detail")
+    override fun generate(): List<Section> {
         val title = file.name
         val keywords = config.keywordExtractor.extract(title) + config.keywordExtractor.extractKeywords(file)
         return listOf(

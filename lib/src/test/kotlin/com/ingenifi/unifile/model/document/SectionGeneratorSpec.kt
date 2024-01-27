@@ -27,7 +27,7 @@ class SectionGeneratorSpec : FeatureSpec({
 
         scenario("txt using raw file generator") {
             val generator = FileGenerator(file = file, headingName = Name(headingNameString), number = number, config = config)
-            val sections = generator.sections()
+            val sections = generator.generate()
             sections shouldBe expectedSection(allKeywords, "Text Document", "simple.txt", "Hello Plain Text")
 
             val tableOfContents = TableOfContents(headings = sections.map { it.heading })
@@ -37,21 +37,21 @@ class SectionGeneratorSpec : FeatureSpec({
         }
 
         scenario("plain text using text generator") {
-            TextGenerator(config, number, file).sections() shouldBe expectedSection(allKeywords, "Text Document", "simple.txt", "Hello Plain Text")
+            TextGenerator(config, number, file).generate() shouldBe expectedSection(allKeywords, "Text Document", "simple.txt", "Hello Plain Text")
         }
 
         scenario("json using text generator") {
             val generator = TextGenerator(config, number, file = File("src/test/resources/simple.json"), headingNameString = "Json Document")
-            val sections = generator.sections()
+            val sections = generator.generate()
             sections shouldBe expectedSection(allKeywords, "Json Document", "simple.json", "{ \"message\" : \"Hello Json\" }")
         }
 
         scenario("pdf using generator by delegation") {
-            PdfGenerator(config, number, file = File("src/test/resources/simple.pdf")).sections() shouldBe expectedSection(allKeywords, "Pdf Document", "simple.pdf", "Hello PDF")
+            PdfGenerator(config, number, file = File("src/test/resources/simple.pdf")).generate() shouldBe expectedSection(allKeywords, "Pdf Document", "simple.pdf", "Hello PDF")
         }
 
         scenario("xml using generator by delegation") {
-            XmlGenerator(config, number, file = File("src/test/resources/simple.xml")).sections() shouldBe expectedSection(
+            XmlGenerator(config, number, file = File("src/test/resources/simple.xml")).generate() shouldBe expectedSection(
                 allKeywords, "Xml Document", "simple.xml", """
            tag []:
              Hello XML

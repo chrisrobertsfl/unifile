@@ -1,6 +1,7 @@
 package com.ingenifi.unifile.formatter.word
 
 import com.ingenifi.unifile.formatter.FileSource
+import com.ingenifi.unifile.model.document.WordConverter
 import java.io.File
 
 data class WordSource(override val file: File) : FileSource {

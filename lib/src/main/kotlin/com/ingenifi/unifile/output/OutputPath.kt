@@ -13,4 +13,11 @@ sealed interface OutputPath {
             println(text)
         }
     }
+
+     class StringOutputPath : OutputPath {
+         lateinit var contents : String
+        override fun write(text: String) {
+            contents = text
+        }
+    }
 }
