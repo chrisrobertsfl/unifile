@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.formatter.powerpoint
 
-import com.ingenifi.unifile.formatter.pdf.PdfConverter
+import com.ingenifi.unifile.model.document.PdfConverter
 import java.io.File
 
 class PowerPointConverter {

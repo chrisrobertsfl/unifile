@@ -1,10 +1,7 @@
 package com.ingenifi.unifile.model.document
 
-import com.ingenifi.unifile.VerbosePrinter
-import com.ingenifi.unifile.VerbosePrinting
 import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.KeywordExtractor
-import com.ingenifi.unifile.formatter.pdf.PdfConverter
 import com.ingenifi.unifile.model.document.DetailText.Detail
 import com.ingenifi.unifile.model.document.KeywordsText.Keywords
 import com.ingenifi.unifile.model.document.SectionGenerator.Config
@@ -12,8 +9,6 @@ import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk
-import org.apache.pdfbox.pdmodel.PDDocument
-import org.apache.pdfbox.text.PDFTextStripper
 import java.io.File
 
 class SectionGeneratorSpec : FeatureSpec({
@@ -54,6 +49,15 @@ class SectionGeneratorSpec : FeatureSpec({
         scenario("pdf using generator by delegation") {
             PdfGenerator(config, number, file = File("src/test/resources/simple.pdf")).sections() shouldBe expectedSection(allKeywords, "Pdf Document", "simple.pdf", "Hello PDF")
         }
+
+        scenario("xml using generator by delegation") {
+            XmlGenerator(config, number, file = File("src/test/resources/simple.xml")).sections() shouldBe expectedSection(
+                allKeywords, "Xml Document", "simple.xml", """
+           tag []:
+             Hello XML
+       """.trimIndent()
+            )
+        }
     }
 })
 
@@ -64,34 +68,6 @@ private fun expectedSection(allKeywords: List<String>, name: String, title: Stri
         ), text = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
     )
 )
-
-interface SectionGenerator {
-    fun sections() = listOf<Section>()
-
-    data class Config(val keywordExtractor: KeywordExtractor, val verbosity: Verbosity)
-}
-
-data class FileGenerator(val config: Config, val number: Int, val file: File, val headingName: HeadingName, val detail: String = file.readText()) : SectionGenerator,
-    VerbosePrinting by VerbosePrinter(config.verbosity) {
-    override fun sections(): List<Section> {
-        verbosePrint("detail is $detail")
-        val title = file.name
-        val keywords = config.keywordExtractor.extract(title) + config.keywordExtractor.extractKeywords(file)
-        return listOf(
-            Section(
-                heading = Heading(
-                    headingName = headingName, sectionNumber = SectionNumber(listOf(Level(number))), title = Title(content = title)
-                ), text = UnifileBodyText(headingName = headingName, keywords = Keywords(keywords), detail = Detail(detail))
-            )
-        )
-    }
-}
-
-data class TextGenerator(val config: Config, val number: Int, val file: File, val headingNameString: String = "Text Document") :
-    SectionGenerator by FileGenerator(config, number, file, Name(headingNameString))
-
-data class PdfGenerator(val config: Config, val number: Int, val file: File, val headingNameString: String = "Pdf Document", val detail: String = PdfConverter().convert(file)) :
-    SectionGenerator by FileGenerator(config, number, file, Name(headingNameString), detail)
 
 
 

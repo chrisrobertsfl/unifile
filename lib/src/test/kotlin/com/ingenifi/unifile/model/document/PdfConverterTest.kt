@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.formatter.pdf
+package com.ingenifi.unifile.model.document
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe

@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.formatter.pdf
+package com.ingenifi.unifile.model.document
 
 import org.apache.pdfbox.pdmodel.PDDocument.load
 import org.apache.pdfbox.text.PDFTextStripper
