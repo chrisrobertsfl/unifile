@@ -2,7 +2,6 @@ package com.ingenifi.unifile.model.generators.powerpoint
 
 import com.ingenifi.unifile.model.generators.FileGenerator
 import com.ingenifi.unifile.model.document.Name
-import com.ingenifi.unifile.model.document.PowerPointConverter
 import com.ingenifi.unifile.model.generators.SectionGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import java.io.File

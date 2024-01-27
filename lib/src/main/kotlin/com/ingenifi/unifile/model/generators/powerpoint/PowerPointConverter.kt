@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.model.document
+package com.ingenifi.unifile.model.generators.powerpoint
 
 import com.ingenifi.unifile.model.generators.pdf.PdfConverter
 import java.io.File

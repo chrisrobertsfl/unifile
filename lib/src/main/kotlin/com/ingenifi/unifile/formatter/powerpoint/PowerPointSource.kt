@@ -1,7 +1,7 @@
 package com.ingenifi.unifile.formatter.powerpoint
 
 import com.ingenifi.unifile.formatter.FileSource
-import com.ingenifi.unifile.model.document.PowerPointConverter
+import com.ingenifi.unifile.model.generators.powerpoint.PowerPointConverter
 import java.io.File
 
 data class PowerPointSource(override val file: File) : FileSource {
