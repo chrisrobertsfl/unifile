@@ -1,23 +1,9 @@
 package com.ingenifi.unifile.formatter.pdf
 
-import com.itextpdf.kernel.pdf.PdfDocument
-import com.itextpdf.kernel.pdf.PdfReader
-import com.itextpdf.kernel.pdf.canvas.parser.PdfTextExtractor
+import org.apache.pdfbox.pdmodel.PDDocument.load
+import org.apache.pdfbox.text.PDFTextStripper
 import java.io.File
 
 class PdfConverter {
-
-    fun convert(pdf: File): String {
-        val reader = PdfReader(pdf.absolutePath)
-        val pdfDoc = PdfDocument(reader)
-        val stringBuilder = StringBuilder()
-
-        for (i in 1..pdfDoc.numberOfPages) {
-            val page = pdfDoc.getPage(i)
-            stringBuilder.append(PdfTextExtractor.getTextFromPage(page)).append("\n")
-        }
-
-        pdfDoc.close()
-        return stringBuilder.toString()
-    }
+    fun convert(pdf: File): String = load(pdf).use { PDFTextStripper().getText(it).trim() }
 }

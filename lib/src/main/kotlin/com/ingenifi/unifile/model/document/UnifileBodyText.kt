@@ -39,6 +39,8 @@ data class UnifileBodyText(
 sealed interface KeywordsText : BodyText {
     object None : KeywordsText {
         override val content: String get() = "(no keywords)"
+
+        override fun toString(): String = "None(keywords=[], content=$content)"
     }
 
     data class Keywords(val keywords: List<String> = listOf(), override val content: String = keywords.joinToString(", ")) : KeywordsText

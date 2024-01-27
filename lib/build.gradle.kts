@@ -71,13 +71,12 @@ dependencies {
     implementation("io.ktor:ktor-client-java:2.3.7")
     implementation("com.jayway.jsonpath:json-path:2.6.0")
     implementation("org.jsoup:jsoup:1.17.2")
-    implementation("com.itextpdf:itext7-core:8.0.2")
     implementation("org.apache.poi:poi-ooxml:5.2.5")
     implementation("org.apache.poi:poi-scratchpad:5.2.5")
-
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.1")
     implementation("com.google.guava:guava:33.0.0-jre")
+    implementation("org.apache.pdfbox:pdfbox:2.0.24")
 
 
 

@@ -1,5 +1,6 @@
 package com.ingenifi.unifile.formatter
 
+import java.io.File
 import java.nio.charset.StandardCharsets
 
 data class KeywordExtractor(
@@ -23,6 +24,14 @@ data class KeywordExtractor(
 
         val numberOfKeywords = (sortedByFrequency.size * percentage).toInt()
         return sortedByFrequency.take(numberOfKeywords).map { it.key }
+    }
+
+    fun extractKeywords(file : File): List<String> {
+        val pathKeywords = file.toPath().parent?.iterator()?.asSequence()?.map { it.toString().replace(Regex("\\W+"), " ").trim() }?.filter { it.isNotEmpty() }?.toList() ?: emptyList()
+        val normalizedFileName = file.name.substringBeforeLast('.').replace(Regex("\\W+"), " ").trim()
+        val keywords = pathKeywords + listOf(normalizedFileName)
+        val extension = file.extension
+        return if (extension.isNotEmpty()) keywords + extension else keywords
     }
 
     companion object {
