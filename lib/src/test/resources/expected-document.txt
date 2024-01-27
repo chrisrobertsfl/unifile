@@ -28,10 +28,10 @@ Hello Plain Text
 - Xml Document Keywords
 src, test, resources, simple, xml
 - Xml Document Summary
+(no summary)
+- Xml Document Detail
 tag []:
   Hello XML
-- Xml Document Detail
-<tag>Hello XML</tag>
 
 
 ==========================================
