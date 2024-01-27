@@ -16,7 +16,9 @@ data class Heading(val headingName : HeadingName = HeadingName.None, val section
 }
 data class Name(override val content : String) : HeadingName
 
-data class SectionNumber(val levels : List<Level>)
+data class SectionNumber(val levels : List<Level>) {
+    constructor(number : Int) : this(listOf(Level(number)))
+}
 data class Level(val number : Int)
 data class Title(val content : String)
 interface BodyText {

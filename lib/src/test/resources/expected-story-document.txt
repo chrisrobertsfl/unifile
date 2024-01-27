@@ -1,0 +1,22 @@
+================================================================
+Table Of Contents
+================================================================
+1. Jira Story - Review and Update the Kafka Consumer Lag for OLM
+
+
+================================================================
+1. Jira Story - Review and Update the Kafka Consumer Lag for OLM
+================================================================
+- Jira Story Keywords
+
+- Jira Story Summary
+(no summary)
+- Jira Story Detail
+*As* an engineer
+*I want to* review and update the Dynatrace monitoring for OLM's kafka consumer lag
+*So* that there is monitoring for all of OLM's kafka topics
+
+*Acceptance Criteria*:
+* review the current DT monitoring for OLM's kafka topics
+** ensure all kafka topics has monitoring for consumer lag
+* work with OLM team to obtain all of OLM's kafka topics

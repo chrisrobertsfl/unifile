@@ -1,21 +1,25 @@
 package com.ingenifi.unifile.model.document
 
+import com.ingenifi.unifile.model.document.SectionGenerator.Config
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import java.io.File
-import com.ingenifi.unifile.model.document.SectionGenerator.Config
 
 data class ConfluenceGenerator(val config: Config, val number: Int, val file: File, val headingNameString: String = "Confluence Page") : SectionGenerator {
     private val api: ConfluenceApi = ConfluenceApi(config.client, config.parameterStore.getParameter("username"), config.parameterStore.getParameter("password"))
+    private val headingName = Name(headingNameString)
     override fun generate(): List<Section> = runBlocking {
-        file.readLines().map { createLink(it) }.map {
-            createSection(it)
-        }
+        file.readLines().map {
+                async { createLink(it) }
+            }.map {
+                createSection(it.await())
+            }
     }
 
     private fun createSection(link: ConfluenceLink) = Section(
         heading = Heading(
-            headingName = Name("Confluence Page"), sectionNumber = SectionNumber(listOf(Level(number))), title = Title(link.title)
-        ), text = UnifileBodyText(headingName = Name("Confluence Page"), keywords = KeywordsText.Keywords(config.keywordExtractor.extract(link.detail)), detail = DetailText.Detail(link.detail))
+            headingName = headingName, sectionNumber = SectionNumber(listOf(Level(number))), title = Title(link.title)
+        ), text = UnifileBodyText(headingName = headingName, keywords = KeywordsText.Keywords(config.keywordExtractor.extract(link.detail)), detail = DetailText.Detail(link.detail))
     )
 
     private suspend fun createLink(url: String): ConfluenceLink {

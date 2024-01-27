@@ -8,7 +8,7 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     fun generate() = buildString {
         appendTableOfContents()
         appendBody()
-    }.trim()
+    }.trim().replace("\r\n", "\n")
 
     private fun StringBuilder.appendTableOfContents() {
         if (document.tableOfContents.headings.isNotEmpty()) {
@@ -36,7 +36,7 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     }
 
     private fun StringBuilder.appendHeading(heading: Heading) = appendLine(formatHeadingWithSectionNumber(heading))
-    private fun formatHeadingWithSectionNumber(heading: Heading) : String {
+    private fun formatHeadingWithSectionNumber(heading: Heading): String {
         val headingName = when (heading.headingName) {
             is HeadingName.None -> ""
             is Name -> "${heading.headingName.content} - "

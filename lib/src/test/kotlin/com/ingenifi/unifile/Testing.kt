@@ -6,7 +6,7 @@ import java.io.File
 import java.nio.charset.Charset.defaultCharset
 
 
-fun simpleFile(extension : String) = File("src/test/resources/simple.${extension}")
+fun resourceAsFile(extension : String, name : String = "simple", ) = File("src/test/resources/${name}.${extension}")
 fun simplePaths(vararg extensions: String) = extensions.map { "src/test/resources/simple.$it" }
 fun resourceAsString(resource: String): String = toString(getResource(resource), defaultCharset())
 
@@ -16,7 +16,7 @@ fun outputResource(resource : String) {
     println("----------------")
 }
 
-fun String.output(heading : String?) {
+fun String.output(heading : String? = null) {
     println("\n-----------------")
     heading?.let { println(it) }
     println(this)
