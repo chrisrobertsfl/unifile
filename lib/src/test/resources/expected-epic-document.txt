@@ -49,9 +49,9 @@ This is a child spike 'OMO-2135 - EFC ACL to determines shipment origin system a
 1.2. Jira Epic Child Story - Simplifying Ship to Home Workflow
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-2134
+child, OMO-2134, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-2134 - Simplifying Ship to Home Workflow' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-2134 - Simplifying Ship to Home Workflow' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As an* OLM team member,
 
@@ -60,7 +60,7 @@ This is a child story 'OMO-2134 - Simplifying Ship to Home Workflow' of epic 'OM
 *So that* all team members, including those from non-technical backgrounds, can easily understand and manage the steps involved in the process.
 
 {*}Acceptance Criteria{*}:
- # 
+ #
  ## Each phase of the Ship to Home process is described in simple, clear language.
  ## The flows are engaging, informative, and accessible to everyone.
  ## Emphasis on key steps and decision-making points in a user-friendly swim lane format.
@@ -71,7 +71,7 @@ This is a child story 'OMO-2134 - Simplifying Ship to Home Workflow' of epic 'OM
 
 
 ===============================================================================================================
-1.3. Jira Epic Child Spike - Investigate EFC6 S2H Shipment Delayed Email Integration 
+1.3. Jira Epic Child Spike - Investigate EFC6 S2H Shipment Delayed Email Integration
 ===============================================================================================================
 - Jira Epic Child Spike Keywords
 child, spike, OMO-1968, OMO-2125
@@ -97,9 +97,9 @@ This is a child spike 'OMO-2125 - Investigate EFC6 S2H Shipment Delayed Email In
 1.4. Jira Epic Child Story - Order Router - Retry flow processing
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-2077
+child, OMO-2077, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-2077 - Order Router - Retry flow processing' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-2077 - Order Router - Retry flow processing' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As* the OLM Router
 *I want to* publish to OLM_ERROR topic on processing errors
@@ -118,9 +118,9 @@ This is a child story 'OMO-2077 - Order Router - Retry flow processing' of epic 
 1.5. Jira Epic Child Story - Order Router Metrics Dashboard for Ship to Home
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-2069
+child, OMO-2069, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-2069 - Order Router Metrics Dashboard for Ship to Home' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-2069 - Order Router Metrics Dashboard for Ship to Home' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As the* Order Router system,
 *I want to* create a dashboard showing key performance metrics for Ship to Home orders,
@@ -136,9 +136,9 @@ This is a child story 'OMO-2069 - Order Router Metrics Dashboard for Ship to Hom
 1.6. Jira Epic Child Story - Implementing Logging for Order Router
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-2068
+child, OMO-2068, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-2068 - Implementing Logging for Order Router' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-2068 - Implementing Logging for Order Router' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As the* Order Router system{*},{*}
 *I want to* implement logging with relevant information for troubleshooting,
@@ -212,9 +212,9 @@ This is a child spike 'OMO-2065 - Checkout JSON->XML: Understand the possibly dy
 1.9. Jira Epic Child Story - Kafka Message Handling in Order Router
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-2063
+child, OMO-2063, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-2063 - Kafka Message Handling in Order Router' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-2063 - Kafka Message Handling in Order Router' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As* the Order Router system,
 *I want to* investigate the message handling from the new Kafka Topic (order-asynch-topic)
@@ -257,9 +257,9 @@ This is a child spike 'OMO-2054 - Design Approach for Order Comparison in OMS an
 1.11. Jira Epic Child Story - Convert Checkout's Order JSON to Existing MQ's Order XML
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-1988
+child, OMO-1988, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-1988 - Convert Checkout's Order JSON to Existing MQ's Order XML' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-1988 - Convert Checkout's Order JSON to Existing MQ's Order XML' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As an OLM Engineer,*
 
@@ -280,9 +280,9 @@ This is a child story 'OMO-1988 - Convert Checkout's Order JSON to Existing MQ's
 1.12. Jira Epic Child Story - Validate Order Consistency Between New Kafka Topic and Existing MQ
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-1982
+child, OMO-1982, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-1982 - Validate Order Consistency Between New Kafka Topic and Existing MQ' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-1982 - Validate Order Consistency Between New Kafka Topic and Existing MQ' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As an* OLM Engineer,
 *I want to* implement or perform an order comparison check,
@@ -310,9 +310,9 @@ This is a child story 'OMO-1982 - Validate Order Consistency Between New Kafka T
 1.13. Jira Epic Child Story - Develop Microservice for Post-Checkout Order Filtering
 ===============================================================================================================
 - Jira Epic Child Story Keywords
-child, story, OMO-1968, OMO-1981
+child, OMO-1981, OMO-1968
 - Jira Epic Child Story Summary
-This is a child story 'OMO-1981 - Develop Microservice for Post-Checkout Order Filtering' of epic 'OMO-1968 - Ship to Home Phase 0
+This is a child 'OMO-1981 - Develop Microservice for Post-Checkout Order Filtering' of epic 'OMO-1968 - Ship to Home Phase 0'
 - Jira Epic Child Story Detail
 *As an* OLM Engineer,
 *I want to* develop a microservice for post-checkout filtering,
