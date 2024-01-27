@@ -5,7 +5,7 @@ import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import io.ktor.client.*
 import java.io.File

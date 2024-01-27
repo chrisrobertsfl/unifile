@@ -20,3 +20,5 @@ data class HtmlGenerator(val config: SectionGenerator.Config, val number: Int, v
 data class TranscriptGenerator(val config: SectionGenerator.Config, val number: Int, val file: File, val headingNameString: String = "Transcript Document", private val transcript : Transcript = TranscriptConverter().convert(file)) :
     SectionGenerator by FileGenerator(config, number, file, Name(headingNameString), summary = transcript.summary, detail = transcript.detail)
 
+data class XmlGenerator(val config: SectionGenerator.Config, val number: Int, val file: File, val headingNameString: String = "Xml Document", val detail: String = XmlConverter().convert(file)) :
+    SectionGenerator by FileGenerator(config, number, file, Name(headingNameString), detail = detail)

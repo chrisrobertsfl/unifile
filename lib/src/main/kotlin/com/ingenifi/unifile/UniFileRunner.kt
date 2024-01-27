@@ -1,6 +1,5 @@
 package com.ingenifi.unifile
 
-import com.ingenifi.unifile.formatter.KeywordExtractor
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.model.document.Document
 import com.ingenifi.unifile.model.document.DocumentGenerator

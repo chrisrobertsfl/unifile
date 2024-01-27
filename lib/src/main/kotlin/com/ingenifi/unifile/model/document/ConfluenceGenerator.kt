@@ -1,11 +1,10 @@
 package com.ingenifi.unifile.model.document
 
-import com.ingenifi.unifile.formatter.confluence.ConfluenceApi
-import com.ingenifi.unifile.formatter.confluence.FetchOption
 import kotlinx.coroutines.runBlocking
 import java.io.File
+import com.ingenifi.unifile.model.document.SectionGenerator.Config
 
-data class ConfluenceGenerator(val config: SectionGenerator.Config, val number: Int, val file: File, val headingNameString: String = "Confluence Page") : SectionGenerator {
+data class ConfluenceGenerator(val config: Config, val number: Int, val file: File, val headingNameString: String = "Confluence Page") : SectionGenerator {
     private val api: ConfluenceApi = ConfluenceApi(config.client, config.parameterStore.getParameter("username"), config.parameterStore.getParameter("password"))
     override fun generate(): List<Section> = runBlocking {
         file.readLines().map { createLink(it) }.map {

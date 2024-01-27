@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.formatter.confluence
+package com.ingenifi.unifile.model.document
 
 class FetchResult(private val resultMap: Map<String, Any>) {
 

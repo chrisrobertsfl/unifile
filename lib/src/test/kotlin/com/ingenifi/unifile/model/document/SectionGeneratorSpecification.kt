@@ -1,7 +1,7 @@
 package com.ingenifi.unifile.model.document
 
 import com.ingenifi.unifile.Verbosity
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.model.document.DetailText.Detail
 import com.ingenifi.unifile.model.document.KeywordsText.Keywords
 import com.ingenifi.unifile.model.document.SectionGenerator.Config

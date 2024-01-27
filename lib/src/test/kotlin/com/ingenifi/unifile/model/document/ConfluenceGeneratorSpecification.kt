@@ -2,7 +2,7 @@ package com.ingenifi.unifile.model.document
 
 import com.ingenifi.unifile.ParameterStore
 import com.ingenifi.unifile.Verbosity
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.model.document.SectionGenerator.Config
 import com.ingenifi.unifile.simpleFile
 import com.ingenifi.unifile.vpnOn

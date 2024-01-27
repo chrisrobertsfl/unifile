@@ -1,6 +1,8 @@
 package com.ingenifi.unifile.formatter.confluence
 
 import com.ingenifi.unifile.UnsecuredHttpClient
+import com.ingenifi.unifile.model.document.ConfluenceApi
+import com.ingenifi.unifile.model.document.FetchOption
 import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.StringSpec
 import kotlinx.serialization.json.Json

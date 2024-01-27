@@ -5,8 +5,9 @@ import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.TableOfContents
+import com.ingenifi.unifile.model.document.ConfluenceApi
 import io.ktor.client.*
 import kotlinx.coroutines.runBlocking
 import java.io.File

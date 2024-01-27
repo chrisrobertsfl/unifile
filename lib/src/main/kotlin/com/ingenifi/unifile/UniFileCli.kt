@@ -1,15 +1,12 @@
 package com.ingenifi.unifile
 
 import com.google.common.base.Stopwatch
-import com.ingenifi.unifile.formatter.KeywordExtractor
-import com.ingenifi.unifile.formatter.confluence.ConfluenceApi
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.FileOutputPath
 import com.ingenifi.unifile.output.OutputPath
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
-import java.util.*
 import java.util.concurrent.Callable
 
 @CommandLine.Command(

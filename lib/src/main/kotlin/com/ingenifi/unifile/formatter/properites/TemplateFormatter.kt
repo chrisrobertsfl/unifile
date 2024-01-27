@@ -2,7 +2,7 @@ package com.ingenifi.unifile.formatter.properites
 
 import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.formatter.plaintext.PlainTextSource
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import java.io.File

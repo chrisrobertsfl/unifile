@@ -6,7 +6,7 @@ import com.ingenifi.unifile.Verbosity
 import com.ingenifi.unifile.formatter.Delegate
 import com.ingenifi.unifile.formatter.DocumentFormatter
 import com.ingenifi.unifile.formatter.IssueSource
-import com.ingenifi.unifile.formatter.KeywordExtractor
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.formatter.toc.HeadingNumber
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import kotlinx.coroutines.Dispatchers

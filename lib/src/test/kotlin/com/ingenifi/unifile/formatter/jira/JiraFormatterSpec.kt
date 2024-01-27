@@ -1,9 +1,9 @@
 package com.ingenifi.unifile.formatter.jira
 
+import com.ingenifi.unifile.KeywordExtractor
 import com.ingenifi.unifile.ParameterStore
 import com.ingenifi.unifile.UnsecuredHttpClient
 import com.ingenifi.unifile.Verbosity
-import com.ingenifi.unifile.formatter.*
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.StringSpec
