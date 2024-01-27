@@ -1,0 +1,25 @@
+=========================================================================
+Table Of Contents
+=========================================================================
+1. Jira Spike - Spike: PAYPAL order return failure - partial cancellation
+
+
+=========================================================================
+1. Jira Spike - Spike: PAYPAL order return failure - partial cancellation
+=========================================================================
+- Jira Spike Keywords
+
+- Jira Spike Summary
+(no summary)
+- Jira Spike Detail
+*As* an OLM engineer
+*I want* to research why partially cancelled PAYPAL orders can't be returned
+*Because we* need the amounts that are sent to KPP to be correct to work through return services (invoices loaded to the Return Service DB and numbers are correct)
+
+This spike is ready for acceptance when:
+ * We know the solution to return partially cancelled PAYPAL orders. 
+ * We know the solution to return partially cancelled PAYPAL + KC orders
+ * Create Jira to implement those
+
+Notes:
+ * [https://confluence.kohls.com:8443/display/OE/OMO-1961+Research+the+Cause+of+Paypal+Orders+Not+Appearing+in+the+Return+Service]
