@@ -1,13 +1,12 @@
-package com.ingenifi.unifile
+package com.ingenifi.unifile.model.generators
 
-import com.ingenifi.unifile.model.generators.KeywordExtractor
 import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
 
 @Ignored
-class KeywordExtractorSpec : StringSpec({
+class KeywordExtractorSpecification : StringSpec({
     "extract" {
         val extractor = KeywordExtractor(.2, stopWords = listOf())
         val text = """

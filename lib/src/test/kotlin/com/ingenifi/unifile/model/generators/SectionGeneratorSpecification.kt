@@ -1,15 +1,13 @@
-package com.ingenifi.unifile.model.document
+package com.ingenifi.unifile.model.generators
 
-import com.ingenifi.unifile.verbosity.Verbosity
-import com.ingenifi.unifile.model.generators.KeywordExtractor
+import com.ingenifi.unifile.model.document.*
 import com.ingenifi.unifile.model.document.DetailText.Detail
 import com.ingenifi.unifile.model.document.KeywordsText.Keywords
-import com.ingenifi.unifile.model.generators.FileGenerator
-import com.ingenifi.unifile.model.generators.pdf.PdfGenerator
-import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
+import com.ingenifi.unifile.model.generators.pdf.PdfGenerator
 import com.ingenifi.unifile.model.generators.text.TextGenerator
 import com.ingenifi.unifile.model.generators.xml.XmlGenerator
+import com.ingenifi.unifile.verbosity.Verbosity
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -17,6 +15,15 @@ import io.mockk.mockk
 import java.io.File
 
 class SectionGeneratorSpecification : FeatureSpec({
+
+    fun expectedSection(allKeywords: List<String>, name: String, title: String, detail: String) = listOf(
+        Section(
+            heading = Heading(
+                headingName = Name(name), sectionNumber = SectionNumber(listOf(Level(1))), title = Title(title)
+            ), text = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
+        )
+    )
+
     feature("Using files") {
         val keywordExtractor = mockk<KeywordExtractor>()
         val expectedExtractedKeywords = listOf("k1", "k2")
@@ -66,13 +73,6 @@ class SectionGeneratorSpecification : FeatureSpec({
     }
 })
 
-private fun expectedSection(allKeywords: List<String>, name: String, title: String, detail: String) = listOf(
-    Section(
-        heading = Heading(
-            headingName = Name(name), sectionNumber = SectionNumber(listOf(Level(1))), title = Title(title)
-        ), text = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
-    )
-)
 
 
 

@@ -1,10 +1,10 @@
-package com.ingenifi.unifile.model.document
+package com.ingenifi.unifile.model.generators.confluence
 
 import com.ingenifi.unifile.ParameterStore
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.model.document.*
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
-import com.ingenifi.unifile.model.generators.confluence.ConfluenceGenerator
+import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.resourceAsFile
 import com.ingenifi.unifile.vpnOn
 import io.kotest.core.spec.style.StringSpec

@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.model.document
+package com.ingenifi.unifile.model.generators.pdf
 
 import com.ingenifi.unifile.model.generators.pdf.PdfConverter
 import io.kotest.core.spec.style.StringSpec

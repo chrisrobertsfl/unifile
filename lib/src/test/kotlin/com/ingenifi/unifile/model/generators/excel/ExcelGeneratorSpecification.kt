@@ -1,10 +1,10 @@
-package com.ingenifi.unifile.model.document
+package com.ingenifi.unifile.model.generators.excel
 
+import com.ingenifi.unifile.model.document.Document
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
-import com.ingenifi.unifile.model.generators.excel.ExcelGenerator
 import com.ingenifi.unifile.resourceAsString
 import com.ingenifi.unifile.resourceAsFile
 import io.kotest.core.spec.style.StringSpec

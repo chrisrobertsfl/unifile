@@ -1,15 +1,19 @@
 package com.ingenifi.unifile
 
 import com.google.common.base.Stopwatch
+import com.google.common.base.Stopwatch.createStarted
+import com.ingenifi.unifile.ParameterStore.Companion.loadProperties
 import com.ingenifi.unifile.formatter.toc.TableOfContents
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.output.FileOutputPath
 import com.ingenifi.unifile.output.OutputPath
+import com.ingenifi.unifile.output.OutputPath.Companion.from
 import com.ingenifi.unifile.verbosity.VerbosePrinter
 import com.ingenifi.unifile.verbosity.Verbosity
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
+import picocli.CommandLine.usage
 import java.util.concurrent.Callable
 
 @CommandLine.Command(
@@ -36,17 +40,13 @@ class UniFileCli : Callable<Int> {
         val verbosity = Verbosity(verbose = verbose, level = 0)
         val printer = VerbosePrinter(verbosity)
         if (inputPaths.isEmpty()) {
-            CommandLine.usage(this, System.out)
+           usage(this, System.out)
             return 1
         }
         return try {
-            val output = OutputPath.from(pathName = outputPath)
-            val input = InputPaths(paths = inputPaths.toList())
-            val parameterStore = ParameterStore.loadProperties(filePath = propertiesFilePath, logger = logger)
-            val keywordExtractor = KeywordExtractor(percentage = 0.1)
-            val toc = TableOfContents()
-            val uniFile = UniFile(input = input, keywordExtractor = keywordExtractor, parameterStore = parameterStore, toc = toc, verbosity = verbosity)
-            val stopwatch = Stopwatch.createStarted()
+            val output : OutputPath = from(pathName = outputPath)
+            val uniFile = UniFileRunner(input = InputPaths(paths = inputPaths.toList()), verbosity = verbosity)
+            val stopwatch = createStarted()
             uniFile.combineFiles(output)
             val elapsed = stopwatch.stop().elapsed().toSeconds()
             printer.verbosePrint("Processing took $elapsed seconds")

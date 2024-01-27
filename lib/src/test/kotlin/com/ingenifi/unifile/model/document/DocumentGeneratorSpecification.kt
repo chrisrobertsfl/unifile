@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk
 
-class DocumentGeneratorSpec : FeatureSpec({
+class DocumentGeneratorSpecification : FeatureSpec({
     feature("table of contents") {
         val body = mockk<Body>()
         every { body.sections } returns listOf()
