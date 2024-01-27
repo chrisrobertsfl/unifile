@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.formatter.confluence
 
-import com.ingenifi.unifile.formatter.html.HtmlConverter
+import com.ingenifi.unifile.model.document.HtmlConverter
 import com.jayway.jsonpath.JsonPath
 import io.ktor.client.*
 import io.ktor.client.request.*

@@ -26,46 +26,33 @@ application {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
-
-    // e-iceblue repository
-    maven(url = "https://repo.e-iceblue.cn/repository/maven-public/")
 }
-
 
 dependencies {
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.1")
 
-    // Kotest
+    // Testing
     testImplementation("io.kotest:kotest-runner-junit5:${kotestVersion}")
     testImplementation("io.kotest:kotest-assertions-core:${kotestVersion}") // replace with the latest version
     testImplementation("io.kotest:kotest-property:${kotestVersion}") // replace with the latest version
-
-    // Mockito
-    testImplementation("org.mockito:mockito-core:5.6.0")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
     testImplementation("io.mockk:mockk:1.13.8")
-
 
     // Utilities
     testImplementation("org.apache.commons:commons-lang3:3.13.0")
-    //testImplementation("org.instancio:instancio-core:3.6.0")
-
+    testImplementation("com.google.guava:guava:33.0.0-jre")
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(kotlin("stdlib"))
-    //implementation("com.google.guava:guava:31.1-jre")
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
     implementation("ch.qos.logback:logback-classic:1.4.11")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.21")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    implementation("commons-io:commons-io:2.15.0")
     implementation("info.picocli:picocli:4.0.4")
     implementation("io.ktor:ktor-client-core:2.3.7")
     implementation("io.ktor:ktor-client-java:2.3.7")

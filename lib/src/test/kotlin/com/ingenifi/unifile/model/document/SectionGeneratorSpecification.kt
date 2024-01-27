@@ -11,7 +11,7 @@ import io.mockk.every
 import io.mockk.mockk
 import java.io.File
 
-class SectionGeneratorSpec : FeatureSpec({
+class SectionGeneratorSpecification : FeatureSpec({
     feature("Using files") {
         val keywordExtractor = mockk<KeywordExtractor>()
         val expectedExtractedKeywords = listOf("k1", "k2")

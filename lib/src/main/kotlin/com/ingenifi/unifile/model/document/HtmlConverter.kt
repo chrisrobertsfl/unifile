@@ -1,12 +1,11 @@
-package com.ingenifi.unifile.formatter.html
+package com.ingenifi.unifile.model.document
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
-import java.io.PrintWriter
+import java.io.*
 
 class HtmlConverter {
-    fun convert(htmlContent: String): String? {
+
+    fun convert(file : File) = convert(file.readText())
+    fun convert(htmlContent: String): String {
         try {
             val processBuilder = ProcessBuilder("pandoc", "-f", "html", "-t", "plain")
             processBuilder.redirectErrorStream(true)
@@ -21,11 +20,11 @@ class HtmlConverter {
             while (reader.readLine().also { line = it } != null) {
                 output.append(line).append("\n")
             }
-            return if (process.waitFor() == 0) output.toString() else  null
+            return if (process.waitFor() == 0) output.toString() else ""
         } catch (e: Exception) {
             // Handle any exceptions that may occur
             e.printStackTrace()
-            return null
+            return ""
         }
     }
 }

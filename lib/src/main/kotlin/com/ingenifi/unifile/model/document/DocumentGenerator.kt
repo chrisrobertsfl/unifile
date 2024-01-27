@@ -8,7 +8,7 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
     fun generate() = buildString {
         appendTableOfContents()
         appendBody()
-    }
+    }.trim()
 
     private fun StringBuilder.appendTableOfContents() {
         if (document.tableOfContents.headings.isNotEmpty()) {

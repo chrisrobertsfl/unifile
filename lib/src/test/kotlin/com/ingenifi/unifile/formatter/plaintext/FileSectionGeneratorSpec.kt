@@ -48,8 +48,6 @@ class FileSectionGeneratorSpec : StringSpec({
 
             - Description
             Hello Plain Text
-
-
         """.trimIndent()
 
     }
