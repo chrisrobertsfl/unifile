@@ -10,6 +10,7 @@ data class SectionGeneratorFactory(val config: SectionGenerator.Config) {
         "json" -> TextGenerator(config = config, number = number, file = file, headingNameString = "Json Document")
         "pdf" -> PdfGenerator(config = config, number = number, file = file)
         "pptx" -> PowerPointGenerator(config = config, number = number, file = file)
+        "transcript" -> TranscriptGenerator(config = config, number = number, file = file)
         "txt" -> TextGenerator(config = config, number = number, file = file)
         "xml" -> XmlGenerator(config = config, number = number, file = file)
         else -> throw IllegalArgumentException("Unknown formatter for extension ${file.extension.lowercase()}: given ${file.name}")

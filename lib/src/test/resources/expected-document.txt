@@ -1,6 +1,6 @@
-==============================
+==========================================
 Table Of Contents
-==============================
+==========================================
 1. Text Document - simple.txt
 2. Xml Document - simple.xml
 3. Pdf Document - simple.pdf
@@ -8,11 +8,12 @@ Table Of Contents
 5. Csv Document - simple.csv
 6. Csv Document - simple.docx
 7. Html Document - simple.html
+8. Transcript Document - simple.transcript
 
 
-==============================
+==========================================
 1. Text Document - simple.txt
-==============================
+==========================================
 - Text Document Keywords
 src, test, resources, simple, txt
 - Text Document Summary
@@ -21,21 +22,21 @@ src, test, resources, simple, txt
 Hello Plain Text
 
 
-==============================
+==========================================
 2. Xml Document - simple.xml
-==============================
+==========================================
 - Xml Document Keywords
 src, test, resources, simple, xml
 - Xml Document Summary
-(no summary)
-- Xml Document Detail
 tag []:
   Hello XML
+- Xml Document Detail
+<tag>Hello XML</tag>
 
 
-==============================
+==========================================
 3. Pdf Document - simple.pdf
-==============================
+==========================================
 - Pdf Document Keywords
 src, test, resources, simple, pdf
 - Pdf Document Summary
@@ -44,9 +45,9 @@ src, test, resources, simple, pdf
 Hello PDF
 
 
-==============================
+==========================================
 4. Json Document - simple.json
-==============================
+==========================================
 - Json Document Keywords
 src, test, resources, simple, json
 - Json Document Summary
@@ -55,9 +56,9 @@ src, test, resources, simple, json
 { "message" : "Hello Json" }
 
 
-==============================
+==========================================
 5. Csv Document - simple.csv
-==============================
+==========================================
 - Csv Document Keywords
 src, test, resources, simple, csv
 - Csv Document Summary
@@ -66,9 +67,9 @@ src, test, resources, simple, csv
 Hello,Csv
 
 
-==============================
+==========================================
 6. Csv Document - simple.docx
-==============================
+==========================================
 - Csv Document Keywords
 src, test, resources, simple, docx
 - Csv Document Summary
@@ -77,12 +78,24 @@ src, test, resources, simple, docx
 Hello DOCX
 
 
-==============================
+==========================================
 7. Html Document - simple.html
-==============================
+==========================================
 - Html Document Keywords
 src, test, resources, simple, html
 - Html Document Summary
 (no summary)
 - Html Document Detail
 Hello HTML
+
+
+
+==========================================
+8. Transcript Document - simple.transcript
+==========================================
+- Transcript Document Keywords
+src, test, resources, simple, transcript
+- Transcript Document Summary
+Simple summary
+- Transcript Document Detail
+Simple detail
