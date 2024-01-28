@@ -21,6 +21,4 @@ data class JiraGenerator(val config: SectionGeneratorConfig, val number: Int, va
             SectionCreator.create(sectionCreatorConfig)
         }.flatten()
     }
-
-
 }

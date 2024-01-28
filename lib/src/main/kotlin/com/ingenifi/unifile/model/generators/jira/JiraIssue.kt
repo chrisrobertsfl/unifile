@@ -19,8 +19,18 @@ interface JiraIssue {
 
         fun epicBug(issueData: IssueData, epic: Epic): EpicBug =
             EpicBug(key = issueData.key, detail = issueData.detail, title = issueData.getBugTitle(), epic = epic, type = issueData.asEpicChildType())
-
         private fun IssueData.asEpicChildType() = "epic child $type"
     }
-
 }
+
+interface EpicChild : JiraIssue {
+    val epic: Epic
+}
+
+data class Epic(override val key: String, override val detail: String, val summary: String, override val title: String, override val type: String, val children: List<JiraIssue> = listOf()) : JiraIssue
+data class EpicBug(override val key: String, override val detail: String, override val title: String, override val epic: Epic, override val type: String) : EpicChild
+data class EpicSpike(override val key: String, override val detail: String, override val title: String, override val epic: Epic, override val type: String) : EpicChild
+data class EpicStory(override val key: String, override val detail: String, override val title: String, override val epic: Epic, override val type: String) : EpicChild
+data class Spike(override val key: String, override val detail: String, override val title: String, override val type: String) : JiraIssue
+data class Story(override val key: String, override val detail: String, override val title: String, override val type: String) : JiraIssue
+data class Bug(override val key: String, override val detail: String, override val title: String, override val type: String) : JiraIssue

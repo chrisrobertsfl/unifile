@@ -1,9 +1,12 @@
 package com.ingenifi.unifile.model.generators.jira
 
+import EpicBugCreator
+import EpicSpikeCreator
+import EpicStoryCreator
 import com.ingenifi.unifile.model.document.Section
 import com.ingenifi.unifile.model.document.SectionNumber
 
-sealed interface SectionCreator {
+fun interface SectionCreator {
 
     companion object {
         fun create(config: SectionCreatorConfig): List<Section> = when (config.jiraIssue) {

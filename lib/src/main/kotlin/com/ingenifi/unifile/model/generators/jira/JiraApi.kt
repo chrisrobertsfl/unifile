@@ -19,8 +19,6 @@ class JiraApi(private val client: HttpClient, private val jiraBaseUrl: String, p
     private val mapper = jacksonObjectMapper().apply {
         enable(SerializationFeature.INDENT_OUTPUT)
     }
-
-
     fun getChildren(epicKey: String): List<String> = runBlocking {
         val authHeader = "Bearer $apiToken"
         val jqlQuery = URLEncoder.encode("\"Epic Link\" = $epicKey", StandardCharsets.UTF_8.toString())
