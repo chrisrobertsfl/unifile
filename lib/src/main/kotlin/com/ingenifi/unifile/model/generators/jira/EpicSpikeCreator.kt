@@ -10,7 +10,7 @@ data class EpicSpikeCreator(val spike: EpicSpike, val keywordExtractor: KeywordE
     override fun create(sectionNumber: SectionNumber): List<Section> {
         verbosePrint("Processing epic child spike '${spike.key} - ${spike.title}' from epic '${spike.epic.key} - ${spike.epic.title}'")
         val headingName = Name("Jira Epic Child Spike")
-        val title = Title(spike.title)
+        val title = TitleText.Title(spike.title)
         val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = title)
         val keywords = createKeywords()
         val detail = DetailText.Detail(spike.detail)

@@ -1,15 +1,14 @@
 package com.ingenifi.unifile.model.generators.excel
 
+import com.ingenifi.unifile.Testing.resourceAsFile
+import com.ingenifi.unifile.Testing.resourceAsString
 import com.ingenifi.unifile.model.document.Document
 import com.ingenifi.unifile.model.generators.KeywordExtractor
-import com.ingenifi.unifile.verbosity.Verbosity
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
-import com.ingenifi.unifile.resourceAsString
-import com.ingenifi.unifile.resourceAsFile
+import com.ingenifi.unifile.verbosity.Verbosity
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import io.mockk.mockk
 
 class ExcelGeneratorSpecification : StringSpec({
 

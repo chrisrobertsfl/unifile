@@ -10,7 +10,7 @@ data class BugCreator(val bug: Bug, val keywordExtractor: KeywordExtractor, val 
     override fun create(sectionNumber: SectionNumber): List<Section> {
         verbosePrint("Processing Story '${bug.key} - ${bug.title}'")
         val headingName = Name("Jira Bug")
-        val title = Title(bug.title)
+        val title = TitleText.Title(bug.title)
         val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = title)
         val keywords = KeywordsText.Keywords(keywordExtractor.extract(bug.detail))
         val text = UnifileBodyText(headingName, keywords = keywords, detail = DetailText.Detail(bug.detail))

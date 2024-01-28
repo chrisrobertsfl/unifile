@@ -1,7 +1,7 @@
 package com.ingenifi.unifile.model.generators.jira
 
-import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.document.*
+import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.verbosity.VerbosePrinter
 import com.ingenifi.unifile.verbosity.VerbosePrinting
 import com.ingenifi.unifile.verbosity.Verbosity
@@ -10,7 +10,7 @@ data class EpicBugCreator(val bug: EpicBug, val keywordExtractor: KeywordExtract
     override fun create(sectionNumber: SectionNumber): List<Section> {
         verbosePrint("Processing epic child spike '${bug.key} - ${bug.title}' from epic '${bug.epic.key} - ${bug.epic.title}'")
         val headingName = Name("Jira Epic Child Spike")
-        val title = Title(bug.title)
+        val title = TitleText.Title(bug.title)
         val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = title)
         val keywords = createKeywords()
         val detail = DetailText.Detail(bug.detail)

@@ -6,25 +6,33 @@ import java.io.File
 import java.nio.charset.Charset.defaultCharset
 
 
-fun resourceAsFile(extension : String, name : String = "simple", ) = File("src/test/resources/${name}.${extension}")
-fun simplePaths(vararg extensions: String) = extensions.map { "src/test/resources/simple.$it" }
-fun resourceAsString(resource: String): String = toString(getResource(resource), defaultCharset())
+object Testing {
 
-fun outputResource(resource : String) {
-    println("\n-----------------\n$resource")
-    println(resourceAsString(resource))
-    println("----------------")
-}
+    fun resourceAsFile(extension: String, name: String = "simple") = File("src/test/resources/${name}.${extension}")
+    fun simplePaths(vararg extensions: String) = extensions.map { "src/test/resources/simple.$it" }
+    fun resourceAsString(resource: String): String = toString(getResource(resource), defaultCharset())
 
-fun String.output(heading : String? = null) {
-    println("\n-----------------")
-    heading?.let { println(it) }
-    println(this)
-    println("----------------")
-}
+    private val separatorLine = "-----------------"
+    fun outputResource(resource: String) {
+        println("\n$separatorLine\n$resource")
+        println(resourceAsString(resource))
+        println(separatorLine)
+    }
 
-fun vpnOn() : Boolean {
-    val httpProxyVariable = System.getenv("HTTP_PROXY")
-    println("httpProxyVariable = ${httpProxyVariable}")
-    return httpProxyVariable != null
+    fun Any?.output(heading: String? = null) {
+
+        this?.also {
+            println("\n$separatorLine")
+            heading?.also { println(it) }
+            println(toString())
+            println(separatorLine)
+        }
+    }
+
+    fun vpnOn(): Boolean {
+        val httpProxyVariable = System.getenv("HTTP_PROXY")
+        println("httpProxyVariable = $httpProxyVariable")
+        return httpProxyVariable != null
+    }
+
 }

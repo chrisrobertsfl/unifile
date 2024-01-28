@@ -27,7 +27,7 @@ data class EpicCreator(val epic: Epic, val keywordExtractor: KeywordExtractor, v
 
     private fun createEpicSection(sectionNumber: SectionNumber): List<Section> {
         val headingName = Name("Jira Epic")
-        val title = Title(epic.title)
+        val title = TitleText.Title(epic.title)
         val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = title)
         val keywords = KeywordsText.Keywords(keywordExtractor.extract(epic.detail))
         val detail = DetailText.Detail(epic.detail)

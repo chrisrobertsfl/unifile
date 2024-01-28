@@ -19,7 +19,7 @@ class SectionGeneratorSpecification : FeatureSpec({
     fun expectedSection(allKeywords: List<String>, name: String, title: String, detail: String) = listOf(
         Section(
             heading = Heading(
-                headingName = Name(name), sectionNumber = SectionNumber(listOf(Level(1))), title = Title(title)
+                headingName = Name(name), sectionNumber = SectionNumber(listOf(Level(1))), title = TitleText.Title(title)
             ), text = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
         )
     )
@@ -53,7 +53,7 @@ class SectionGeneratorSpecification : FeatureSpec({
         }
 
         scenario("json using text generator") {
-            val generator = TextGenerator(config, number, file = File("src/test/resources/simple.json"), headingNameString = "Json Document")
+            val generator = TextGenerator(config, number, file = File("src/test/resources/simple.json"), headingName = Name("Json Document"))
             val sections = generator.generate()
             sections shouldBe expectedSection(allKeywords, "Json Document", "simple.json", "{ \"message\" : \"Hello Json\" }")
         }

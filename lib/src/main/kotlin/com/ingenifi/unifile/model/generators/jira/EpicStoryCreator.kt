@@ -14,7 +14,7 @@ data class EpicStoryCreator(
     override fun create(sectionNumber: SectionNumber): List<Section> {
         verbosePrint("Processing epic child story '${story.key} - ${story.title}' from epic '${story.epic.key} - ${story.epic.title}'")
         val headingName = Name("Jira Epic Child Story")
-        val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = Title(story.title))
+        val heading = Heading(headingName = headingName, sectionNumber = sectionNumber, title = TitleText.Title(story.title))
         val keywords = childCreator.createKeywords()
         val summary = childCreator.createSummary()
         val detail = DetailText.Detail(story.detail)

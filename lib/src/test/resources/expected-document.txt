@@ -6,7 +6,7 @@ Table Of Contents
 3. Pdf Document - simple.pdf
 4. Json Document - simple.json
 5. Csv Document - simple.csv
-6. Csv Document - simple.docx
+6. Word Document - simple.docx
 7. Html Document - simple.html
 8. Transcript Document - simple.transcript
 
@@ -68,13 +68,13 @@ Hello,Csv
 
 
 ==========================================
-6. Csv Document - simple.docx
+6. Word Document - simple.docx
 ==========================================
-- Csv Document Keywords
+- Word Document Keywords
 src, test, resources, simple, docx
-- Csv Document Summary
+- Word Document Summary
 (no summary)
-- Csv Document Detail
+- Word Document Detail
 Hello DOCX
 
 

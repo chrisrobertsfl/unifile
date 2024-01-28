@@ -1,6 +1,7 @@
 package com.ingenifi.unifile.model.generators.document
 
 import com.ingenifi.unifile.model.document.*
+import com.ingenifi.unifile.model.document.TitleText.Title
 
 data class DocumentGenerator(val document: Document, val justifySectionNumbers: Boolean = false) {
     private val maxSectionLength = if (justifySectionNumbers) determineMaximumSectionLength() else 0
@@ -39,10 +40,7 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
 
         return list1.size.compareTo(list2.size)
     }
-
-    private fun StringBuilder.appendBody() {
-        document.body.sections.forEach { appendSection(it) }
-    }
+    private fun StringBuilder.appendBody() = document.body.sections.forEach { appendSection(it) }
 
     private fun StringBuilder.appendSection(section: Section) {
         appendLine(borderLine)
@@ -56,24 +54,22 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
         appendLine()
     }
 
-    private fun StringBuilder.appendHeading(heading: Heading) {
-        appendLine(formatHeadingWithSectionNumber(heading))
-    }
+    private fun StringBuilder.appendHeading(heading: Heading) = appendLine(formatHeadingWithSectionNumber(heading))
 
-    private fun formatHeadingWithSectionNumber(heading: Heading): String {
-        val headingName = when (heading.headingName) {
-            is HeadingName.None -> ""
-            is Name -> "${heading.headingName.content} - "
-        }
-        return "${generateSectionNumber(heading.sectionNumber).padStartIfNeeded(maxSectionLength, ' ', justifySectionNumbers)} ${headingName}${heading.title.content}"
+    private fun createEntryLine(heading: Heading): String {
+        val separator = if (heading.isNameAndTitlePresent()) " - " else ""
+        val headingName = heading.headingName.takeIf { it is Name }?.content ?: ""
+        val title = heading.title.takeIf { it is Title }?.content ?: ""
+        return listOf(headingName, title).joinToString(separator = separator)
     }
-
+    private fun formatHeadingWithSectionNumber(heading: Heading): String = "${generateSectionNumber(heading.sectionNumber).padStartIfNeeded(maxSectionLength, ' ', justifySectionNumbers)} ${createEntryLine(heading)}"
     private fun generateSectionNumber(sectionNumber: SectionNumber) = sectionNumber.levels.joinToString(separator = ".") { "${it.number}" } + "."
-
     private fun determineMaximumSectionLength() = document.tableOfContents.headings.maxOfOrNull { generateSectionNumber(it.sectionNumber).length } ?: 0
-
-    private fun determineMaximumHeadingLength() =
-        (document.tableOfContents.headings + document.body.sections.map { it.heading }).map { heading -> formatHeadingWithSectionNumber(heading).length }.maxOrNull() ?: 0
-
+    private fun determineMaximumHeadingLength(): Int {
+        val tocHeadings = document.tableOfContents.headings
+        val bodySectionHeadings = document.body.sections.map { it.heading }
+        val allHeadings = tocHeadings + bodySectionHeadings
+        return allHeadings.maxOfOrNull { heading -> formatHeadingWithSectionNumber(heading).length } ?: 0
+    }
     private fun String.padStartIfNeeded(length: Int, padChar: Char, justify: Boolean) = if (justify) this.padStart(length, padChar) else this
 }

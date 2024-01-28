@@ -1,5 +1,8 @@
 package com.ingenifi.unifile
 
+import com.ingenifi.unifile.Testing.output
+import com.ingenifi.unifile.Testing.resourceAsString
+import com.ingenifi.unifile.Testing.simplePaths
 import com.ingenifi.unifile.input.InputPaths
 import com.ingenifi.unifile.output.OutputPath
 import com.ingenifi.unifile.verbosity.Verbosity
@@ -12,6 +15,7 @@ class UniFileRunnerSpecification : StringSpec({
         val output = OutputPath.StringOutputPath()
         UniFileRunner(input = input, verbosity = Verbosity(verbose = true, level = 0)).combineFiles(output)
         val expectedDocument = resourceAsString("expected-document.txt")
+        output.contents.output()
         output.contents shouldBe expectedDocument
     }
 })

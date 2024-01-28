@@ -10,7 +10,7 @@ import com.ingenifi.unifile.verbosity.VerbosePrinter
 import com.ingenifi.unifile.verbosity.VerbosePrinting
 import java.io.File
 
-data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingNameString: String = "Excel Document") : SectionGenerator,
+data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingName: HeadingName = HEADING_NAME) : SectionGenerator,
     VerbosePrinting by VerbosePrinter(config.verbosity) {
     private val fileKeywords = config.keywordExtractor.extractKeywords(file)
     override fun generate(): List<Section> {
@@ -26,7 +26,7 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
     private fun generateWorkbookSection(worksheetNames: Set<String>): Section {
         fun createTitle() = file.name.substringBeforeLast(".xls")
         fun Set<String>.asWorksheetList(): String = joinToString(separator = ", ", prefix = "'", postfix = "'") { it }
-        fun createHeading(headingName: Name, title: String) = Heading(headingName = headingName, sectionNumber = SectionNumber(listOf(Level(number))), title = Title(title))
+        fun createHeading(headingName: Name, title: String) = Heading(headingName = headingName, sectionNumber = SectionNumber(listOf(Level(number))), title = TitleText.Title(title))
         fun createKeywords(worksheetNames: Set<String>) = Keywords(fileKeywords + worksheetNames)
         fun createSummary(title: String, worksheetNames: Set<String>) =
             Summary("This is the workbook '$title' containing ${worksheetNames.size} worksheet(s) named: ${worksheetNames.asWorksheetList()}")
@@ -46,7 +46,7 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
 
     private fun generateWorksheetSection(worksheet: WorkSheet, sectionNumberCounter: Int, withLevel: Int): Section {
         fun createSummary(title: String, worksheet: WorkSheet) = Summary("This is worksheet '$title' of workbook '${worksheet.workbookName}")
-        fun createHeading(headingName: Name, sectionNumberCounter: Int, title: String) = Heading(headingName, SectionNumber(listOf(Level(number), Level(sectionNumberCounter))), Title(title))
+        fun createHeading(headingName: Name, sectionNumberCounter: Int, title: String) = Heading(headingName, SectionNumber(listOf(Level(number), Level(sectionNumberCounter))), TitleText.Title(title))
         fun createKeywords(worksheet: WorkSheet, detail: String): KeywordsText = Keywords(config.keywordExtractor.extract(detail) + fileKeywords + worksheet.title + worksheet.workbookName)
 
         verbosePrint("Processing Worksheet '${worksheet.title}' of Workbook '${worksheet.workbookName}'", withLevel = withLevel)
@@ -62,4 +62,8 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
     }
 
     private fun createBodyText(headingName: Name, keywords: KeywordsText, summary: Summary, detail: Detail) = UnifileBodyText(headingName, keywords, summary, detail)
+
+    companion object {
+        val HEADING_NAME = Name("Excel Document")
+    }
 }
