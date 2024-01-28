@@ -2,7 +2,6 @@ package com.ingenifi.unifile.model.generators.jira
 
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.verbosity.Verbosity
-import com.ingenifi.unifile.formatter.jira.JiraApi
 import com.ingenifi.unifile.model.document.SectionNumber
 
 data class SectionCreatorConfig(

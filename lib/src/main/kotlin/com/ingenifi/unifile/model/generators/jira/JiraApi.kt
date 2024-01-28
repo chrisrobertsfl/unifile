@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.formatter.jira
+package com.ingenifi.unifile.model.generators.jira
 
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

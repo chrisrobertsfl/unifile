@@ -1,7 +1,5 @@
 package com.ingenifi.unifile.model.generators.jira
 
-import com.ingenifi.unifile.formatter.jira.JiraApi
-
 data class IssueCreator(val api: JiraApi) {
     fun create(issueKey: String, epic: Epic? = null): JiraIssue {
         val issueData = IssueData.from(issueKey, api.getIssue(issueKey))

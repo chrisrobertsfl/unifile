@@ -1,7 +1,5 @@
 package com.ingenifi.unifile.model.generators.jira
 
-import com.ingenifi.unifile.formatter.jira.IssueFactory
-
 data class IssueData(private val rawMap: Map<String, Any>?, val key: String, val type: String, val detail: String) {
     fun getStoryTitle() = getNonEpicTitle()
     fun getSpikeTitle() = getNonEpicTitle()
@@ -16,7 +14,7 @@ data class IssueData(private val rawMap: Map<String, Any>?, val key: String, val
         }
 
         private fun parseType(rawMap: Map<String, Any>?): String {
-            val issueTypeMap = rawMap?.get(IssueFactory.ISSUE_TYPE) as Map<String, Any>
+            val issueTypeMap = rawMap?.get("issuetype") as Map<String, Any>
             val type = issueTypeMap["name"] as String
             return type.lowercase()
         }

@@ -4,7 +4,6 @@ import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.verbosity.VerbosePrinter
 import com.ingenifi.unifile.verbosity.VerbosePrinting
 import com.ingenifi.unifile.verbosity.Verbosity
-import com.ingenifi.unifile.formatter.jira.JiraApi
 import com.ingenifi.unifile.model.document.*
 
 data class EpicCreator(val epic: Epic, val keywordExtractor: KeywordExtractor, val api: JiraApi, val issueCreator: IssueCreator, val verbosity: Verbosity) : SectionCreator,

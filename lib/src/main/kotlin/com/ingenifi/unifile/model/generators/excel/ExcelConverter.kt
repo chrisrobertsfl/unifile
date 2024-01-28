@@ -1,4 +1,4 @@
-package com.ingenifi.unifile.formatter.excel
+package com.ingenifi.unifile.model.generators.excel
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
