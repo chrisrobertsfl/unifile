@@ -25,7 +25,7 @@ data class UniFileRunner(
     val verbosity: Verbosity
 ) : VerbosePrinting by VerbosePrinter(verbosity) {
 
-    private val sectionGeneratorFactory = SectionGeneratorFactory(config = SectionGeneratorConfig(keywordExtractor, verbosity))
+    private val sectionGeneratorFactory = SectionGeneratorFactory(config = SectionGeneratorConfig(keywordExtractor = keywordExtractor, verbosity = verbosity, parameterStore = parameterStore))
     fun combineFiles(output: OutputPath) = runBlocking {
         verbosePrint("Processing files")
         val withLevel = verbosity.increasedLevel()

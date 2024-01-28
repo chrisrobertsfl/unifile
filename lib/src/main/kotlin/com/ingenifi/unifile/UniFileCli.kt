@@ -34,6 +34,8 @@ class UniFileCli : Callable<Int> {
 
     override fun call(): Int {
         val verbosity = Verbosity(verbose = verbose, level = 0)
+        val parameterStore = ParameterStore.loadProperties(filePath = propertiesFilePath, logger = logger)
+
         val printer = VerbosePrinter(verbosity)
         if (inputPaths.isEmpty()) {
            usage(this, System.out)
@@ -41,7 +43,7 @@ class UniFileCli : Callable<Int> {
         }
         return try {
             val output : OutputPath = from(pathName = outputPath)
-            val uniFile = UniFileRunner(input = InputPaths(paths = inputPaths.toList()), verbosity = verbosity)
+            val uniFile = UniFileRunner(input = InputPaths(paths = inputPaths.toList()), verbosity = verbosity, parameterStore = parameterStore)
             val stopwatch = createStarted()
             uniFile.combineFiles(output)
             val elapsed = stopwatch.stop().elapsed().toSeconds()

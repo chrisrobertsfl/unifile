@@ -17,7 +17,8 @@ data class ParameterStore(private val properties: Map<String, String>) {
             val propertiesFile = File(filePath ?: defaultPath)
             val properties = Properties()
 
-            if (propertiesFile.exists()) {
+            val exists = propertiesFile.exists()
+            if (exists) {
                 propertiesFile.inputStream().use {
                     properties.load(it)
                 }
@@ -26,7 +27,8 @@ data class ParameterStore(private val properties: Map<String, String>) {
             }
 
             val propertiesMap = properties.mapKeys { it.key.toString() }.mapValues { it.value.toString() }
-            return ParameterStore(propertiesMap)
+            val parameterStore = ParameterStore(propertiesMap)
+            return parameterStore
         }
     }
 }
