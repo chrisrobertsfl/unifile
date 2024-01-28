@@ -14,7 +14,7 @@ import io.mockk.mockk
 
 class ConfluenceGeneratorSpecification : StringSpec({
 
-    "generate".config(enabled = true ) {
+    "generate".config(enabledIf = { vpnOn() } ) {
         val config = SectionGeneratorConfig(keywordExtractor = KeywordExtractor(), verbosity = Verbosity(true, 0), parameterStore = ParameterStore.loadProperties())
         ConfluenceGenerator(config = config, number = 1, file = resourceAsFile("confluence")).generate() shouldBe listOf(
             Section(
