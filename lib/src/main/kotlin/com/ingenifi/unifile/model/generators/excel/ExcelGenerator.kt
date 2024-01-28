@@ -6,15 +6,18 @@ import com.ingenifi.unifile.model.document.KeywordsText.Keywords
 import com.ingenifi.unifile.model.document.SummaryText.Summary
 import com.ingenifi.unifile.model.generators.SectionGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
+import com.ingenifi.unifile.verbosity.VerbosePrinter
+import com.ingenifi.unifile.verbosity.VerbosePrinting
 import java.io.File
 
-data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingNameString: String = "Excel Document") : SectionGenerator {
+data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingNameString: String = "Excel Document") : SectionGenerator,
+    VerbosePrinting by VerbosePrinter(config.verbosity) {
     private val fileKeywords = config.keywordExtractor.extractKeywords(file)
     override fun generate(): List<Section> {
         val worksheetData = ExcelConverter().convert(file)
         val workbookSection = generateWorkbookSection(worksheetData.keys)
         val worksheetSections = worksheetData.values.mapIndexed { index, worksheet ->
-            generateWorksheetSection(worksheet, number + index)
+            generateWorksheetSection(worksheet = worksheet, sectionNumberCounter = number + index, withLevel = config.verbosity.increasedLevel(by = 1))
         }
         return listOf(workbookSection) + worksheetSections
     }
@@ -27,10 +30,12 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         fun createKeywords(worksheetNames: Set<String>) = Keywords(fileKeywords + worksheetNames)
         fun createSummary(title: String, worksheetNames: Set<String>) =
             Summary("This is the workbook '$title' containing ${worksheetNames.size} worksheet(s) named: ${worksheetNames.asWorksheetList()}")
+
         fun createDetail(title: String) = Detail("Subsections represent worksheets contained in this workbook '$title'")
 
-        val headingName = Name("Excel Workbook")
         val title = createTitle()
+        verbosePrint("Processing Workbook '${file.name}'")
+        val headingName = Name("Excel Workbook")
         val heading = createHeading(headingName, title)
         val keywords = createKeywords(worksheetNames)
         val summary = createSummary(title, worksheetNames)
@@ -39,13 +44,14 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         return Section(heading = heading, text = text)
     }
 
-    private fun generateWorksheetSection(worksheet: WorkSheet, sectionNumberCounter: Int): Section {
+    private fun generateWorksheetSection(worksheet: WorkSheet, sectionNumberCounter: Int, withLevel: Int): Section {
         fun createSummary(title: String, worksheet: WorkSheet) = Summary("This is worksheet '$title' of workbook '${worksheet.workbookName}")
         fun createHeading(headingName: Name, sectionNumberCounter: Int, title: String) = Heading(headingName, SectionNumber(listOf(Level(number), Level(sectionNumberCounter))), Title(title))
         fun createKeywords(worksheet: WorkSheet, detail: String): KeywordsText = Keywords(config.keywordExtractor.extract(detail) + fileKeywords + worksheet.title + worksheet.workbookName)
 
-        val headingName = Name("Excel Worksheet")
+        verbosePrint("Processing Worksheet '${worksheet.title}' of Workbook '${worksheet.workbookName}'", withLevel = withLevel)
         val title = worksheet.title
+        val headingName = Name("Excel Worksheet")
         val heading = createHeading(headingName, sectionNumberCounter, title)
         val csvDetail = worksheet.toFullCsv()
         val keywords = createKeywords(worksheet, csvDetail)
@@ -54,5 +60,6 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         val text = createBodyText(headingName, keywords, summary, detail)
         return Section(heading = heading, text = text)
     }
+
     private fun createBodyText(headingName: Name, keywords: KeywordsText, summary: Summary, detail: Detail) = UnifileBodyText(headingName, keywords, summary, detail)
 }
