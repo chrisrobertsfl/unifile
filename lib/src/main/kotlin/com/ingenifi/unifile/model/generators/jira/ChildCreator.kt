@@ -5,17 +5,17 @@ import com.ingenifi.unifile.model.document.KeywordsText
 import com.ingenifi.unifile.model.document.SummaryText
 
 interface ChildCreator {
-    val jiraIssue: EpicChild
+    val epicChild: EpicChild
     val keywordExtractor: KeywordExtractor
 
     fun createKeywords(): KeywordsText.Keywords {
-        val detailKeywords = keywordExtractor.extract(jiraIssue.detail)
-        val additionalKeywords = listOf("child", jiraIssue.key, jiraIssue.epic.key)
+        val detailKeywords = keywordExtractor.extract(epicChild.detail)
+        val additionalKeywords = listOf("child", epicChild.key, epicChild.epic.key)
         return KeywordsText.Keywords(detailKeywords + additionalKeywords)
     }
 
     fun createSummary(): SummaryText {
-        val content = "This is a child '${jiraIssue.key} - ${jiraIssue.title}' of epic '${jiraIssue.epic.key} - ${jiraIssue.epic.title}'"
+        val content = "This is a child '${epicChild.key} - ${epicChild.title}' of epic '${epicChild.epic.key} - ${epicChild.epic.title}'"
         return SummaryText.Summary(content)
     }
 }
