@@ -1,12 +1,10 @@
 package com.ingenifi.unifile.model.generators.jira
 
-import EpicBugCreator
-import EpicSpikeCreator
-import EpicStoryCreator
 import com.ingenifi.unifile.model.document.Section
 import com.ingenifi.unifile.model.document.SectionNumber
 
 fun interface SectionCreator {
+    fun create(sectionNumber: SectionNumber): List<Section>
 
     companion object {
         fun create(config: SectionCreatorConfig): List<Section> = when (config.jiraIssue) {
@@ -14,7 +12,7 @@ fun interface SectionCreator {
                 config.number
             )
 
-            is Story -> StoryCreator(story = config.jiraIssue, keywordExtractor = config.keywordExtractor, verbosity =  config.verbosity).create(config.number)
+            is Story -> StoryCreator(story = config.jiraIssue, keywordExtractor = config.keywordExtractor, verbosity = config.verbosity).create(config.number)
             is Spike -> SpikeCreator(spike = config.jiraIssue, keywordExtractor = config.keywordExtractor, verbosity = config.verbosity).create(config.number)
             is Bug -> BugCreator(bug = config.jiraIssue, keywordExtractor = config.keywordExtractor, verbosity = config.verbosity).create(config.number)
             is EpicStory -> EpicStoryCreator(story = config.jiraIssue, keywordExtractor = config.keywordExtractor, verbosity = config.verbosity).create(config.number)
@@ -23,8 +21,4 @@ fun interface SectionCreator {
             else -> throw IllegalArgumentException("type not yet supported")
         }
     }
-
-    fun create(sectionNumber: SectionNumber): List<Section>
-
-
 }

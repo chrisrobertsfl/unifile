@@ -1,12 +1,7 @@
 package com.ingenifi.unifile
 
 import com.google.common.base.Stopwatch.createStarted
-import com.ingenifi.unifile.input.InputPaths
-import com.ingenifi.unifile.output.FileOutputPath
-import com.ingenifi.unifile.output.OutputPath
-import com.ingenifi.unifile.output.OutputPath.Companion.from
-import com.ingenifi.unifile.verbosity.VerbosePrinter
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.OutputPath.Companion.from
 import org.slf4j.LoggerFactory
 import picocli.CommandLine
 import picocli.CommandLine.usage
@@ -31,18 +26,17 @@ class UniFileCli : Callable<Int> {
     @CommandLine.Option(names = ["-v", "--verbose"], description = ["Enable verbose output"])
     private var verbose: Boolean = false
 
-
     override fun call(): Int {
         val verbosity = Verbosity(verbose = verbose, level = 0)
         val parameterStore = ParameterStore.loadProperties(filePath = propertiesFilePath, logger = logger)
-
         val printer = VerbosePrinter(verbosity)
+
         if (inputPaths.isEmpty()) {
-           usage(this, System.out)
+            usage(this, System.out)
             return 1
         }
         return try {
-            val output : OutputPath = from(pathName = outputPath)
+            val output: OutputPath = from(pathName = outputPath)
             val uniFile = UniFileRunner(input = InputPaths(paths = inputPaths.toList()), verbosity = verbosity, parameterStore = parameterStore)
             val stopwatch = createStarted()
             uniFile.combineFiles(output)

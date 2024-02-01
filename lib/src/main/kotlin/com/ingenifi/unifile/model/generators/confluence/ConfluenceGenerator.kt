@@ -3,8 +3,8 @@ package com.ingenifi.unifile.model.generators.confluence
 import com.ingenifi.unifile.model.document.*
 import com.ingenifi.unifile.model.generators.SectionGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
-import com.ingenifi.unifile.verbosity.VerbosePrinter
-import com.ingenifi.unifile.verbosity.VerbosePrinting
+import com.ingenifi.unifile.VerbosePrinter
+import com.ingenifi.unifile.VerbosePrinting
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import java.io.File
@@ -27,7 +27,7 @@ data class ConfluenceGenerator(val config: SectionGeneratorConfig, val number: I
         return Section(
             heading = Heading(
                 headingName = headingName, sectionNumber = SectionNumber(listOf(Level(number))), title = TitleText.Title(link.title)
-            ), text = UnifileBodyText(headingName = headingName, keywords = KeywordsText.Keywords(config.keywordExtractor.extract(link.detail)), detail = DetailText.Detail(link.detail))
+            ), bodyText = UnifileBodyText(headingName = headingName, keywords = KeywordsText.Keywords(config.keywordExtractor.extract(link.detail)), detail = DetailText.Detail(link.detail))
         )
     }
 

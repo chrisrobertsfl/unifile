@@ -2,13 +2,10 @@ package com.ingenifi.unifile
 
 import org.slf4j.Logger
 import java.io.File
-import java.util.Properties
+import java.util.*
 
 data class ParameterStore(private val properties: Map<String, String>) {
-
-    fun getParameter(key: String): String {
-        return properties[key] ?: throw IllegalArgumentException("Parameter '$key' not specified in properties")
-    }
+    fun getParameter(key: String): String = properties[key] ?: throw IllegalArgumentException("Parameter '$key' not specified in properties")
 
     companion object {
         val NONE: ParameterStore = ParameterStore(mapOf())
@@ -17,18 +14,13 @@ data class ParameterStore(private val properties: Map<String, String>) {
             val propertiesFile = File(filePath ?: defaultPath)
             val properties = Properties()
 
-            val exists = propertiesFile.exists()
-            if (exists) {
-                propertiesFile.inputStream().use {
-                    properties.load(it)
-                }
+            if (propertiesFile.exists()) {
+                propertiesFile.inputStream().use { properties.load(it) }
             } else {
                 logger?.warn("Properties file not found: ${propertiesFile.path}")
             }
 
-            val propertiesMap = properties.mapKeys { it.key.toString() }.mapValues { it.value.toString() }
-            val parameterStore = ParameterStore(propertiesMap)
-            return parameterStore
+            return ParameterStore(properties.entries.associate { (key, value) -> key.toString() to value.toString() })
         }
     }
 }

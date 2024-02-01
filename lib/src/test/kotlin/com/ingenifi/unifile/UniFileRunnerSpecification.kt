@@ -3,9 +3,6 @@ package com.ingenifi.unifile
 import com.ingenifi.unifile.Testing.output
 import com.ingenifi.unifile.Testing.resourceAsString
 import com.ingenifi.unifile.Testing.simplePaths
-import com.ingenifi.unifile.input.InputPaths
-import com.ingenifi.unifile.output.OutputPath
-import com.ingenifi.unifile.verbosity.Verbosity
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 

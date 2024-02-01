@@ -40,6 +40,6 @@ class ConfluenceApi(
     }.bodyAsText()
 
     companion object {
-        fun htmlToPlainText(html: String): String = HtmlConverter().convert(html)!!
+        fun htmlToPlainText(html: String): String = HtmlConverter().convert(html)
     }
 }

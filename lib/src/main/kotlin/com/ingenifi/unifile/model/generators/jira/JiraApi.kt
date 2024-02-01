@@ -35,6 +35,7 @@ class JiraApi(private val client: HttpClient, private val jiraBaseUrl: String, p
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun getIssue(key: String): Map<String, Any>? = runBlocking {
         val authHeader = "Bearer $apiToken"
         val urlString = "$jiraBaseUrl/rest/api/2/issue/$key"

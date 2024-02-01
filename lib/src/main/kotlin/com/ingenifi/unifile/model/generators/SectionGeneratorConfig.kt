@@ -3,7 +3,7 @@ package com.ingenifi.unifile.model.generators
 import com.ingenifi.unifile.ParameterStore
 import com.ingenifi.unifile.ParameterStore.Companion.NONE
 import com.ingenifi.unifile.UnsecuredHttpClient.create
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.Verbosity
 import io.ktor.client.*
 
 

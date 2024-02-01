@@ -40,13 +40,18 @@ data class DocumentGenerator(val document: Document, val justifySectionNumbers: 
 
         return list1.size.compareTo(list2.size)
     }
-    private fun StringBuilder.appendBody() = document.body.sections.forEach { appendSection(it) }
+    private fun StringBuilder.appendBody() {
+        val sortedSections = document.body.sections.sortedWith(Comparator { s1, s2 ->
+            compareSectionNumbers(s1.heading.sectionNumber, s2.heading.sectionNumber)
+        })
+        sortedSections.forEach { appendSection(it) }
+    }
 
     private fun StringBuilder.appendSection(section: Section) {
         appendLine(borderLine)
         appendLine(formatHeadingWithSectionNumber(section.heading))
         appendLine(borderLine)
-        appendText(section.text)
+        appendText(section.bodyText)
     }
 
     private fun StringBuilder.appendText(text: BodyText) {

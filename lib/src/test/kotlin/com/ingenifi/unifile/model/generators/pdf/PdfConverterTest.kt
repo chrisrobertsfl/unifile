@@ -1,6 +1,5 @@
 package com.ingenifi.unifile.model.generators.pdf
 
-import com.ingenifi.unifile.model.generators.pdf.PdfConverter
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.io.File

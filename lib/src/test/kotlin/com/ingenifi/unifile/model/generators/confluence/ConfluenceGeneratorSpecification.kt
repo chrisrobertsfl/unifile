@@ -6,7 +6,7 @@ import com.ingenifi.unifile.Testing.vpnOn
 import com.ingenifi.unifile.model.document.*
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.Verbosity
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
@@ -19,7 +19,7 @@ class ConfluenceGeneratorSpecification : StringSpec({
             Section(
                 heading = Heading(
                     headingName = Name("Confluence Page"), sectionNumber = SectionNumber(listOf(Level(1))), title = TitleText.Title("Hello Confluence")
-                ), text = UnifileBodyText(headingName = Name("Confluence Page"), keywords = KeywordsText.Keywords(), detail = DetailText.Detail("Simple detail"))
+                ), bodyText = UnifileBodyText(headingName = Name("Confluence Page"), keywords = KeywordsText.Keywords(), detail = DetailText.Detail("Simple detail"))
             )
         )
     }

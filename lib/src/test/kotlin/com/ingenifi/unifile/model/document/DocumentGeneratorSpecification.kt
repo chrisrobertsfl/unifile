@@ -1,6 +1,6 @@
 package com.ingenifi.unifile.model.document
 
-import com.ingenifi.unifile.model.document.TitleText.*
+import com.ingenifi.unifile.model.document.TitleText.Title
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
@@ -57,8 +57,8 @@ class DocumentGeneratorSpecification : FeatureSpec({
             val document = Document(
                 tableOfContents = tableOfContents, body = Body(
                     sections = listOf(
-                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), headingName = Name("Document"), title = Title("My first title")), text = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
-                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), headingName = Name("PDF"), title = Title("My second title")), text = Text("My second text"))
+                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), headingName = Name("Document"), title = Title("My first title")), bodyText = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
+                        Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), headingName = Name("PDF"), title = Title("My second title")), bodyText = Text("My second text"))
 
                     )
                 )
@@ -81,8 +81,8 @@ class DocumentGeneratorSpecification : FeatureSpec({
         scenario("Entire document is generated with justification") {
             val body = Body(
                 sections = listOf(
-                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")), text = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
-                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), title = Title("My second title")), text = Text("My second text"))
+                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(1))), title = Title("My first title")), bodyText = Text("My first text is very long but is not considered in calculating the max border length for section headings")),
+                    Section(heading = Heading(sectionNumber = SectionNumber(levels = listOf(Level(2))), title = Title("My second title")), bodyText = Text("My second text"))
 
                 )
             )

@@ -1,15 +1,10 @@
 package com.ingenifi.unifile
 
-import com.ingenifi.unifile.input.InputPaths
-import com.ingenifi.unifile.model.document.*
+import com.ingenifi.unifile.model.document.Document
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.SectionGeneratorFactory
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
-import com.ingenifi.unifile.output.OutputPath
-import com.ingenifi.unifile.verbosity.VerbosePrinter
-import com.ingenifi.unifile.verbosity.VerbosePrinting
-import com.ingenifi.unifile.verbosity.Verbosity
 import io.ktor.client.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

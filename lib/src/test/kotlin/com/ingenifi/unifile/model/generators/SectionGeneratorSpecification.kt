@@ -7,7 +7,7 @@ import com.ingenifi.unifile.model.generators.document.DocumentGenerator
 import com.ingenifi.unifile.model.generators.pdf.PdfGenerator
 import com.ingenifi.unifile.model.generators.text.TextGenerator
 import com.ingenifi.unifile.model.generators.xml.XmlGenerator
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.Verbosity
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -20,7 +20,7 @@ class SectionGeneratorSpecification : FeatureSpec({
         Section(
             heading = Heading(
                 headingName = Name(name), sectionNumber = SectionNumber(listOf(Level(1))), title = TitleText.Title(title)
-            ), text = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
+            ), bodyText = UnifileBodyText(headingName = Name(name), keywords = Keywords(allKeywords), detail = Detail(detail))
         )
     )
 

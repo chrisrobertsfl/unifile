@@ -9,7 +9,7 @@ import com.ingenifi.unifile.model.document.Section
 import com.ingenifi.unifile.model.generators.KeywordExtractor
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.model.generators.document.DocumentGenerator
-import com.ingenifi.unifile.verbosity.Verbosity
+import com.ingenifi.unifile.Verbosity
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 

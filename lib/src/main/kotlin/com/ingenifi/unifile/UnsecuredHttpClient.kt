@@ -2,13 +2,12 @@ package com.ingenifi.unifile
 
 import io.ktor.client.*
 import io.ktor.client.engine.java.*
+import java.security.cert.X509Certificate
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
-import java.security.cert.X509Certificate
 
 object UnsecuredHttpClient {
-
     fun create(): HttpClient {
         val sslContext = createInsecureSslContext()
 

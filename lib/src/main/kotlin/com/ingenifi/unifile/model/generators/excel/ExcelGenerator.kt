@@ -6,8 +6,8 @@ import com.ingenifi.unifile.model.document.KeywordsText.Keywords
 import com.ingenifi.unifile.model.document.SummaryText.Summary
 import com.ingenifi.unifile.model.generators.SectionGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
-import com.ingenifi.unifile.verbosity.VerbosePrinter
-import com.ingenifi.unifile.verbosity.VerbosePrinting
+import com.ingenifi.unifile.VerbosePrinter
+import com.ingenifi.unifile.VerbosePrinting
 import java.io.File
 
 data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingName: HeadingName = HEADING_NAME) : SectionGenerator,
@@ -41,7 +41,7 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         val summary = createSummary(title, worksheetNames)
         val detail = createDetail(title)
         val text = createBodyText(headingName, keywords, summary, detail)
-        return Section(heading = heading, text = text)
+        return Section(heading = heading, bodyText = text)
     }
 
     private fun generateWorksheetSection(worksheet: WorkSheet, sectionNumberCounter: Int, withLevel: Int): Section {
@@ -58,7 +58,7 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         val summary = createSummary(title, worksheet)
         val detail = Detail(csvDetail)
         val text = createBodyText(headingName, keywords, summary, detail)
-        return Section(heading = heading, text = text)
+        return Section(heading = heading, bodyText = text)
     }
 
     private fun createBodyText(headingName: Name, keywords: KeywordsText, summary: Summary, detail: Detail) = UnifileBodyText(headingName, keywords, summary, detail)
