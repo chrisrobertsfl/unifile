@@ -29,6 +29,7 @@ data class SectionGeneratorFactory(val config: SectionGeneratorConfig) {
         "txt" -> TextGenerator(config = config, number = number, file = file)
         "xlsx" -> ExcelGenerator(config = config, number = number, file = file)
         "xml" -> XmlGenerator(config = config, number = number, file = file)
-        else -> throw IllegalArgumentException("Unknown formatter for extension ${file.extension.lowercase()}: given ${file.name}")
+        //else -> throw IllegalArgumentException("Unknown formatter for extension ${file.extension.lowercase()}: given ${file.name}")
+        else -> NotSupportedGenerator(config = config, file = file)
     }
 }

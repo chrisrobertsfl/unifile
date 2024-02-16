@@ -12,15 +12,21 @@ import java.io.File
 data class JiraGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File) : SectionGenerator, VerbosePrinting by VerbosePrinter(config.verbosity) {
     private val api = JiraApi(config.client, jiraBaseUrl = config.parameterStore.getParameter("jiraBaseUrl"), apiToken = config.parameterStore.getParameter("apiToken"))
     private val issueCreator = IssueCreator(api)
-    override fun generate(): List<Section> = runBlocking {
+    private var numberOfFilesProcessed = 0
+
+    override fun generate(): List<Section>  {
         verbosePrint("Processing Jira file '${file.name}'")
         val sectionVerbosity = config.verbosity.increasingBy(by = 1)
-        JiraFile(file = file).lines().map { issueCreator.create(it) }.mapIndexed { index, it ->
-            val documentNumber = number + index
+        return JiraFile(file = file).lines().map { issueCreator.create(it) }.map {
+            val documentNumber = number + numberOfFilesProcessed
             val sectionCreatorConfig = SectionCreatorConfig(
                 jiraIssue = it, keywordExtractor = config.keywordExtractor, api = api, issueCreator = issueCreator, number = SectionNumber(documentNumber), verbosity = sectionVerbosity
             )
-            SectionCreator.create(sectionCreatorConfig)
+            val sections = SectionCreator.create(sectionCreatorConfig)
+            numberOfFilesProcessed += 1
+            sections
         }.flatten()
     }
+
+    override fun numberOfFilesProcessed(): Int = numberOfFilesProcessed
 }

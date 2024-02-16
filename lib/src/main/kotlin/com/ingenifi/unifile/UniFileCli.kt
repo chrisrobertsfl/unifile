@@ -42,6 +42,7 @@ class UniFileCli : Callable<Int> {
             uniFile.combineFiles(output)
             val elapsed = stopwatch.stop().elapsed().toSeconds()
             printer.verbosePrint("Processing took $elapsed seconds")
+            logger.info("before outputting")
             if (output is FileOutputPath) printer.verbosePrint("Combined file created: ${output.path}") else printer.verbosePrint("Completed with output written to console")
             0
         } catch (e: Exception) {

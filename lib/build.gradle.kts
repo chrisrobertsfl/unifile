@@ -66,10 +66,6 @@ dependencies {
     implementation("org.apache.pdfbox:pdfbox:2.0.24")
 
 
-
-
-
-
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
