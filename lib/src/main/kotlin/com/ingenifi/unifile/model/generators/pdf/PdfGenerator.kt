@@ -4,7 +4,7 @@ import com.ingenifi.unifile.model.document.DetailText
 import com.ingenifi.unifile.model.document.HeadingName
 import com.ingenifi.unifile.model.document.Name
 import com.ingenifi.unifile.model.generators.FileGenerator
-import com.ingenifi.unifile.model.generators.SectionGenerator
+import com.ingenifi.unifile.model.generators.SectionsGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import java.io.File
 
@@ -14,7 +14,7 @@ data class PdfGenerator(
             file
         )
     )
-) : SectionGenerator by FileGenerator(config, number, file, headingName = headingName, detail = detail) {
+) : SectionsGenerator by FileGenerator(config, number, file, headingName = headingName, detail = detail) {
     companion object {
         val HEADING_NAME = Name("Pdf Document")
     }

@@ -15,7 +15,7 @@ import com.ingenifi.unifile.model.generators.xml.XmlGenerator
 import java.io.File
 
 data class SectionGeneratorFactory(val config: SectionGeneratorConfig) {
-    fun create(file: File, number: Int): SectionGenerator = when (file.extension.lowercase()) {
+    fun create(file: File, number: Int): SectionsGenerator = when (file.extension.lowercase()) {
         "confluence" -> ConfluenceGenerator(config = config, number = number, file = file)
         "csv" -> TextGenerator(config = config, number = number, file = file, headingName = Name("Csv Document"))
         "docx" -> WordGenerator(config = config, number = number, file = file)

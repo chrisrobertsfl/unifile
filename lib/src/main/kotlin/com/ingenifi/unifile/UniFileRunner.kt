@@ -28,10 +28,9 @@ data class UniFileRunner(
         val sections = allFiles.map {
             verbosePrint("Processing file #${lastNumber}: $it", withLevel = withLevel)
             val sectionGenerator = sectionGeneratorFactory.create(it, lastNumber)
-
             val sections = sectionGenerator.generate()
-            lastNumber += sectionGenerator.numberOfFilesProcessed()
-            sections
+            lastNumber += sections.numberProcessed
+            sections.list
         }.flatten()
         val text = DocumentGenerator(document = Document(sections), justifySectionNumbers = true).generate()
         output.write(text = text)

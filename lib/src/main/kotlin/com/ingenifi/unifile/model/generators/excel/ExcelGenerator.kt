@@ -4,22 +4,22 @@ import com.ingenifi.unifile.model.document.*
 import com.ingenifi.unifile.model.document.DetailText.Detail
 import com.ingenifi.unifile.model.document.KeywordsText.Keywords
 import com.ingenifi.unifile.model.document.SummaryText.Summary
-import com.ingenifi.unifile.model.generators.SectionGenerator
+import com.ingenifi.unifile.model.generators.SectionsGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import java.io.File
 
-data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingName: HeadingName = HEADING_NAME) : SectionGenerator,
+data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingName: HeadingName = HEADING_NAME) : SectionsGenerator,
     VerbosePrinting by VerbosePrinter(config.verbosity) {
     private val fileKeywords = config.keywordExtractor.extractKeywords(file)
-    override fun generate(): List<Section> {
+    override fun generate(): Sections {
         val worksheetData = ExcelConverter().convert(file)
         val workbookSection = generateWorkbookSection(worksheetData.keys)
         val worksheetSections = worksheetData.values.mapIndexed { index, worksheet ->
             generateWorksheetSection(worksheet = worksheet, sectionNumberCounter = number + index, withLevel = config.verbosity.increasedLevel(by = 1))
         }
-        return listOf(workbookSection) + worksheetSections
+        return Sections(list = listOf(workbookSection) + worksheetSections)
     }
 
 

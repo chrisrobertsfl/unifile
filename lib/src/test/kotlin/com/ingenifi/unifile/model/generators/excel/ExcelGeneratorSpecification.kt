@@ -15,7 +15,7 @@ class ExcelGeneratorSpecification : StringSpec({
     "generate" {
         val config = SectionGeneratorConfig(keywordExtractor = KeywordExtractor(), verbosity = Verbosity(false, 0))
         val sections = ExcelGenerator(config = config, number = 1, file = resourceAsFile("xlsx")).generate()
-        DocumentGenerator(Document(sections = sections)).generate() shouldBe resourceAsString("expected-excel-document.txt")
+        DocumentGenerator(Document(sections = sections.list)).generate() shouldBe resourceAsString("expected-excel-document.txt")
     }
 })
 

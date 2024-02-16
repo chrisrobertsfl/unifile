@@ -4,14 +4,14 @@ import com.ingenifi.unifile.model.document.HeadingName
 import com.ingenifi.unifile.model.document.Name
 import com.ingenifi.unifile.model.document.TitleText
 import com.ingenifi.unifile.model.generators.FileGenerator
-import com.ingenifi.unifile.model.generators.SectionGenerator
+import com.ingenifi.unifile.model.generators.SectionsGenerator
 import com.ingenifi.unifile.model.generators.SectionGeneratorConfig
 import com.ingenifi.unifile.VerbosePrinter
 import com.ingenifi.unifile.VerbosePrinting
 import java.io.File
 
 data class KotlinGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File) :
-    SectionGenerator by FileGenerator(config = config.copy(additionalKeywords = addKeywords(file)), number = number, file = file, headingName = headingName(file), title = TitleText.None),
+    SectionsGenerator by FileGenerator(config = config.copy(additionalKeywords = addKeywords(file)), number = number, file = file, headingName = headingName(file), title = TitleText.None),
     VerbosePrinting by VerbosePrinter(config.verbosity) {
     companion object {
 

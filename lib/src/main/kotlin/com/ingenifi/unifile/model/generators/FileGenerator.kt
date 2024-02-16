@@ -17,10 +17,10 @@ data class FileGenerator(
     val detail: DetailText = Detail(file.readText()),
     val title: TitleText = Title(file.name),
     val additionalKeywords: List<String> = listOf()
-) : SectionGenerator, VerbosePrinting by VerbosePrinter(config.verbosity) {
-    override fun generate(): List<Section> {
+) : SectionsGenerator, VerbosePrinting by VerbosePrinter(config.verbosity) {
+    override fun generate(): Sections {
         val keywords = config.keywordExtractor.extract(title.content) + config.keywordExtractor.extractKeywords(file) + config.additionalKeywords
         val text = UnifileBodyText(headingName = headingName, keywords = Keywords(keywords), summary = summary, detail = detail)
-        return listOf(Section(heading = Heading(headingName = headingName, sectionNumber = SectionNumber(number), title = title), bodyText = text))
+        return Sections(list = listOf(Section(heading = Heading(headingName = headingName, sectionNumber = SectionNumber(number), title = title), bodyText = text)))
     }
 }
