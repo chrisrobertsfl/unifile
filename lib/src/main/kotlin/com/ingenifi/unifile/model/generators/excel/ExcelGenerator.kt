@@ -17,7 +17,7 @@ data class ExcelGenerator(val config: SectionGeneratorConfig, val number: Int, v
         val worksheetData = ExcelConverter().convert(file)
         val workbookSection = generateWorkbookSection(worksheetData.keys)
         val worksheetSections = worksheetData.values.mapIndexed { index, worksheet ->
-            generateWorksheetSection(worksheet = worksheet, sectionNumberCounter = number + index, withLevel = config.verbosity.increasedLevel(by = 1))
+            generateWorksheetSection(worksheet = worksheet, sectionNumberCounter =  index + 1, withLevel = config.verbosity.increasedLevel(by = 1))
         }
         return Sections(list = listOf(workbookSection) + worksheetSections)
     }
