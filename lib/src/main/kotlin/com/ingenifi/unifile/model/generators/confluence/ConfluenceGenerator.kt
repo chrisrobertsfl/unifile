@@ -14,7 +14,7 @@ import java.io.File
 data class ConfluenceGenerator(val config: SectionGeneratorConfig, val number: Int, val file: File, val headingName: HeadingName = HEADING_NAME) : SectionsGenerator,
     VerbosePrinting by VerbosePrinter(config.verbosity) {
     private val api: ConfluenceApi = ConfluenceApi(config.client, config.parameterStore.getParameter("username"), config.parameterStore.getParameter("password"))
-    private var numberProcessed = 1
+
     override fun generate(): Sections = runBlocking {
         verbosePrint("Processing Confluence file '${file.name}'")
         val withLevel = config.verbosity.increasedLevel(1)
@@ -26,7 +26,7 @@ data class ConfluenceGenerator(val config: SectionGeneratorConfig, val number: I
             }
         }.awaitAll()
 
-        Sections(list = sections, numberProcessed = links.size) // Update numberProcessed based on the size of links
+        Sections(list = sections, numberProcessed = links.size + 1) // Update numberProcessed based on the size of links
     }
 
     private fun createSection(link: ConfluenceLink, withLevel: Int, index: Int): Section {
