@@ -1,3 +1,5 @@
 package com.ingenifi.unifile.model.document
 
-data class Section(val heading : Heading, val bodyText : BodyText)
+import java.time.LocalDate
+
+data class Section(val heading : Heading, val lastUpdated : LocalDate = LocalDate.now(), val keywords : List<String> = listOf(), val summary : String = "", val bodyText : BodyText)
