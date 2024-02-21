@@ -68,6 +68,12 @@ class TextSectionGeneratorsSpecification : FeatureSpec({
             val file = tempFile(name = "Title-is-here", content = content)
             TextSectionGenerator(number = 1, file = file).generate()[0].metadata.lastUpdated.text shouldBe LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
         }
+        scenario("Pull title only out from file") {
+            val content = createContentWithTags(keywords = listOf("keyword"), lastUpdated = "20240220", summary = "summary", content = "content")
+            val file = tempFile(name = "Title-is-here", content = content)
+            println("file.name = ${file.name}")
+            TextSectionGenerator(number = 1, file = file).generate() shouldBe sections
+        }
     }
 })
 
