@@ -36,8 +36,19 @@ object Testing {
         return httpProxyVariable != null
     }
 
-    fun tempFile(prefix : String = "testFile", suffix : String = ".txt", content : String = "") =Files.createTempFile(prefix, suffix).toFile().apply {
+    fun tempFile(name: String = "testFile", extension: String = "txt", content: String = ""): File {
+        // Create a temporary directory to hold the file, ensuring it gets deleted on exit
+        val tempDir = Files.createTempDirectory(null).toFile().apply { deleteOnExit() }
+
+        // Construct the complete file name with extension
+        val fileName = "$name.$extension"
+
+        // Create the file within the temporary directory
+        val file = File(tempDir, fileName).apply {
             writeText(content)
             deleteOnExit()
         }
+
+        return file
+    }
 }

@@ -10,8 +10,8 @@ class TextSectionGeneratorsSpecification : FeatureSpec({
     val sections = listOf(
         Section(
             id = Id(1),
-            title = Title("title"),
-            metadata = SectionMetadata(keywords = Keywords(list = listOf("keyword")), lastUpdated = LastUpdated("2024-02-20"), summary = Summary(text = "summary")),
+            title = Title("Title is here"),
+            metadata = SectionMetadata(keywords = Keywords(list = listOf("keyword")), lastUpdated = LastUpdated("20240220"), summary = Summary(text = "summary")),
             content = Content(text = "content"),
             relatedSections = RelatedSections()
         )
@@ -19,15 +19,14 @@ class TextSectionGeneratorsSpecification : FeatureSpec({
 
 
     feature("Plain Text File") {
-
         scenario("Everything is provided in the file internally") {
             val content = """
                 <!-- Title -->
-                title
+                Title is here
                 <!-- Keywords -->
                 keyword
                 <!-- LastUpdated -->
-                2024-02-20
+                20240220
                 <!-- Summary -->
                 summary
                 <!-- Content -->
@@ -36,6 +35,22 @@ class TextSectionGeneratorsSpecification : FeatureSpec({
             val file = tempFile(content = content)
             TextSectionGenerator(number = 1, file = file).generate() shouldBe sections
         }
+        scenario("Last updated is embedded in file name like 20240220-Title-is-here.txt") {
+            val content = """
+                <!-- Title -->
+                Title is here
+                <!-- Keywords -->
+                keyword
+                <!-- Summary -->
+                summary
+                <!-- Content -->
+                content
+            """.trimIndent()
+            val file = tempFile(name = "20240220-Title-is-here", content = content)
+            println("file.name = ${file.name}")
+            TextSectionGenerator(number = 1, file = file).generate() shouldBe sections
+        }
     }
+
 })
 
