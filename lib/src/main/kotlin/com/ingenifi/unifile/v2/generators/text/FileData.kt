@@ -18,49 +18,38 @@ data class FileData(
         fun from(file: File): FileData {
             val extractor = FileSectionExtractor(file.readText())
 
-            val extractedLastUpdated = extractor.lastUpdated().text
-            val lastUpdated = determineLastUpdated(file, extractedLastUpdated)
-            val title = determineTitle(file, extractor.title().text, lastUpdated.text)
+            val lastUpdated = extractor.lastUpdated().takeIfNotEmpty() ?: file.determineLastUpdated()
+            val title = extractor.title().takeIfNotEmpty() ?: file.deriveTitle(lastUpdated)
             val summary = extractor.summary()
             val content = extractor.content()
             val keywords = extractor.keywords()
 
-            return FileData(
-                title = title,
-                summary = summary,
-                content = content,
-                lastUpdated = lastUpdated,
-                keywords = keywords
-            )
+            return FileData(title, summary, content, lastUpdated, keywords)
         }
 
-        private fun determineLastUpdated(file: File, extractedLastUpdated: String): LastUpdated {
-            if (extractedLastUpdated.isNotBlank()) {
-                return LastUpdated(extractedLastUpdated)
-            }
+        private fun LastUpdated.takeIfNotEmpty(): LastUpdated? = takeIf { it.text.isNotEmpty() }
+        private fun Title.takeIfNotEmpty(): Title? = takeIf { it.text.isNotEmpty() }
 
+        private fun File.deriveTitle(lastUpdated: LastUpdated): Title {
+            val titleWithoutDate = nameWithoutExtension
+                .removePrefix(lastUpdated.text)
+                .replaceFirst("^\\d{8}-", "")
+                .replace('-', ' ')
+                .trim()
+            return Title(titleWithoutDate)
+        }
+
+        private fun File.determineLastUpdated(): LastUpdated {
             val datePattern = "\\d{8}".toRegex()
-            datePattern.find(file.name)?.let {
-                return LastUpdated(it.value)
-            }
+            val extractedDate = datePattern.find(name)?.value
+            val fileDate = extractedDate ?: Files.readAttributes(toPath(), BasicFileAttributes::class.java)
+                .creationTime()
+                .toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate()
+                .format(DateTimeFormatter.ofPattern("yyyyMMdd"))
 
-            val fileAttr = Files.readAttributes(file.toPath(), BasicFileAttributes::class.java)
-            val fileDate = fileAttr.creationTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
-            return LastUpdated(fileDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")))
-        }
-
-        private fun determineTitle(file: File, extractedTitle: String, extractedLastUpdated: String): Title {
-            // If the title is extracted from the content
-            if (extractedTitle.isNotBlank()) {
-                return Title(extractedTitle)
-            }
-
-            // Regex to identify and remove the date prefix from the file name if present
-            val datePrefixPattern = "^\\d{8}-".toRegex()
-            val fileNameWithoutExtension = file.nameWithoutExtension
-            val titleWithoutDatePrefix = datePrefixPattern.replaceFirst(fileNameWithoutExtension, "")
-            val title = titleWithoutDatePrefix.replace('-', ' ').trim()
-            return Title(title)
+            return LastUpdated(fileDate)
         }
     }
 }
