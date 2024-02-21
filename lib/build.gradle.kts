@@ -43,6 +43,7 @@ dependencies {
     testImplementation("org.apache.commons:commons-lang3:3.13.0")
     testImplementation("com.google.guava:guava:33.0.0-jre")
 
+
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
 

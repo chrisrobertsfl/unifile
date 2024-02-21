@@ -4,6 +4,7 @@ import com.google.common.io.Resources.getResource
 import com.google.common.io.Resources.toString
 import java.io.File
 import java.nio.charset.Charset.defaultCharset
+import java.nio.file.Files
 
 
 object Testing {
@@ -35,4 +36,8 @@ object Testing {
         return httpProxyVariable != null
     }
 
+    fun tempFile(prefix : String = "testFile", suffix : String = ".txt", content : String = "") =Files.createTempFile(prefix, suffix).toFile().apply {
+            writeText(content)
+            deleteOnExit()
+        }
 }

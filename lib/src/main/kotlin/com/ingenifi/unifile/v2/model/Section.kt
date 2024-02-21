@@ -2,13 +2,13 @@ package com.ingenifi.unifile.v2.model
 
 import java.time.LocalDateTime
 
-data class Section(val id: Id, val title: Title, val metadata: SectionMetadata, val content : Content, val relatedSections: RelatedSections) {
+data class Section(val id: Id, val title: Title, val metadata: SectionMetadata, val content : Content = Content(), val relatedSections: RelatedSections = RelatedSections()) {
     fun accept(visitor: SectionVisitor) = visitor.visitSection(this)
 }
 
 data class Id(val number: Int = 0)
 data class Title(val text: String = "")
-data class SectionMetadata(val title : Title = Title("Metdata"), val keywords: Keywords, val lastUpdated: LastUpdated, val summary: Summary)
+data class SectionMetadata(val title : Title = Title("Metdata"), val keywords: Keywords = Keywords(), val lastUpdated: LastUpdated = LastUpdated(), val summary: Summary = Summary())
 data class Keywords(val title : Title = Title("Tags/Keywords"), val list: List<String> = listOf())
 data class LastUpdated(val text: String = LocalDateTime.now().toString())
 data class Summary(val title : Title = Title("Summary"), val text: String = "")
