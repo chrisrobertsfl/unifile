@@ -2,7 +2,10 @@ package com.ingenifi.unifile.v2.generators.text
 
 import com.ingenifi.unifile.v2.model.*
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.attribute.BasicFileAttributes
 import java.time.LocalDate
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 data class FileData(
@@ -23,11 +26,12 @@ data class FileData(
                 val dateMatch = datePattern.find(file.name)
                 val dateStr = dateMatch?.value
                 val date = if (dateStr != null) {
-                    // Format date as YYYYMMDD instead of converting to LocalDate
-                    dateStr // Use the string directly without parsing to LocalDate
+                    dateStr // Use the extracted date string directly
                 } else {
-                    // If no date found in file name, use current date in YYYYMMDD format
-                    LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+                    // If no date found in file name, use file creation date
+                    val fileAttr = Files.readAttributes(file.toPath(), BasicFileAttributes::class.java)
+                    val fileCreationDate = fileAttr.creationTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+                    fileCreationDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"))
                 }
                 LastUpdated(date)
             } else {
